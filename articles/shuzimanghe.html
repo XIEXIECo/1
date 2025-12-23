@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+<meta charset="utf-8">
+<title>数字盲盒 | 在虚拟世界 探寻“盒”的边界 - Tencent ISUX Design</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="theme-color" content="#000000">
+<link rel="mask-icon" href="../static/images/favicon.svg" color="#FFFFFF">
+<link rel="shortcut icon" href="../static/images/favicon.ico" type="image/x-icon">
+<link href="../static/css/base.css" rel="stylesheet">
+<script type="text/javascript" src="https://js.aq.qq.com/js/aq_common.js"></script>
+
+<meta name="keywords" content="ISUX,中国用户体验,腾讯设计,H5,动画,svg,webpack,vuejs,react,webComponents,react-native,人工智能,VR,AR,QQ,QQ空间,原创,创意,平面设计,UI,UI设计,网页设计,插画,动漫,摄影,字体设计,logo设计,版式设计,前端技术,视觉设计,用户研究,交互设计,品牌设计,UI开发,产品设计,市场研究,UX设计,腾讯社交用户体验设计部,Qlippie,QQfamily,PsPlay,Demoo">
+<meta name="description" content="腾讯社交用户体验设计，简称ISUX (Internet Social User Experience)，成立于2011年1月11日，是腾讯集团核心、全球最具规模的UX设计团队，专业成员包括用户研究、交互设计、视觉设计、品牌设计、视频动画设计、UI开发、产品设计与市场研究等，至今ISUX分布于中国深圳总部、北京、上海、成都及韩国首尔。">
+
+<!-- 社交分享 -->
+<meta itemprop="name" content="数字盲盒 | 在虚拟世界 探寻“盒”的边界" />
+<meta itemprop="description" content="" />
+<meta itemprop="image" content="https://cdn-isux.qq.com/upload/detail/VrGzWjlw7eDxo1wl69XTP72j42JNF1JULj8S3drmivc.jpeg" />
+<!-- 社交分享 -->
+
+<!-- Facebook Open Graph -->
+<meta property="fb:app_id" content="137155036704975" />
+<meta property="og:url" content="https://isux.tencent.com/articles/shuzimanghe.html" />
+<meta property="og:title" content="数字盲盒 | 在虚拟世界 探寻“盒”的边界" />
+<meta property="og:site_name" content="Tencent ISUX Design" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://cdn-isux.qq.com/upload/detail/VrGzWjlw7eDxo1wl69XTP72j42JNF1JULj8S3drmivc.jpeg" />
+<meta property="og:locale" content="en_us" />
+<!-- Facebook Open Graph -->
+
+<!-- home css file -->
+<link href="../static/css/detail.css" rel="stylesheet">
+<!-- home css file -->
+
+</head>
+<body>
+<!-- 移动端的结构，要单独写html，才可以在header下面滑出 -->
+<div class="_m-nav-wrapper">
+    <ul class="_nav-items">
+            <li class="_nav-item active">
+                <a href="index.html">ARTICLES</a>
+            </li>
+            <li class="_nav-item">
+                <a href="../brands/index.html">BRANDS</a>
+            </li>
+            <li class="_nav-item">
+                <a href="../resources/index.html">RESOURCES</a>
+            </li>
+            <li class="_nav-item">
+                <a href="../careers/index.html">CAREERS</a>
+            </li>
+
+        <!-- 移动端的搜索按钮，pc的时候为隐藏状态，功能跟._nav-search一样 -->
+        <div class="nav-item -m-search">
+            <a href="#/search/" data-action="toggle" data-args="body" data-cssclass="xxx"></a>
+        </div>
+    </ul>
+</div>
+
+<header>
+    <div class="_header-wrapper">
+        <nav id="navigator" class="mod_site_nav nav-animate-item js-nav-state">
+            <div class="_nav-logo">
+                <a href="../index.html" class="_nav-flower" ></a>
+                <!-- <a href="/" class="js-nav-isux _nav-isux"></a> -->
+            </div>
+            <!-- pc端的结构 -->
+            <div class="_nav-wrapper">
+                <ul class="_nav-items">
+                        <li class="_nav-item active">
+                            <a href="index.html">ARTICLES</a>
+                        </li>
+                        <li class="_nav-item">
+                            <a href="../brands/index.html">BRANDS</a>
+                        </li>
+                        <li class="_nav-item">
+                            <a href="../resources/index.html">RESOURCES</a>
+                        </li>
+                        <li class="_nav-item">
+                            <a href="../careers/index.html">CAREERS</a>
+                        </li>
+                    <!-- 移动端的搜索按钮，pc的时候为隐藏状态，功能跟._nav-search一样 -->
+                    <div class="nav-item -m-search">
+                        <a href="#/search/" data-action="toggle" data-args="body" data-cssclass="xxx"></a>
+                    </div>
+                </ul>
+            </div>
+
+            <!-- pc端的搜索按钮，移动端时为隐藏状态 -->
+            <div class="_nav-search">
+                <a href="#/search/" data-action="toggle" data-args="body" data-cssclass="xxx"></a>
+            </div>
+
+            <!-- 移动端的菜单list按钮，pc的时候为隐藏状态，在列表icon和close-icon之间切换 -->
+            <div class="_m-nav-list" data-cssclass="_m-nav-close">
+                <a href="#/list/" data-action="toggle" data-args="body" class="lines js-m-navlist">
+                    <span class="line first-line"></span>
+                    <span class="line second-line"></span>
+                    <span class="line third-line"></span>
+                </a>
+            </div>
+
+        </nav>
+    </div>
+</header>
+<div class="_fake-header"></div>
+<!-- 文章详情页 -->
+<div class="_main_content">
+    <!-- 前言模块 -->
+    <section class="_mod_introduce _mod_editor js-mod-introduce">
+
+        <div class="_introduce_title_wrapper show-animate-item">
+            <div class="_article_title_wrapper">
+                <div class="_introduce_title js-intro-title">数字盲盒 | 在虚拟世界 探寻“盒”的边界</div>
+            </div>
+            <div class="_public_line caretColor" ></div>
+            <div class="_introduce_tag js-intro-tag" >EVENT</div>
+        </div>
+        
+        <div class="_public_paragraph js-intro-content show-animate-item"></div>
+
+        <div class="_public_banner js-intro-banner js-defualt-banner show-animate-item"><img class="pic js-pic-banner clip-animate-item block-item" data-banner-src="https://cdn-isux.qq.com/upload/detail/VrGzWjlw7eDxo1wl69XTP72j42JNF1JULj8S3drmivc.jpeg" data-article-id="545" src="https://cdn-isux.qq.com/upload/detail/VrGzWjlw7eDxo1wl69XTP72j42JNF1JULj8S3drmivc.jpeg" alt=""></div>
+    
+    </section>
+
+    <div class="editable" id="editor2">
+        <!-- 正文模块 -->
+        
+            
+            <section class="_mod_content _mod_editor">
+                
+                <div class="_public_subtitle show-animate-item js-content-subtitle medium-editor-placeholder-relative" data-placeholder="Chapter Title"></div>
+                <div class="_public_line show-animate-item caretColor" contenteditable="false"></div>
+                <div class="_public_line_title show-animate-item js-content-title js-content-subtitle medium-editor-placeholder-relative" data-placeholder="Section Title"></div>
+                <p class="show-animate-item"><br></p><div class="_public_title show-animate-item" data-placeholder="Section Title">前言</div><p class="show-animate-item">“生活就像是一颗巧克力，你永远不知道下一颗是什么滋味。”盲盒的诞生，给“box”的意象又增加了一份神秘。2020年作为大众广为人知的盲盒元年，随着12月第一支“盲盒股”在港交所挂牌上市，盲盒零售店和自动盲盒机都如雨后春笋一般席卷了大小消费集散地。抽盲盒、买盲盒、再到次级市场交易盲盒，一个百亿盲盒市场被快速“拆”了出来。</p><p class="show-animate-item"> </p><p class="show-animate-item">从潘多拉的魔盒、薛定谔的猫，再到盲盒的隐藏款，“抽盒”在搭上潮玩这趟商业快车的同时，也在不断试探年轻的好奇心和为此豪掷千金的底线。根据《95一样玩家剁手力榜单》显示，收藏盲盒手办从最开始的“亚文化”消费，已经成为当下95后热度最高的收藏爱好。也不难理解，盲盒低至50-80元的单价，和Z世代年轻人群体逐渐下沉的消费趋势一拍即合。而搭载了游戏及商业IP的盲盒，除了有得天独厚的爆款产出特性，也在更多方面和更高层次上满足Z世代年轻人的好奇心、收集欲并拓展了线下社交的可能性。</p><p class="show-animate-item"> </p><p class="show-animate-item">那么同样备受年轻人喜爱的社交产品手Q，在这趟“万物皆可盲盒”的浪潮中，又可以扮演怎样的角色呢？我们给出的答案是：数字盲盒。借助平台已有的大量IP，数字盲盒相比线下实体盲盒搭乘IP红利的成本更低，推陈出新，以速度和“量”取胜是一大优势。同时，我们也希望以日签打卡的方式，在满足手Q、Z世代用户收集欲望的同时，打造一种基于线下盲盒收集但同时潜在拓展数字“盲盒”社交的新玩法。</p><p class="show-animate-item"><br></p><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">Chapter1</div><div class="_public_line show-animate-item"></div><div class="_public_line_title show-animate-item" data-placeholder="Section Title">从线下到线上</div><p class="show-animate-item">在传承线下玩法的同时打造线上盲盒新玩法，则需要考虑到许多问题。我们留意到，线下盲盒有许多优势是无法照搬的，比如实体盲盒的触感，购买、拆开实体盲盒所获得的即时心理反馈等。但盲盒的核心特点，就在于它给普通的商品增加了游戏属性。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="56.25%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/ImrxE8v13l8NnvLRYLCWc752smcmQztmg6r4jDnUlZz.png" class="pic block-item clip-animate-item"></div><p class="show-animate-item">因此，我们也尝试通过挖掘数字盲盒的独特之处，保留并增添整个抽盒过程的娱乐性和惊喜。从设计层面而言，我们从以下三个角度切入构思：</p><p class="show-animate-item">1） IP：筛选线下盲盒成功案例，敲定以Q萌的盲盒为主推IP；并且线上盲盒可以实现短平快上架IP，结合时效热点，孵化出更出圈的虚拟IP。</p><p class="show-animate-item">2） 包装：趋同于线下盲盒包装，继承实体盲盒的视觉审美体验；线下盲盒受包装成本所限，线上盲盒可以打磨出更新颖的盲盒包装。</p><p class="show-animate-item">3） 隐藏玩法：同步线下盲盒玩法逻辑，采用N+1的种类形式，在每套盲盒系列中设定一个隐藏款。在用户抽盒过程中，整套盲盒以动画轮播的方式呈现，隐藏款则用问号代替，驱动玩家好奇心。并且依附QQ关系链，引导用户交换已经拥有的重复盲盒，从而收集整套端盒。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="56.25%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/Dm6bZPyps895ryVlq9j3N3BKQfnBwfyAWursg1dQpLQ.png" class="pic block-item clip-animate-item"></div><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">Chapter2</div><div class="_public_line show-animate-item"></div><div class="_public_line_title show-animate-item" data-placeholder="Section Title">IP：重中之重</div><p class="show-animate-item">主打IP对品牌形象的构造有至关重要的作用。这种重要性不外乎企鹅之于手Q，因此敲定、完善头部IP，是设计手Q数字盲盒的首要考虑。在设计的首个阶段，我们选定了四类优质数字盲盒IP：</p><p class="show-animate-item">1） 自有潮玩IP：选择现有ISUX体系下已孵化成熟的精品潮玩IP，比如PUPU&amp;蓝莓之夜，UPUP牛&amp;牛年大吉等；</p><p class="show-animate-item">2） 自有虚拟IP：在手Q用户群中知名度高、在礼物系统中受到粉丝热捧的IP。比如多肉植物、Alice梦游仙境系列等；</p><p class="show-animate-item">3） 外部虚拟IP：联名外部爆款IP。手Q以95后年轻用户为主，也是外部各大爆款IP的目标消费者聚集地。因此我们挖掘了包括超人气虚拟偶像洛天依，迪士尼的达菲熊&amp;星黛露春节系列在内的外部IP合作；</p><p class="show-animate-item">4） 外部潮玩IP：拥抱主流盲盒潮玩IP，将消费者粉丝与盲盒的情感从线下延续至线上。知名IP包括star moly萌力星球、迷萌假日派对、达么吉发财者联盟系列等。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="56.25%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/09PsFWlYULVbDrS2tIT1xLd2VXx2G14jTJ8JJkH4yMo.png" class="pic block-item clip-animate-item"></div><p class="show-animate-item">敲定IP方向后，我们综合了几个方面考虑数字盲盒的IP设计和上架思路：</p><p class="show-animate-item">1） 目标匹配度：IP是否和手Q用户群体产生足够的共鸣；</p><p class="show-animate-item">2） 品牌定位：IP是否和数字盲盒平台的风格、氛围及调性协调一致；</p><p class="show-animate-item">3） 制作成本：在估算数字盲盒IP生命周期的基础上，是否能以较低的设计、生产及修改成本进行批量生产。</p><p class="show-animate-item"><br></p><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">Chapter3</div><div class="_public_line show-animate-item"></div><div class="_public_line_title show-animate-item" data-placeholder="Section Title">盒：再一次定义视觉边界</div><p class="show-animate-item">“从Box出发”这一理念，也淋漓尽致地体现在虚拟盲盒视觉设定的方方面面。<br></p><div class="_public_title show-animate-item" data-placeholder="Section Title">3.1 LOGO设定</div><p class="show-animate-item">在logo设定上，我们将“盒”的意象与字母Q的形态相结合，并充分考虑移动端设备屏幕的呈现空间，以30度的轴测图视角构建出一个正方形的盒子。这样既突显了logo的存在感，又给整个视觉界面留出了充足的展示空间。同时，logo三维六边形的框架设计，也突出了产品的格调和设计感。<br></p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="56.25%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/Qb626LBrmsJJ35ADvIxdcgcwsVjBWSFCj9tTLiNeSEu.png" class="pic block-item clip-animate-item"></div><div class="_public_title show-animate-item" data-placeholder="Section Title"><div class="_public_title show-animate-item" data-placeholder="Section Title"><div class="_public_title show-animate-item" data-placeholder="Section Title" style="text-align: justify;">3.2 品牌色彩&amp;字体</div><p style="text-align: justify;" class="show-animate-item">在配色设定方面，我们提取传统线下盲盒品牌中核心玩家广泛认可的粉色，也从QQ品牌色中提取出蓝色，调和出一种明度更深的蓝色作为互补色。字体设定上，我们选择了造字工房元黑体搭配DIN的家族字体作为数字盲盒平台的运营字体。这款字体字形较为硬朗粗壮，但同时又兼顾圆角的设定，符合数字盲盒品牌“活泼，潮流，可爱”的气质定位。<br></p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="56.25%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/QxO5CPUeyN1N8FGwYHydMUfNBJU8Nw8lu2k8ItGOqQk.png" class="pic block-item clip-animate-item"></div><div class="_public_title show-animate-item" data-placeholder="Section Title">3.3 品牌Pattern</div><p class="show-animate-item">同时，我们在平台界面的视觉方面也延续logo的设计思路，通过使用30度轴测图的空间正方形，衍生为基础图形并在不同页面中配合主题品牌色使用。同时，该基础图形也在数字盲盒的其他页面结合产品形态灵活变形，强化数字盲盒品牌形象。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="56.25%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/27xbzaLZmTetrefonqZUCMRncBSpCuUnhyfQ8w2VYaG.png" class="pic block-item clip-animate-item"></div><p class="show-animate-item">“盒”的设计理念也延展到页面的设计思路中。在抽盒延展上，我们基于30度平行透视的设计理念进行了一系列构思。首先在抽盒页面，我们将页面简单分割为上下两个部分。盒内产品放置在一个通过透视视角构建出的“桌面”上，并通过动画进行进行系列产品展示。页面下半部分则用于信息及其他相关操作。<br></p><div class="_public_title show-animate-item" data-placeholder="Section Title">3.4 品牌应用至界面</div><p class="show-animate-item">在ARK传播、用户赠送数字盲盒的界面，我们也利用30度平行透视的设计思路，在分享卡片中对数字盲盒及相关产品进行了空间视觉处理。此外，贯穿始终的纯色背景在突出盲盒产品本身的前提下，也保证了整体风格的一致性。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="62.60206859009254%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/Wdf3rGsM2eTnWt7ePDDemtW6oR0vzqklpKgClYnpnz8.png" class="pic block-item clip-animate-item"></div><div class="_public_title show-animate-item" data-placeholder="Section Title">3.5 盲盒包装</div><p class="show-animate-item">在包装设定上，我们延续线下盲盒常规的视觉惯例，以“盒”的形式进行产品包装，并以logo的30度侧轴图作为基础预览视角。众所周知，虽然线下盲盒的包装五花八门，比如浮雕、专色印刷，但最终还是落脚到“纸本”这一包装形式。相比之下，数字盲盒包装不受制作成本限制，发挥空间就更为广阔。在此基础上，我们将数字盲盒的包装设计成具有磨砂质感的毛玻璃材质。这一设计不仅让数字盲盒更有视觉冲击力和格调，同时雾化的透明磨砂表面也可以隐隐透露出盒内产品的轮廓和颜色，勾起用户抽盒过程中的紧张好奇情绪。</p><p class="show-animate-item"> </p><p class="show-animate-item">在此基础上，每个盲盒配合各系列的IP字体、规范化的系列编号、品牌LOGO和IP色，则可以高效统一IP形象，规范化输出系列盲盒包装。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="63.25632563256326%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/PS2A7tvSxH1rFhkPgQKVCOx8jYvN8apkWtdaUoulMPn.png" class="pic block-item clip-animate-item"></div><div class="_public_pic block-item block-shadow-item show-animate-item _public_pic_gif caretColor"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/154fd2YquXzdSu7ggJcJ8BN7kPrMesOx1QWjFfWfc7N.gif" class="pic block-item clip-animate-item"></div><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">Chapter4</div><div class="_public_line show-animate-item"></div><div class="_public_line_title show-animate-item" data-placeholder="Section Title">让“盒”动起来</div><p class="show-animate-item">完成了盲盒静态视觉的构思后，就进入了动画设定的阶段。我们将抽盒UI中的动画种类大致分为三种：</p><p class="show-animate-item">一、 辅助型循环动画：限制较少的页面动画，主要目的是烘托抽盒界面的氛围。</p><p class="show-animate-item">二、 辅助操作的反馈型动画：主要为用户抽盒后唤醒的交互动画，增强抽盒结果的用户心理反馈。由于此类动画基于用户操作触发，因此时长限制较为严格。动画过长会直接减缓载入速度，消耗用户等待时长，适得其反。</p><p class="show-animate-item">三、 载入动画：动画形式简单，主要目的是在等待的过程中加入趣味的细节，动画资源要保证尽可能小。界面设计继承品牌图形设计思路，风格统一。</p><div class="_public_pic block-item block-shadow-item show-animate-item _public_pic_gif caretColor"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/nhATR1o7Az7zEM4H4SAqId2j30b9BsIhoVecSmenkNg.gif" class="pic block-item clip-animate-item"></div><p class="show-animate-item">抽盒页面的设计是整个数字盲盒设计的重中之重。这就要求设计师既突出展示盲盒产品本身，又保证抽盒界面的趣味性。在底层动画中，我们继续延续30度平行透视视角的设计逻辑，使用After Effects的摄像机工具以Y轴旋转的方式做成Fake 3D的效果。在制作Fake 3D动画时，我们也使用了Lottie组件。Lottie组件的优势在于在实现动画高保真还原的同时，也可以通过在AE内替换对应素材即可在统一标准下实现量化输出，规范后续动画生产标准，提高生产效率，降低设计成本。</p><p class="show-animate-item"> </p><p class="show-animate-item">在底层动画上，我们也加入了四层动画进行功能和效果的区分。在叠加的首层动画上，我们对每套数字盲盒的所有产品进行了展示，进一步加深用户对可能拆出的盲盒产品的期待心理。在第二层和第三层动画上，我们以Z轴旋转的动画特效，将数字盲盒进行一种立体的空间感展示，并使用粒子效果配合光环旋转的动画特效环绕数字盲盒，引导用户的点击路径。同时在最顶层，也就是第四层动画，我们还加入了手Q具有代表性的大黄脸表情，并赋予它弹跳和位移的效果，增添抽盒界面的趣味性。</p><div class="_public_pic block-item block-shadow-item show-animate-item _public_pic_gif caretColor"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/2dvcceMEivCJ3MVduHnmECSAA0dKqcRNBsyLApCfShu.gif" class="pic block-item clip-animate-item"></div><div class="_public_title show-animate-item" data-placeholder="Section Title">结语</div><p class="show-animate-item">畅想：未来：无限延展的“盒”</p><p class="show-animate-item">本次数字盲盒的设计项目时间紧，需要赶在年前新版本发布之前敲定设计细节。因此设计的重点和难点，就是需要找出一个和品牌强关联的视觉元素，提纲挈领地引导整个视觉设计方案。而我们给出的30度轴测图视角，就成功给予了数字盲盒空间的概念，并将这一设计细节灵活贯穿项目始终。此外，一些视觉类设计比如盲盒Z轴旋转，也需要从视觉设计师的视角出发，提前通过和包括开发在内的相关项目团队进行对接，给予解决方案。这在很大程度上也节约了人力成本，推动了项目的快速落地。</p><p class="show-animate-item"> </p><p class="show-animate-item">而在整个数字盲盒的设计过程中我们也反复思考，如何通过打磨数字盲盒的特点和亮点，实现超过线下抽盒的体验。比如在一开始就提到，线下盲盒从项目创立、建模、工厂生产打样、后期形态修正再经过一系列生产运输到达消费者面前，时间长、成本高。而相比之下，数字盲盒则在抓热点、做爆款上具备得天独厚的优势。通过和潮流IP快节奏展开合作，在短期内提升影响力及曝光度，触达大批潜在受众。</p><p class="show-animate-item"> </p><p class="show-animate-item">与此同时，我们也体现出数字盲盒的亮点.在一些特性上做到超过线下抽盲盒体验</p><p class="show-animate-item">盲盒IP选择，在线下盲盒运营策略中，从项目立项到设计师创意建模再到工厂生产打样，反复修正盲盒最终的形态，下线生产物流到消费者面前，是一个非常冗长的过程。相比线上盲盒的节奏则会轻盈很多，我们在线上数字盲盒中发挥特点，筛选出一些时效性强，热度高的IP，快速制作素材上架数字盲盒平台。以「创造营2021」为例，线上盲盒可以在最短时间内响应热点，制作出短时间内出团成员的IP素材并且上架数字盲盒平台，这些都是线下盲盒所无法触及的。</p><p class="show-animate-item"> </p><p class="show-animate-item">盲盒潮玩是z世代身边最热门的话题之一，消费主义浪潮过后，人们从新审视「盲盒」的价值意义，未尝不是一件好事。数字盲盒固然无法代替真实盲盒带来的重量和触摸手感，但是现实盲盒潮玩逃不开工业化的生产成本，数字盲盒平台通过有低成本扁平化的策略，有温度的情感化设计，和用户建立起来另一种连接。今年上半年「NFT」和「加密艺术」大热，数字盲盒也可以顺应虚拟道具上链的热潮，与新技术碰撞出更多可能性。</p></div></div>
+
+            </section>
+
+        
+    
+
+        
+    
+    </div>
+
+    
+
+    <!-- 测试连接 https://v.qq.com/x/page/f0507qj9hhv.html -->
+    <!-- 测试连接 https://v.qq.com/x/page/s05065zrbps.html -->
+
+    <!-- 文章数据模块 -->
+    <section class="_mod_stat show-animate-item">
+        <div class="_stat_wrapper">
+            
+            <div class="_article_date">
+                <span class="date">SEPTEMBER 15, 2021</span>
+            </div>
+
+            <div class="_article_stat">
+
+                <ul class="_stat_list">
+                    <li class="_stat_item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18" class="_stat_view _stat_icon">
+                            <g>
+                                <path class="view_svg" d="M19,9c0,2.5-3.5,8-9,8S1,11.5,1,9s3.5-8,9-8S19,6.5,19,9Z"/>
+                                <circle class="view_svg" cx="10" cy="9" r="3"/>
+                            </g>
+                        </svg>
+                        <span class="_views">30388</span>
+                    </li>
+                    <li class="_stat_item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18.53" class="_stat_like _stat_icon" id="js-like-0" data-id="545">
+                            <g>
+                                <path class="like_svg" d="M17.54,9.54A5,5,0,1,0,10,3,5,5,0,1,0,2.46,9.54L10,17.11Z"/>
+                            </g>
+                        </svg>
+                        <span class="_likes js-like-text">71</span>
+                    </li>
+                </ul>
+
+                <ul class="_stat_share_article js-share-list" data-title="数字盲盒 | 在虚拟世界 探寻“盒”的边界" data-desc="" data-pic="https://cdn-isux.qq.com/upload/detail/VrGzWjlw7eDxo1wl69XTP72j42JNF1JULj8S3drmivc.jpeg">
+                    <li class="share_article_item share_article_item_qzone js-china-ip" data-href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=%7Burl%7D&amp;title=%7Btitle%7D&amp;desc=&amp;summary=%7Bdesc%7D&amp;site=&amp;pics=%7Bpic%7D"></li>
+                    <li class="share_article_item share_article_item_qq js-china-ip" data-href="http://connect.qq.com/widget/shareqq/index.html?url=%7Burl%7D&amp;title=%7Btitle%7D&amp;desc=&amp;summary=%7Bdesc%7D&amp;site=isux&amp;pics=%7Bpic%7D"></li>
+                    <li class="share_article_item share_article_item_fb" data-href="https://www.facebook.com/sharer/sharer.php?u=%7Burl%7D&amp;t=%7Bdesc%7D"></li>
+                    <li class="share_article_item share_article_item_twitter" data-href="http://twitter.com/home?status=%7Bdesc%7D%20%23%7Btitle%7D%23&amp;url=%7Burl%7D&amp;pic=%7Bpic%7D&amp;desc="></li>
+                    <li class="share_article_item share_article_item_sina js-china-ip" data-href="http://service.weibo.com/share/share.php?title=%7Bdesc%7D%20%23%7Btitle%7D%23&amp;url=%7Burl%7D&amp;pic=%7Bpic%7D&amp;desc="></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作者模块 -->
+    <section class="_mod_authors show-animate-item">
+        <!-- 可以写成这个模块的 border-top -->
+        <!--<div class="_article_line"></div>-->
+        <div class="_authors_title">CONTRIBUTORS</div>
+        <ul class="_authors">
+            <li class="_author">
+                <img class="pic" src="https://isuxdesign-1251263993.file.myqcloud.com/avatars/QjQ5C1pcqVlxh6UAxUb4LsIuQEY2OiGROpoad3OvYtr.png" alt="">
+                <div class="name">space</div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- 相关文章推荐模块 -->
+    <section class="_mod_related show-animate-item">
+        <ul class="related-list clearfix" id="list">
+            <li class="related-item first-item" data-index='1'>
+                <a href="shuzimanghe.html" target="_blank">
+                        <img class="pic clip-animate-item pic-gray" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/545_a.jpg" />
+                        <img class="pic pic-colorful clip-animate-item" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/545_a_src.jpg" />
+
+                    
+                    <div class="_title-wrapper fade-aniamte-item">
+                        <div class="_title-flex">
+                            <h3 class="title js-article-title">数字盲盒 | 在虚拟世界 探寻“盒”的边界</h3>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="related-item" data-index='2'>
+                <a href="isux-punk.html" target="_blank">
+                        <img class="pic clip-animate-item pic-gray" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/529_a.jpg" />
+                        <img class="pic pic-colorful clip-animate-item" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/529_a_src.jpg" />
+
+                    
+                    <div class="_title-wrapper fade-aniamte-item">
+                        <div class="_title-flex">
+                            <h3 class="title js-article-title">企鹅收藏家 | Vol.3-PUNK专访</h3>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="related-item last-item" data-index='3'>
+                <a href="498.html" target="_blank">
+                        <img class="pic clip-animate-item pic-gray" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/498_a.jpg" />
+                        <img class="pic pic-colorful clip-animate-item" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/498_a_src.jpg" />
+
+                    
+                    <div class="_title-wrapper fade-aniamte-item">
+                        <div class="_title-flex">
+                            <h3 class="title js-article-title">ISUX 2021实习生招聘开启！</h3>
+                        </div>
+                    </div>
+                </a>
+            </li>
+
+        
+        </ul>
+    </section>
+
+</div>
+
+<div class="share_article_scroll share_article_hide">
+    
+    <div class="_mod_stat">
+        <div class="_article_stat">
+
+            <ul class="_stat_list">
+                <li class="_stat_item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18" class="_stat_view _stat_icon">
+                        <g>
+                            <path class="view_svg" d="M19,9c0,2.5-3.5,8-9,8S1,11.5,1,9s3.5-8,9-8S19,6.5,19,9Z"/>
+                            <circle class="view_svg" cx="10" cy="9" r="3"/>
+                        </g>
+                    </svg>
+                    <span class="_views">30388</span>
+                </li>
+                <li class="_stat_item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18.53" class="_stat_like _stat_icon" id="js-like-1" data-id="545">
+                        <g>
+                            <path class="like_svg" d="M17.54,9.54A5,5,0,1,0,10,3,5,5,0,1,0,2.46,9.54L10,17.11Z"/>
+                        </g>
+                    </svg>
+                    <span class="_likes bottom-like-text">71</span>
+                </li>
+            </ul>
+
+            <ul class="_stat_share_article js-share-list" data-title="数字盲盒 | 在虚拟世界 探寻“盒”的边界" data-desc="" data-pic="https://cdn-isux.qq.com/upload/detail/VrGzWjlw7eDxo1wl69XTP72j42JNF1JULj8S3drmivc.jpeg">
+                <li class="share_article_item share_article_item_qzone" data-href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=%7Burl%7D&amp;title=%7Btitle%7D&amp;desc=&amp;summary=%7Bdesc%7D&amp;site=&amp;pics=%7Bpic%7D"></li>
+                <li class="share_article_item share_article_item_qq" data-href="http://connect.qq.com/widget/shareqq/index.html?url=%7Burl%7D&amp;title=%7Btitle%7D&amp;desc=&amp;summary=%7Bdesc%7D&amp;site=isux&amp;pics=%7Bpic%7D"></li>
+                <li class="share_article_item share_article_item_fb" data-href="https://www.facebook.com/sharer/sharer.php?u=%7Burl%7D&amp;t=%7Bdesc%7D"></li>
+                <li class="share_article_item share_article_item_sina" data-href="http://service.weibo.com/share/share.php?title=%7Bdesc%7D%20%23%7Btitle%7D%23&amp;url=%7Burl%7D&amp;pic=%7Bpic%7D&amp;desc="></li>
+            </ul>
+        </div>
+    </div>
+
+    
+</div>
+<!-- 文章详情页 -->
+
+ <div id="bottom-mask"></div>
+<div class="mask-strip"></div>
+
+<footer class="mod_site_footer" role="contentinfo">
+    <div class="_footer-prefix">
+        <div class="_inner-wrapper"></div>
+    </div>
+    <div class="_social">
+        <div class="_inner-wrapper">
+            <ul class="_social-media-links">
+                <!-- <li class="-hc -vimeo"><a href="#" title="vimeo"></a></li> -->
+                <li class="-hc -wechat">
+                    <a title="wechat">
+                        <span class="-wechat-qr">
+                            <img class="lazy" data-src="../static/images/isux_qrcode.jpg" alt="微信公众号二维码" width="230" height="230">
+                        </span>
+                    </a>
+                </li>
+                <!-- <li class="-hc -facebook"><a href="#" title="facebook"></a></li> -->
+                <li class="-hc -weibo"><a href="http://weibo.com/txisux" target="_blank" title="weibo"></a></li>
+
+                <li class="-hc -zcool">
+                    <a href="https://www.zcool.com.cn/u/1936779" target="_blank" title="zcool"></a>
+                </li>
+
+                <li class="-hc -ins">
+                    <a href="https://www.instagram.com/isux_lab" target="_blank" title="instagram"></a>
+                </li>
+
+                <li class="-hc -behance">
+                    <a href="https://www.behance.net/18485758707c20" target="_blank" title="behance"></a>
+                </li>
+
+                <li class="-hc -medium">
+                    <a href="https://medium.com/@tencent.isux" target="_blank" title="medium"></a>
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="_footer-suffix">
+        <div class="_inner-wrapper">
+            <div class="supporting-information">
+                <ul class="_footer-links"><li class="_footer-link"><a href="https://www.tencent.com/" target="_blank">TENCENT</a></li><li class="_footer-link"><a href="https://qqfamily.com" target="_blank">QQfamily</a></li><li class="_footer-link"><a href="https://ycg.qq.com/" target="_blank">YCG</a></li></ul>
+            </div>
+            <div class="copyright">Copyright © 1998 - 2025 Tencent Inc. All Rights Reserved.</div>
+        </div>
+    </div>
+</footer>
+
+
+<div class="isux-qrcode">
+	<img src="../static/images/qrcode.jpg" alt="ISUX 二维码">
+</div>
+<div class="-search hide" id="search" role="application" aria-hidden="false">
+	<div class="-search-inner">
+		<div class="-search-form">
+			<span class="-search-box">
+				<input type="search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" maxlength="100" class="-search-input" placeholder="keywords" value="" />
+				<button type="button" class="-search-reset" title="Close">&times;</button>
+			</span>
+		</div>
+		<div class="-search-result">
+			<div class="-search-result-head">
+				啥，没结果？别担心，我们为您准备了推荐的文章：
+			</div>
+			<div class="gallery -search-gallery" id="searchResult"></div>
+		</div>
+		<div class="-loading -search-loading hide">
+			<span class="-loading-icon -search-loading-icon"><i></i><i></i></span>
+		</div>
+	</div>
+</div>
+<!-- .-search -->
+<script type="text/tpl" id="itemTpl">
+<div class="gallery-item <%=?cssclass%>"<%=?dataset%>>
+	<a class="gallery-wrapper" href="<%=url%>" target="_blank">
+		<div class="gallery-pics show-search-animate-item">
+			<div class="gallery-pic gallery-pic-gray lazy clip-animate-item" data-src="<%=image%>"></div>
+			<div class="gallery-pic gallery-pic-normal lazy clip-animate-item" data-src="<%=image1x%>"></div>
+		</div>
+		<div class="gallery-info show-search-animate-item">
+			<h3 class="title" title="<%=title%>"><%=title%></h3>
+			<p class="category"><%=category_name%></p>
+			<p class="abstract"><%=abstract%></p>
+		</div>
+	</a>
+</div>
+</script>
+<script>
+var G_csrf = 'w4HAepjhX1s0mlC8acnnZ_g3Zm77HA68';
+</script>
+<script src="../static/js/lib.js"></script>
+
+<!-- 引入腾讯视频JS库 -->
+<script src="https://vm.gtimg.cn/tencentvideo/txp/js/txplayer.js"></script>
+
+<!-- 引入判断背景显示不同字体颜色的组件 -->
+<script src="../static/js/common/background-check.js"></script>
+<script>
+window.backgroundCheck && backgroundCheck.init({
+    targets: '._title-flex',
+    imgs: '.pic-gray',
+    parents: '.related-item a',
+    cssclass: '_article-light-item',
+    lazy: false
+});
+</script>
+
+<!-- 页面逻辑js -->
+<script src="../static/js/detail.js"></script>
+
+<!-- TA -->
+
+<!-- TA -->
+<!-- GA -->
+
+<!-- GA -->
+</body>
+</html>

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+<meta charset="utf-8">
+<title>如何在页面极速渲染3D模型 - Tencent ISUX Design</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="theme-color" content="#000000">
+<link rel="mask-icon" href="../static/images/favicon.svg" color="#FFFFFF">
+<link rel="shortcut icon" href="../static/images/favicon.ico" type="image/x-icon">
+<link href="../static/css/base.css" rel="stylesheet">
+<script type="text/javascript" src="https://js.aq.qq.com/js/aq_common.js"></script>
+
+<meta name="keywords" content="3D模型,ThreeJS,贴图优化,3D渲染">
+<meta name="description" content="glTF &amp; Draco &amp; Basis，优化页面中的 3D 模型">
+
+<!-- 社交分享 -->
+<meta itemprop="name" content="如何在页面极速渲染3D模型" />
+<meta itemprop="description" content="glTF &amp; Draco &amp; Basis，优化页面中的 3D 模型" />
+<meta itemprop="image" content="https://cdn-isux.qq.com/upload/detail/U6fi4oRUQWqiFMaui4SSV1qRPxVR8S2lmr6Sc1saEJp.png" />
+<!-- 社交分享 -->
+
+<!-- Facebook Open Graph -->
+<meta property="fb:app_id" content="137155036704975" />
+<meta property="og:url" content="https://isux.tencent.com/articles/isux-optimizing-3d-model.html" />
+<meta property="og:title" content="如何在页面极速渲染3D模型" />
+<meta property="og:site_name" content="Tencent ISUX Design" />
+<meta property="og:description" content="glTF &amp; Draco &amp; Basis，优化页面中的 3D 模型" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://cdn-isux.qq.com/upload/detail/U6fi4oRUQWqiFMaui4SSV1qRPxVR8S2lmr6Sc1saEJp.png" />
+<meta property="og:locale" content="en_us" />
+<!-- Facebook Open Graph -->
+
+<!-- home css file -->
+<link href="../static/css/detail.css" rel="stylesheet">
+<!-- home css file -->
+
+</head>
+<body>
+<!-- 移动端的结构，要单独写html，才可以在header下面滑出 -->
+<div class="_m-nav-wrapper">
+    <ul class="_nav-items">
+            <li class="_nav-item active">
+                <a href="index.html">ARTICLES</a>
+            </li>
+            <li class="_nav-item">
+                <a href="../brands/index.html">BRANDS</a>
+            </li>
+            <li class="_nav-item">
+                <a href="../resources/index.html">RESOURCES</a>
+            </li>
+            <li class="_nav-item">
+                <a href="../careers/index.html">CAREERS</a>
+            </li>
+
+        <!-- 移动端的搜索按钮，pc的时候为隐藏状态，功能跟._nav-search一样 -->
+        <div class="nav-item -m-search">
+            <a href="#/search/" data-action="toggle" data-args="body" data-cssclass="xxx"></a>
+        </div>
+    </ul>
+</div>
+
+<header>
+    <div class="_header-wrapper">
+        <nav id="navigator" class="mod_site_nav nav-animate-item js-nav-state">
+            <div class="_nav-logo">
+                <a href="../index.html" class="_nav-flower" ></a>
+                <!-- <a href="/" class="js-nav-isux _nav-isux"></a> -->
+            </div>
+            <!-- pc端的结构 -->
+            <div class="_nav-wrapper">
+                <ul class="_nav-items">
+                        <li class="_nav-item active">
+                            <a href="index.html">ARTICLES</a>
+                        </li>
+                        <li class="_nav-item">
+                            <a href="../brands/index.html">BRANDS</a>
+                        </li>
+                        <li class="_nav-item">
+                            <a href="../resources/index.html">RESOURCES</a>
+                        </li>
+                        <li class="_nav-item">
+                            <a href="../careers/index.html">CAREERS</a>
+                        </li>
+                    <!-- 移动端的搜索按钮，pc的时候为隐藏状态，功能跟._nav-search一样 -->
+                    <div class="nav-item -m-search">
+                        <a href="#/search/" data-action="toggle" data-args="body" data-cssclass="xxx"></a>
+                    </div>
+                </ul>
+            </div>
+
+            <!-- pc端的搜索按钮，移动端时为隐藏状态 -->
+            <div class="_nav-search">
+                <a href="#/search/" data-action="toggle" data-args="body" data-cssclass="xxx"></a>
+            </div>
+
+            <!-- 移动端的菜单list按钮，pc的时候为隐藏状态，在列表icon和close-icon之间切换 -->
+            <div class="_m-nav-list" data-cssclass="_m-nav-close">
+                <a href="#/list/" data-action="toggle" data-args="body" class="lines js-m-navlist">
+                    <span class="line first-line"></span>
+                    <span class="line second-line"></span>
+                    <span class="line third-line"></span>
+                </a>
+            </div>
+
+        </nav>
+    </div>
+</header>
+<div class="_fake-header"></div>
+<!-- 文章详情页 -->
+<div class="_main_content">
+    <!-- 前言模块 -->
+    <section class="_mod_introduce _mod_editor js-mod-introduce">
+
+        <div class="_introduce_title_wrapper show-animate-item">
+            <div class="_article_title_wrapper">
+                <div class="_introduce_title js-intro-title">如何在页面极速渲染3D模型</div>
+            </div>
+            <div class="_public_line caretColor" ></div>
+            <div class="_introduce_tag js-intro-tag" >TECH</div>
+        </div>
+        
+        <div class="_public_paragraph js-intro-content show-animate-item">glTF &amp; Draco &amp; Basis，优化页面中的 3D 模型</div>
+
+        <div class="_public_banner js-intro-banner js-defualt-banner show-animate-item"><img class="pic js-pic-banner clip-animate-item block-item" data-banner-src="https://cdn-isux.qq.com/upload/detail/U6fi4oRUQWqiFMaui4SSV1qRPxVR8S2lmr6Sc1saEJp.png" data-article-id="372" src="https://cdn-isux.qq.com/upload/detail/U6fi4oRUQWqiFMaui4SSV1qRPxVR8S2lmr6Sc1saEJp.png" alt=""></div>
+    
+    </section>
+
+    <div class="editable" id="editor2">
+        <!-- 正文模块 -->
+        
+            
+            
+            
+            
+            
+            
+            
+            <section class="_mod_content _mod_editor">
+                
+                <div class="_public_subtitle show-animate-item js-content-subtitle medium-editor-placeholder-relative" data-placeholder="Chapter Title"></div><div class="_public_paragraph show-animate-item js-content-content" data-showbar="true" data-placeholder="Type your text"><p class="show-animate-item">朋友们，还记得 QQ 20 周年 H5 中可可爱爱的太空鹅吗？</p><div class="_public_pic block-item block-shadow-item show-animate-item _public_pic_gif caretColor"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/36POxSjfvw3qmN0ko3IanmGPbyetEd6qsK3B96vm9tX.gif" class="pic block-item clip-animate-item"></div><p class="show-animate-item">为了实现旋转和换肤功能，在 H5 中我们随机展示了5种类型的 3D 太空鹅模型，如下图所示：</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="26.149802890932982%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/dAxZ7hk9Prk5AcXLOHl74pMsZGxx735suIuKVMMCKgj.png" class="pic block-item clip-animate-item"></div><p class="show-animate-item">但是在 H5 中引入 3D 模型往往存在资源太大、性能损耗严重、还原不真实的问题，这也让许多 3D 创意止步于开发阶段。</p><p class="show-animate-item">如何更好地在 H5 中还原模型呢？本文将从模型网格和贴图文件两方面分析，介绍几种通过技术角度优化加载速度和提高渲染性能的途径，在保证 3D 模型不减面，贴图不缩小的情况下，将模型精致地还原在 H5 或其他应用程序中。</p><div class="_public_title show-animate-item" data-placeholder="Section Title">模型网格压缩</div><p class="show-animate-item">首先是分析模型网格，对于大型 3D 资源，我们一般会通过在模型设计时进行“减面”来减少模型几何体的大小，但也会带来模型精致度的缺失。如下图所示：</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="53.5289452815226%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/467bdvhFeNUViApJtNRLiWhNpuQqTzxbTzm3VyHEa40.png" class="pic block-item clip-animate-item"></div><p class="show-animate-item">而通过 glTF 配合 Draco 压缩的方式，可以在视觉效果近乎一致的情况下，让3D模型文件成倍缩小。下面具体介绍 glTF 格式及 Draco 压缩工具。</p><p class="show-animate-item"><br></p><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">1. 将模型导出为 glTF 格式</div><p class="show-animate-item"><b>glTF 介绍</b></p><p class="show-animate-item">glTF 称为“ 3D 界的 JPEG”，使用了更优的数据结构，为应用程序实时渲染而生。glTF 有以下几大特点：</p><p class="show-animate-item">- 由现有 OpenGL 的维护组织 Khronos 推出，目的就是为了统一用于应用程序渲染的 3D 格式，更适用于基于 OpenGL 的引擎；</p><p class="show-animate-item">- 减少了 3D 格式中除了与渲染无关的冗余信息，最小化 3D 文件资源；</p><p class="show-animate-item">- 优化了应用程序读取效率和和减少渲染模型的运行时间；</p><p class="show-animate-item">- 支持 3D 模型几何体、材质、动画及场景、摄影机等信息。</p><p class="show-animate-item">glTF 导出格式有两种后缀格式可供选择：.gltf 和 .glb：</p><p class="show-animate-item">- .gltf 文件导出时一般会输出两种文件类型，一是 .bin 文件，以二进制流的方式存储顶点坐标、顶点法线坐标和贴图纹理坐标、贴图信息等模型基本数据信息；二是 .gltf 文件，本质是 json 文件，记录对bin文件中模型顶点基本数据的索引、材质索引等信息，方便编辑，可读性较好；</p><p class="show-animate-item">- .glb 文件格式只导出一个 .glb 文件，将所有数据都输出为二进制流，通常来说会更小一点，若不关心模型内的具体数据可直接选择此类型。</p><p class="show-animate-item"><b>glTF 转换</b></p><p class="show-animate-item">目前有些建模工具还不具备导出 glTF 格式功能，可以输出 FBX / Collada 格式后通过以下工具进行转换：</p><p class="show-animate-item">- FBX 转 glTF</p><p class="show-animate-item">a. Facebook 推出的 FBX2glTF 命令行工具，可直接从github 官网下载 release 版本；</p><p class="show-animate-item">b. 通过 Paint 3D、Substance Painter 等可视化编辑工具进行转换。</p><p class="show-animate-item">- Collada 转 glTF</p><p class="show-animate-item">COLLADA2GLTF 命令行工具，可转换 .dae 格式的文件，从 GitHub 官网直接下载 release 版本，解压后在命令行进入目录即可调用。</p><p class="show-animate-item"><b>glTF 查看</b></p><p class="show-animate-item">转换后可通过以下查看工具查看 glTF 资源：</p><p class="show-animate-item">- Windows&nbsp;10 及以上自带的 3D&nbsp;Paints；</p><p class="show-animate-item">- glTF 在线查看器：https://gltf-viewer.donmccurdy.com；</p><p class="show-animate-item">- 对于开发者，可直接使用 VSCode 插件—— glTF&nbsp;Tools。</p><p class="show-animate-item"><br></p><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">2. 通过 Draco 进行压缩</div><p class="show-animate-item"><b>Draco 及 gltf-pipeline 介绍</b></p><p class="show-animate-item">Draco 是 Google 推出的一个用于 3D 模型压缩和解压缩的工具库，上述介绍的 FBX2glTF 及 COLLADA2GLTF 工具也嵌入了 Draco 压缩功能，除此之外，glTF 资源可通过基于 Draco 开发的命令行工具 gltf-pipeline 进行编码压缩，gltf-pipeline 可通过 npm 的方式安装使用。使用方法如下：</p><div class="_public_code show-animate-item" data-placeholder="Paste your code right here"><p class="show-animate-item">#全局安装</p><p class="show-animate-item">npm install -g gltf-pipeline</p><p class="show-animate-item">#压缩glb文件 -b表示输出glb格式，-d表示压缩</p><p class="show-animate-item">gltf-pipeline -i model.glb -b -d</p><p class="show-animate-item">#压缩glb文件并将纹理图片分离出来</p><p class="show-animate-item">gltf-pipeline -i model.glb -b -d -t</p><p class="show-animate-item">#更多参数查阅</p><p class="show-animate-item">gltf-pipeline -h</p></div><p class="show-animate-item"><b>Draco 压缩分析</b></p><p class="show-animate-item">通过 Draco 进行压缩基本上是有损的，有两点表现：</p><p class="show-animate-item">- Draco 通过 Edge breaker 3D 压缩算法改变了模型的网格数据的索引方法，缺少了原来的网格顺序；</p><p class="show-animate-item">- Draco 通过减少顶点坐标、顶点纹理坐标等信息的位数，以减少数据的存储量。</p><p class="show-animate-item">但在 gltf-pipeline 或其他压缩工具中，压缩程度可通过设置参数进行调整，如下所示：</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="48.335974643423135%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/WL7Zg7umuvjHKLKCLqBM7hbaMvOij2UexiCtuPMmCja.png" class="pic block-item clip-animate-item"></div><p class="show-animate-item">当 --draco.compressionLevel 为0时，将保留原来的网格顺序，网格数据索引的压缩力度最小，--draco.quantizeXXXBits 可控制坐标等基本数据值的位数，位数越少压缩力度越大。由于一个三角形网格对应多个顶点坐标、顶点法线坐标、颜色坐标等数据，一般来说 --draco.quantizeXXXBits 对文件的大小影响会更大。</p><p class="show-animate-item">若不设置参数，gltf-pipeline 会直接以默认值压缩。</p><p class="show-animate-item">虽说 Draco 是有损的，但相对于直接为模型减面来说，采用 Draco 压缩方法视觉偏差会小很多。</p><p class="show-animate-item">压缩后的 glTF 模型需要通过在应用中嵌入 Draco 解码工具包，主要是对 edge breaker 算法部分进行解码，解码时间一般比编码时间少，但必须考量模型与工具包的大小对比。例如 ThreeJS 提供了 draco_decoder 模块进行解码，draco_decoder 约600KB，若模型资源文件比工具包还小，就没有必要再引入 Draco 压缩了。</p><p class="show-animate-item"><br></p><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">3. 效果测试</div><p class="show-animate-item">我们以太空鹅模型为例，只加载模型几何体，不带入材质属性，通过ThreeJS 分别加载 FBX / glTF / 压缩后的glTF 的格式，第三种格式以默认参数压缩。测试效果对比如下：</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="47.881773399014776%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/Em34Yje31ln8dnA0pqIGnv1ob3tgzdGWb0bo92psAv6.png" class="pic block-item clip-animate-item"></div><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="40.05763688760807%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/poPDjj5kynEXjoV3g3HRDyUSMNwse8mmsbCbhmpLwoQ.png" class="pic block-item clip-animate-item"></div><p class="show-animate-item">从图中可以看出，文件从 FBX 转换为 glTF 后大小差异不大，但是渲染速度有了明显提升。</p><p class="show-animate-item">另外经过压缩的 glTF 文件仅为正常 FBX 和 glTF 文件的1/10左右，而在视觉上三者几何体结构没有明显的差异，压缩后的 glTF 开启了 worker 线程做 Draco 解码，多了一小部分模型解码时间。</p><p class="show-animate-item"><br></p><div class="_public_title show-animate-item" data-placeholder="Section Title">模型贴图优化</div><p class="show-animate-item">上述描述的模型压缩只针对模型网格数据，不会对 glTF 文件里的贴图进行处理。然而很多时候贴图文件往往大于模型。此时则需要将模型和贴图分开进行处理（建模时分开输出一个打好 UVtag 纹理坐标的“白模”和需要用到的纹理贴图）。下面介绍如何优化用于应用程序渲染的贴图文件。</p><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">1. 贴图加载过程分析</div><p class="show-animate-item">以一个基于物理引擎渲染的电视机 Demo 模型为例，一般会输出几种尺寸较大的贴图文件：颜色贴图，法线贴图，金属粗糙贴图，如下图例子所示：</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="32.864450127877234%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/5mjTbA3LzpvHvwQ7MvRcWcxNa5a1blys3Vx8jIWswHb.png" class="pic block-item clip-animate-item"></div><p class="show-animate-item">输出贴图一般为 png 格式，许多同学会通过压缩 png 或者将 png 转成 jpg 格式减少纹理大小，其实这种处理方式只优化了图片加载速度，加载完毕后，png/jpg 仍需要全部转码为纹理(texture)才能开始渲染，而具有相同尺寸的贴图纹理 GPU 占用内存大小相同，故压缩后的 png/jpg 对于渲染过程并没有优化。</p><p class="show-animate-item">庆幸的是许多设备都有可直接用于渲染的 GPU 压缩纹理(compress texture)格式，压缩纹理可比由 png 直接转换的纹理减少5倍或以上的大小。如果直接提供压缩纹理格式，则不需要进行 png 的转码过程且可大大减少纹理内存。如下图方案2所示：</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="23.653846153846153%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/RxPSM1pSFhHV8etR5wJANGCKHBQ0FilHgrRfDX1JDmQ.png" class="pic block-item clip-animate-item"></div><p class="show-animate-item">但由于 GPU 芯片提供商太多，设备的压缩纹理格式多种多样（例如安卓设备常用格式是 ETC1/ETC2，苹果设备是 PVRTC…），手动输出多种格式代价大，导致方案2较难落地。</p><p class="show-animate-item"><br></p><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">2. Basis Universal 压缩</div><p class="show-animate-item">转折点在于今年五月份，Binomial 公司推出了 Basis Universal 压缩 GPU 纹理技术，Basis Universal 支持多种常用的压缩纹理格式，将 png 转换为 basis 文件后，大小与 jpg 格式差不多，但在 GPU 上比  png/jpg 小6-8倍。</p><p class="show-animate-item">应用程序加载 basis 文件后，可通过 basis 转码器快速转换成适用于设备的压缩纹理格式。如下图(图片来自Google Blog)所示：</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="61.50943396226415%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/XxMgUQ369nZ78qZNrLK38z90XCmAhbIdTB9R4BWTU7N.png" class="pic block-item clip-animate-item"></div><p class="show-animate-item">Basis 用法也比较简单，可通过 basisu 命令行工具压缩 png，直接从github 官网下载Release版本或者通过 CMake 编译源码，以 Mac 系统为例（Windows 系统将命令改为 basis.exe），列举几种常用用法：</p><div class="_public_code show-animate-item" data-placeholder="Paste your code right here"><p class="show-animate-item"># 进入执行目录</p><p class="show-animate-item">cd bin-osx</p><p class="show-animate-item"># 将.png格式转为 .basis</p><p class="show-animate-item">./basisu xxx.png</p><p class="show-animate-item"># 针对法线/金属/粗糙贴图等linear颜色空间的贴图 需加上-linear</p><p class="show-animate-item">./basisu xxx.png -linear</p><p class="show-animate-item"># 最大限度保证图片质量的转换</p><p class="show-animate-item">./basisu xxx.png -comp_level 5 -max_endpoints 16128 -max_selectors 16128 -no_selector_rdo</p><p class="show-animate-item"># 最大限度压缩linear颜色空间的贴图</p><p class="show-animate-item">./basisu xxx.png -linear -global_sel_pal -no_hybrid_sel_cb</p></div><p class="show-animate-item">生成的 .basis 文件需要在程序中通过转码器转成设备的压缩纹理格式，例如在ThreeJS 中可通过 basisTextureLoader 转换，具体用法可查阅ThreeJS 官网。</p><p class="show-animate-item"><br></p><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">3. 效果测试</div><p class="show-animate-item">为了数据更加明显，我们在Mac Chrome 浏览器performance模式下，针对同一个电视机模型利用 ThreeJS 各自加载了 4096 x 4096 大小的颜色贴图、法线贴图、金属与粗糙贴图，对比如下：</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="37.917860553963706%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/WG68CTSKTXAtpyz5b2kRNkt8mxNxIa32xAscGrUH8I0.png" class="pic block-item clip-animate-item"></div><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="21.12810707456979%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/BxJNMq5AG0IueVlREP2RUTaS0DwHCvxwPpPd6dJaPOO.png" class="pic block-item clip-animate-item"></div><p class="show-animate-item">由上图使用 basis 贴图资源文件大小比 png 减少了11倍以上，同时主线程的脚本时间和绘制时间花销也小于 png/jpg 贴图。</p><p class="show-animate-item">需要注意的是，同样由于不同的压缩纹理格式不同，在 basis 文件一致的情况下，不同设备的渲染表现可能会出现不一致，需要进行多端测试，且目前部分格式不支持 alpha 通道，带半透明的颜色贴图若不生效可考虑单独拆出 alpha 贴图。</p><div class="_public_title show-animate-item" data-placeholder="Section Title">展望</div><p class="show-animate-item">除了基于 webGL 的 H5，glTF 与 Basis 亦可用于其它基于 OpenGL 渲染的应用程序。值得期待的是，目前 Google 与 Binomial 公司正在推进 Basis Universal 与 glTF 3D 传输标准的合作，或许在不久的将来就可以迎来结合了 basis 贴图的 glTF 格式，不需要做另外的处理可以直接导入模型到应用程序中。</p><div class="_public_title show-animate-item" data-placeholder="Section Title">参考资料</div><p class="show-animate-item">1. https://spin.atomicobject.com/2018/09/30/compress-3d-files-draco/ </p><p class="show-animate-item">2. https://neil3d.github.io/3dengine/gltf-mesh.html </p><p class="show-animate-item">3. https://github.com/google/draco </p><p class="show-animate-item">4. https://www.ece.uvic.ca/~frodo/publications/yuetang_meng_project_slides.pdf </p><p class="show-animate-item">5. https://developers.facebook.com/docs/sharing/3d-posts/glb-tutorials </p><p class="show-animate-item">6. https://github.com/AnalyticalGraphicsInc/gltf-pipeline </p><p class="show-animate-item">7. https://www.khronos.org/gltf/ </p><p class="show-animate-item">8. https://news.ycombinator.com/item?id=19986749 </p><p class="show-animate-item">9. https://github.com/BinomialLLC/basis_universal </p><p class="show-animate-item">10. https://www.khronos.org/blog/google-and-binomial-contribute-basis-universal-texture-format-to-khronos-gltf-3d-transmission-open-standard</p><div class="_public_line_title show-animate-item" data-placeholder="Section Title"></div></div>
+
+            </section>
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+    </div>
+
+    
+
+    <!-- 测试连接 https://v.qq.com/x/page/f0507qj9hhv.html -->
+    <!-- 测试连接 https://v.qq.com/x/page/s05065zrbps.html -->
+
+    <!-- 文章数据模块 -->
+    <section class="_mod_stat show-animate-item">
+        <div class="_stat_wrapper">
+            
+            <div class="_article_date">
+                <span class="date">DECEMBER 5, 2019</span>
+            </div>
+
+            <div class="_article_stat">
+
+                <ul class="_stat_list">
+                    <li class="_stat_item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18" class="_stat_view _stat_icon">
+                            <g>
+                                <path class="view_svg" d="M19,9c0,2.5-3.5,8-9,8S1,11.5,1,9s3.5-8,9-8S19,6.5,19,9Z"/>
+                                <circle class="view_svg" cx="10" cy="9" r="3"/>
+                            </g>
+                        </svg>
+                        <span class="_views">35921</span>
+                    </li>
+                    <li class="_stat_item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18.53" class="_stat_like _stat_icon" id="js-like-0" data-id="372">
+                            <g>
+                                <path class="like_svg" d="M17.54,9.54A5,5,0,1,0,10,3,5,5,0,1,0,2.46,9.54L10,17.11Z"/>
+                            </g>
+                        </svg>
+                        <span class="_likes js-like-text">292</span>
+                    </li>
+                </ul>
+
+                <ul class="_stat_share_article js-share-list" data-title="如何在页面极速渲染3D模型" data-desc="glTF &amp; Draco &amp; Basis，优化页面中的 3D 模型" data-pic="https://cdn-isux.qq.com/upload/detail/U6fi4oRUQWqiFMaui4SSV1qRPxVR8S2lmr6Sc1saEJp.png">
+                    <li class="share_article_item share_article_item_qzone js-china-ip" data-href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=%7Burl%7D&amp;title=%7Btitle%7D&amp;desc=&amp;summary=%7Bdesc%7D&amp;site=&amp;pics=%7Bpic%7D"></li>
+                    <li class="share_article_item share_article_item_qq js-china-ip" data-href="http://connect.qq.com/widget/shareqq/index.html?url=%7Burl%7D&amp;title=%7Btitle%7D&amp;desc=&amp;summary=%7Bdesc%7D&amp;site=isux&amp;pics=%7Bpic%7D"></li>
+                    <li class="share_article_item share_article_item_fb" data-href="https://www.facebook.com/sharer/sharer.php?u=%7Burl%7D&amp;t=%7Bdesc%7D"></li>
+                    <li class="share_article_item share_article_item_twitter" data-href="http://twitter.com/home?status=%7Bdesc%7D%20%23%7Btitle%7D%23&amp;url=%7Burl%7D&amp;pic=%7Bpic%7D&amp;desc="></li>
+                    <li class="share_article_item share_article_item_sina js-china-ip" data-href="http://service.weibo.com/share/share.php?title=%7Bdesc%7D%20%23%7Btitle%7D%23&amp;url=%7Burl%7D&amp;pic=%7Bpic%7D&amp;desc="></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作者模块 -->
+    <section class="_mod_authors show-animate-item">
+        <!-- 可以写成这个模块的 border-top -->
+        <!--<div class="_article_line"></div>-->
+        <div class="_authors_title">CONTRIBUTORS</div>
+        <ul class="_authors">
+            <li class="_author">
+                <img class="pic" src="https://isuxdesign-1251263993.file.myqcloud.com/avatars/cbEFH8hmoqVkmsdXu51dqoFRWT1uLE415V481CkJSDT.jpg" alt="">
+                <div class="name">ISUX</div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- 相关文章推荐模块 -->
+    <section class="_mod_related show-animate-item">
+        <ul class="related-list clearfix" id="list">
+            <li class="related-item first-item" data-index='1'>
+                <a href="3d-to-h5.html" target="_blank">
+                        <img class="pic clip-animate-item pic-gray" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/564_a.jpg" />
+                        <img class="pic pic-colorful clip-animate-item" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/564_a_src.jpg" />
+
+                    
+                    <div class="_title-wrapper fade-aniamte-item">
+                        <div class="_title-flex">
+                            <h3 class="title js-article-title">3DtoH5工作流应用手册 理论篇</h3>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="related-item" data-index='2'>
+                <a href="isux-ae-play.html" target="_blank">
+                        <img class="pic clip-animate-item pic-gray" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/542_a.jpg" />
+                        <img class="pic pic-colorful clip-animate-item" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/542_a_src.jpg" />
+
+                    
+                    <div class="_title-wrapper fade-aniamte-item">
+                        <div class="_title-flex">
+                            <h3 class="title js-article-title">玩转AE丨动效设计必备指南</h3>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="related-item last-item" data-index='3'>
+                <a href="isux-optimizing-3d-model.html" target="_blank">
+                        <img class="pic clip-animate-item pic-gray" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/372_a.jpg" />
+                        <img class="pic pic-colorful clip-animate-item" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/372_a_src.jpg" />
+
+                    
+                    <div class="_title-wrapper fade-aniamte-item">
+                        <div class="_title-flex">
+                            <h3 class="title js-article-title">如何在页面极速渲染3D模型</h3>
+                        </div>
+                    </div>
+                </a>
+            </li>
+
+        
+        </ul>
+    </section>
+
+</div>
+
+<div class="share_article_scroll share_article_hide">
+    
+    <div class="_mod_stat">
+        <div class="_article_stat">
+
+            <ul class="_stat_list">
+                <li class="_stat_item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18" class="_stat_view _stat_icon">
+                        <g>
+                            <path class="view_svg" d="M19,9c0,2.5-3.5,8-9,8S1,11.5,1,9s3.5-8,9-8S19,6.5,19,9Z"/>
+                            <circle class="view_svg" cx="10" cy="9" r="3"/>
+                        </g>
+                    </svg>
+                    <span class="_views">35921</span>
+                </li>
+                <li class="_stat_item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18.53" class="_stat_like _stat_icon" id="js-like-1" data-id="372">
+                        <g>
+                            <path class="like_svg" d="M17.54,9.54A5,5,0,1,0,10,3,5,5,0,1,0,2.46,9.54L10,17.11Z"/>
+                        </g>
+                    </svg>
+                    <span class="_likes bottom-like-text">292</span>
+                </li>
+            </ul>
+
+            <ul class="_stat_share_article js-share-list" data-title="如何在页面极速渲染3D模型" data-desc="glTF &amp; Draco &amp; Basis，优化页面中的 3D 模型" data-pic="https://cdn-isux.qq.com/upload/detail/U6fi4oRUQWqiFMaui4SSV1qRPxVR8S2lmr6Sc1saEJp.png">
+                <li class="share_article_item share_article_item_qzone" data-href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=%7Burl%7D&amp;title=%7Btitle%7D&amp;desc=&amp;summary=%7Bdesc%7D&amp;site=&amp;pics=%7Bpic%7D"></li>
+                <li class="share_article_item share_article_item_qq" data-href="http://connect.qq.com/widget/shareqq/index.html?url=%7Burl%7D&amp;title=%7Btitle%7D&amp;desc=&amp;summary=%7Bdesc%7D&amp;site=isux&amp;pics=%7Bpic%7D"></li>
+                <li class="share_article_item share_article_item_fb" data-href="https://www.facebook.com/sharer/sharer.php?u=%7Burl%7D&amp;t=%7Bdesc%7D"></li>
+                <li class="share_article_item share_article_item_sina" data-href="http://service.weibo.com/share/share.php?title=%7Bdesc%7D%20%23%7Btitle%7D%23&amp;url=%7Burl%7D&amp;pic=%7Bpic%7D&amp;desc="></li>
+            </ul>
+        </div>
+    </div>
+
+    
+</div>
+<!-- 文章详情页 -->
+
+ <div id="bottom-mask"></div>
+<div class="mask-strip"></div>
+
+<footer class="mod_site_footer" role="contentinfo">
+    <div class="_footer-prefix">
+        <div class="_inner-wrapper"></div>
+    </div>
+    <div class="_social">
+        <div class="_inner-wrapper">
+            <ul class="_social-media-links">
+                <!-- <li class="-hc -vimeo"><a href="#" title="vimeo"></a></li> -->
+                <li class="-hc -wechat">
+                    <a title="wechat">
+                        <span class="-wechat-qr">
+                            <img class="lazy" data-src="../static/images/isux_qrcode.jpg" alt="微信公众号二维码" width="230" height="230">
+                        </span>
+                    </a>
+                </li>
+                <!-- <li class="-hc -facebook"><a href="#" title="facebook"></a></li> -->
+                <li class="-hc -weibo"><a href="http://weibo.com/txisux" target="_blank" title="weibo"></a></li>
+
+                <li class="-hc -zcool">
+                    <a href="https://www.zcool.com.cn/u/1936779" target="_blank" title="zcool"></a>
+                </li>
+
+                <li class="-hc -ins">
+                    <a href="https://www.instagram.com/isux_lab" target="_blank" title="instagram"></a>
+                </li>
+
+                <li class="-hc -behance">
+                    <a href="https://www.behance.net/18485758707c20" target="_blank" title="behance"></a>
+                </li>
+
+                <li class="-hc -medium">
+                    <a href="https://medium.com/@tencent.isux" target="_blank" title="medium"></a>
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="_footer-suffix">
+        <div class="_inner-wrapper">
+            <div class="supporting-information">
+                <ul class="_footer-links"><li class="_footer-link"><a href="https://www.tencent.com/" target="_blank">TENCENT</a></li><li class="_footer-link"><a href="https://qqfamily.com" target="_blank">QQfamily</a></li><li class="_footer-link"><a href="https://ycg.qq.com/" target="_blank">YCG</a></li></ul>
+            </div>
+            <div class="copyright">Copyright © 1998 - 2025 Tencent Inc. All Rights Reserved.</div>
+        </div>
+    </div>
+</footer>
+
+
+<div class="isux-qrcode">
+	<img src="../static/images/qrcode.jpg" alt="ISUX 二维码">
+</div>
+<div class="-search hide" id="search" role="application" aria-hidden="false">
+	<div class="-search-inner">
+		<div class="-search-form">
+			<span class="-search-box">
+				<input type="search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" maxlength="100" class="-search-input" placeholder="keywords" value="" />
+				<button type="button" class="-search-reset" title="Close">&times;</button>
+			</span>
+		</div>
+		<div class="-search-result">
+			<div class="-search-result-head">
+				啥，没结果？别担心，我们为您准备了推荐的文章：
+			</div>
+			<div class="gallery -search-gallery" id="searchResult"></div>
+		</div>
+		<div class="-loading -search-loading hide">
+			<span class="-loading-icon -search-loading-icon"><i></i><i></i></span>
+		</div>
+	</div>
+</div>
+<!-- .-search -->
+<script type="text/tpl" id="itemTpl">
+<div class="gallery-item <%=?cssclass%>"<%=?dataset%>>
+	<a class="gallery-wrapper" href="<%=url%>" target="_blank">
+		<div class="gallery-pics show-search-animate-item">
+			<div class="gallery-pic gallery-pic-gray lazy clip-animate-item" data-src="<%=image%>"></div>
+			<div class="gallery-pic gallery-pic-normal lazy clip-animate-item" data-src="<%=image1x%>"></div>
+		</div>
+		<div class="gallery-info show-search-animate-item">
+			<h3 class="title" title="<%=title%>"><%=title%></h3>
+			<p class="category"><%=category_name%></p>
+			<p class="abstract"><%=abstract%></p>
+		</div>
+	</a>
+</div>
+</script>
+<script>
+var G_csrf = 'w4HAepjhX1s0mlC8acnnZ_g3Zm77HA68';
+</script>
+<script src="../static/js/lib.js"></script>
+
+<!-- 引入腾讯视频JS库 -->
+<script src="https://vm.gtimg.cn/tencentvideo/txp/js/txplayer.js"></script>
+
+<!-- 引入判断背景显示不同字体颜色的组件 -->
+<script src="../static/js/common/background-check.js"></script>
+<script>
+window.backgroundCheck && backgroundCheck.init({
+    targets: '._title-flex',
+    imgs: '.pic-gray',
+    parents: '.related-item a',
+    cssclass: '_article-light-item',
+    lazy: false
+});
+</script>
+
+<!-- 页面逻辑js -->
+<script src="../static/js/detail.js"></script>
+
+<!-- TA -->
+
+<!-- TA -->
+<!-- GA -->
+
+<!-- GA -->
+</body>
+</html>

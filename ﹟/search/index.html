@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+<meta charset="utf-8">
+<title>Tencent ISUX Design</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="theme-color" content="#000000">
+<link rel="mask-icon" href="../../static/images/favicon.svg" color="#FFFFFF">
+<link rel="shortcut icon" href="../../static/images/favicon.ico" type="image/x-icon">
+<link href="../../static/css/base.css" rel="stylesheet">
+<script type="text/javascript" src="https://js.aq.qq.com/js/aq_common.js"></script>
+
+<meta name="keywords" content="ISUX,中国用户体验,腾讯设计,H5,动画,svg,webpack,vuejs,react,webComponents,react-native,人工智能,VR,AR,QQ,QQ空间,原创,创意,平面设计,UI,UI设计,网页设计,插画,动漫,摄影,字体设计,logo设计,版式设计,前端技术,视觉设计,用户研究,交互设计,品牌设计,UI开发,产品设计,市场研究,UX设计,腾讯社交用户体验设计部,Qlippie,QQfamily,PsPlay,Demoo">
+<meta name="description" content="腾讯社交用户体验设计，简称ISUX (Internet Social User Experience)，成立于2011年1月11日，是腾讯集团核心、全球最具规模的UX设计团队，专业成员包括用户研究、交互设计、视觉设计、品牌设计、视频动画设计、UI开发、产品设计与市场研究等，至今ISUX分布于中国深圳总部、北京、上海、成都及韩国首尔。">
+
+<!-- 社交分享 -->
+<meta itemprop="name" content="Tencent ISUX Design" />
+<meta itemprop="description" content="腾讯社交用户体验设计，简称ISUX (Internet Social User Experience)，成立于2011年1月11日，是腾讯集团核心、全球最具规模的UX设计团队，专业成员包括用户研究、交互设计、视觉设计、品牌设计、视频动画设计、UI开发、产品设计与市场研究等，至今ISUX分布于中国深圳总部、北京、上海、成都及韩国首尔。" />
+<meta itemprop="image" content="" />
+<!-- 社交分享 -->
+
+<!-- Facebook Open Graph -->
+<meta property="fb:app_id" content="137155036704975" />
+<meta property="og:url" content="https://isux.tencent.com" />
+<meta property="og:title" content="Tencent ISUX Design" />
+<meta property="og:site_name" content="Tencent ISUX Design" />
+<meta property="og:description" content="腾讯社交用户体验设计，简称ISUX (Internet Social User Experience)，成立于2011年1月11日，是腾讯集团核心、全球最具规模的UX设计团队，专业成员包括用户研究、交互设计、视觉设计、品牌设计、视频动画设计、UI开发、产品设计与市场研究等，至今ISUX分布于中国深圳总部、北京、上海、成都及韩国首尔。" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://cdn-isux.qq.com/upload/detail/pZSWsy7XvaSB3Wpm5yr3goTAJ8YvqTT929gsOqIvkfu.jpg" />
+<meta property="og:locale" content="en_us" />
+<!-- Facebook Open Graph -->
+
+<!-- home css file -->
+<link href="../../static/css/home.css" rel="stylesheet">
+<!-- home css file -->
+</head>
+<body>
+<!-- 移动端的结构，要单独写html，才可以在header下面滑出 -->
+<div class="_m-nav-wrapper">
+    <ul class="_nav-items">
+            <li class="_nav-item">
+                <a href="../../articles/index.html">ARTICLES</a>
+            </li>
+            <li class="_nav-item">
+                <a href="../../brands/index.html">BRANDS</a>
+            </li>
+            <li class="_nav-item">
+                <a href="../../resources/index.html">RESOURCES</a>
+            </li>
+            <li class="_nav-item">
+                <a href="../../careers/index.html">CAREERS</a>
+            </li>
+
+        <!-- 移动端的搜索按钮，pc的时候为隐藏状态，功能跟._nav-search一样 -->
+        <div class="nav-item -m-search">
+            <a href="index.html" data-action="toggle" data-args="body" data-cssclass="xxx"></a>
+        </div>
+    </ul>
+</div>
+
+<header>
+    <div class="_header-wrapper">
+        <nav id="navigator" class="mod_site_nav nav-animate-item js-nav-state">
+            <div class="_nav-logo">
+                <a href="../../index.html" class="_nav-flower" ></a>
+                <!-- <a href="/" class="js-nav-isux _nav-isux"></a> -->
+            </div>
+            <!-- pc端的结构 -->
+            <div class="_nav-wrapper">
+                <ul class="_nav-items">
+                        <li class="_nav-item">
+                            <a href="../../articles/index.html">ARTICLES</a>
+                        </li>
+                        <li class="_nav-item">
+                            <a href="../../brands/index.html">BRANDS</a>
+                        </li>
+                        <li class="_nav-item">
+                            <a href="../../resources/index.html">RESOURCES</a>
+                        </li>
+                        <li class="_nav-item">
+                            <a href="../../careers/index.html">CAREERS</a>
+                        </li>
+                    <!-- 移动端的搜索按钮，pc的时候为隐藏状态，功能跟._nav-search一样 -->
+                    <div class="nav-item -m-search">
+                        <a href="index.html" data-action="toggle" data-args="body" data-cssclass="xxx"></a>
+                    </div>
+                </ul>
+            </div>
+
+            <!-- pc端的搜索按钮，移动端时为隐藏状态 -->
+            <div class="_nav-search">
+                <a href="index.html" data-action="toggle" data-args="body" data-cssclass="xxx"></a>
+            </div>
+
+            <!-- 移动端的菜单list按钮，pc的时候为隐藏状态，在列表icon和close-icon之间切换 -->
+            <div class="_m-nav-list" data-cssclass="_m-nav-close">
+                <a href="../list/index.html" data-action="toggle" data-args="body" class="lines js-m-navlist">
+                    <span class="line first-line"></span>
+                    <span class="line second-line"></span>
+                    <span class="line third-line"></span>
+                </a>
+            </div>
+
+        </nav>
+    </div>
+</header>
+<div class="_fake-header"></div>
+
+
+<!-- 文章列表 -->
+<section class="list" id="list">
+    <article class="js-animate-out">
+        <section id="main" class="mod_main">
+            <ul class="_article-items">
+                <li class="_article-item show-animate-item"   data-home-index="1">
+        <a href="../../articles/freshelement.html">
+        <img class="pic js-pic-item clip-animate-item pic-gray lazy" data-basename="591"  data-src="https://cdn-isux.qq.com/upload/covers/591_b_src.jpg" src="https://cdn-isux.qq.com/upload/covers/591_b_src.jpg" />
+        <img class="pic js-pic-item clip-animate-item pic-colorful lazy" data-basename="591" data-src="https://cdn-isux.qq.com/upload/covers/591_b_src.jpg" src="https://cdn-isux.qq.com/upload/covers/591_b_src.jpg" />
+
+            <div class="_title-wrapper fade-animate-item">
+                <div class="_title-flex" >
+                    <h3 class="title js-article-title" style="color: #000000;">新奇物种：探寻关系链中的陪伴价值</h3>
+                    <!-- <p class="tag">
+                        DESIGN
+                    </p> -->
+                </div>
+            </div>
+
+        </a>
+                </li>
+                <li class="_article-item show-animate-item"   data-home-index="2">
+        <a href="../../articles/Chinese-font.html">
+        <img class="pic js-pic-item clip-animate-item pic-gray lazy" data-basename="590" data-src="https://cdn-isux.qq.com/upload/covers/590_a.jpg" src="https://cdn-isux.qq.com/upload/covers/590_a.jpg" />
+        <img class="pic js-pic-item clip-animate-item pic-colorful lazy" data-basename="590" data-src="https://cdn-isux.qq.com/upload/covers/590_a_src.jpg" src="https://cdn-isux.qq.com/upload/covers/590_a_src.jpg" />
+
+            <div class="_title-wrapper fade-animate-item">
+                <div class="_title-flex" >
+                    <h3 class="title js-article-title" style="color: #000000;">字体设计｜从字体历史中汲取设计的方法</h3>
+                    <!-- <p class="tag">
+                        DESIGN
+                    </p> -->
+                </div>
+            </div>
+
+        </a>
+                </li>
+                <li class="_article-item show-animate-item"   data-home-index="3">
+                    
+                      
+        <a href="../../articles/qqfamily.html">
+            <img class="pic js-pic-item clip-animate-item pic-gray lazy" data-basename="featured" data-src="https://cdn-isux.qq.com/upload/covers/featured_c.jpg" src="https://cdn-isux.qq.com/upload/covers/featured_c.jpg" />
+            <div class="pic js-pic-item clip-animate-item pic-colorful lazy" data-basename="featured" data-src="https://cdn-isux.qq.com/upload/covers/featured_c_src.mp4" data-AdIndex="1">
+                <source>
+                    <video id="featuredVideo" playsinline webkit-playsinline class="featured-video" src="https://cdn-isux.qq.com/upload/covers/featured_c_src.mp4"></video>
+                </source>
+            </div>
+
+            <div class="_title-wrapper fade-animate-item">
+                <div class="_title-flex" >
+                    <h3 class="title js-article-title">QQfamily</h3>
+                </div>
+
+            
+            </div>
+
+        </a>
+                    
+                </li>
+                <li class="_article-item show-animate-item"   data-home-index="4">
+        <a href="../../articles/Now2022AnnualCeremony.html">
+        <img class="pic js-pic-item clip-animate-item pic-gray lazy" data-basename="586" data-src="https://cdn-isux.qq.com/upload/covers/586_a.jpg" src="https://cdn-isux.qq.com/upload/covers/586_a.jpg" />
+        <img class="pic js-pic-item clip-animate-item pic-colorful lazy" data-basename="586" data-src="https://cdn-isux.qq.com/upload/covers/586_a_src.jpg" src="https://cdn-isux.qq.com/upload/covers/586_a_src.jpg" />
+
+            <div class="_title-wrapper fade-animate-item">
+                <div class="_title-flex" >
+                    <h3 class="title js-article-title" style="color: #000000;">如何打造沉浸式盛典体验</h3>
+                    <!-- <p class="tag">
+                        DESIGN
+                    </p> -->
+                </div>
+            </div>
+
+        </a>
+                </li>
+                <li class="_article-item show-animate-item"   data-home-index="5">
+        <a href="../../articles/softdynamics.html">
+        <img class="pic js-pic-item clip-animate-item pic-gray lazy" data-basename="588"  data-src="https://cdn-isux.qq.com/upload/covers/588_b.jpg" src="https://cdn-isux.qq.com/upload/covers/588_b.jpg" />
+        <img class="pic js-pic-item clip-animate-item pic-colorful lazy" data-basename="588" data-src="https://cdn-isux.qq.com/upload/covers/588_b_src.jpg" src="https://cdn-isux.qq.com/upload/covers/588_b_src.jpg" />
+
+            <div class="_title-wrapper fade-animate-item">
+                <div class="_title-flex" >
+                    <h3 class="title js-article-title" style="color: #000000;">走进动力学的柔体世界</h3>
+                    <!-- <p class="tag">
+                        DESIGN
+                    </p> -->
+                </div>
+            </div>
+
+        </a>
+                </li>
+                <li class="_article-item show-animate-item"   id="js-featured-item" data-home-index="6">
+        <a href="../../articles/qqgame.html">
+        <img class="pic js-pic-item clip-animate-item pic-gray lazy" data-basename="589" data-src="https://cdn-isux.qq.com/upload/covers/589_a.jpg" src="https://cdn-isux.qq.com/upload/covers/589_a.jpg" />
+        <img class="pic js-pic-item clip-animate-item pic-colorful lazy" data-basename="589" data-src="https://cdn-isux.qq.com/upload/covers/589_a_src.jpg" src="https://cdn-isux.qq.com/upload/covers/589_a_src.jpg" />
+
+            <div class="_title-wrapper fade-animate-item">
+                <div class="_title-flex" >
+                    <h3 class="title js-article-title" style="color: #000000;">能量满满 生机焕发|QQ游戏中心体验升级</h3>
+                    <!-- <p class="tag">
+                        DESIGN
+                    </p> -->
+                </div>
+            </div>
+
+        </a>
+                </li>
+                <li class="_article-item show-animate-item"   data-home-index="7">
+        <a href="../../articles/aigc-design.html">
+        <img class="pic js-pic-item clip-animate-item pic-gray lazy" data-basename="585" data-src="https://cdn-isux.qq.com/upload/covers/585_a.jpg" src="https://cdn-isux.qq.com/upload/covers/585_a.jpg" />
+        <img class="pic js-pic-item clip-animate-item pic-colorful lazy" data-basename="585" data-src="https://cdn-isux.qq.com/upload/covers/585_a_src.jpg" src="https://cdn-isux.qq.com/upload/covers/585_a_src.jpg" />
+
+            <div class="_title-wrapper fade-animate-item">
+                <div class="_title-flex" >
+                    <h3 class="title js-article-title" style="color: #000000;">运用AIGC人工智能生产内容</h3>
+                    <!-- <p class="tag">
+                        DESIGN
+                    </p> -->
+                </div>
+            </div>
+
+        </a>
+                </li>
+                <li class="_article-item show-animate-item"   data-home-index="8">
+        <a href="../../articles/isux-ux-makesimple.html">
+        <img class="pic js-pic-item clip-animate-item pic-gray lazy" data-basename="584" data-src="https://cdn-isux.qq.com/upload/covers/584_a.jpg" src="https://cdn-isux.qq.com/upload/covers/584_a.jpg" />
+        <img class="pic js-pic-item clip-animate-item pic-colorful lazy" data-basename="584" data-src="https://cdn-isux.qq.com/upload/covers/584_a_src.jpg" src="https://cdn-isux.qq.com/upload/covers/584_a_src.jpg" />
+
+            <div class="_title-wrapper fade-animate-item">
+                <div class="_title-flex" >
+                    <h3 class="title js-article-title" style="color: #000000;">面对繁冗，拒绝“摆烂”｜工具型产品如何简化设计</h3>
+                    <!-- <p class="tag">
+                        DESIGN
+                    </p> -->
+                </div>
+            </div>
+
+        </a>
+                </li>
+                <li class="_article-item show-animate-item"   data-home-index="9">
+        <a href="../../articles/radical-innovation.html">
+        <img class="pic js-pic-item clip-animate-item pic-gray lazy" data-basename="583" data-src="https://cdn-isux.qq.com/upload/covers/583_a.jpg" src="https://cdn-isux.qq.com/upload/covers/583_a.jpg" />
+        <img class="pic js-pic-item clip-animate-item pic-colorful lazy" data-basename="583" data-src="https://cdn-isux.qq.com/upload/covers/583_a_src.jpg" src="https://cdn-isux.qq.com/upload/covers/583_a_src.jpg" />
+
+            <div class="_title-wrapper fade-animate-item">
+                <div class="_title-flex" >
+                    <h3 class="title js-article-title" style="color: #ffffff;">设计策略｜源源不断的创新思路（激进篇）</h3>
+                    <!-- <p class="tag">
+                        DESIGN
+                    </p> -->
+                </div>
+            </div>
+
+        </a>
+                </li>
+                <li class="_article-item show-animate-item"   data-home-index="10">
+        <a href="../../articles/incremental-innovation.html">
+        <img class="pic js-pic-item clip-animate-item pic-gray lazy" data-basename="582" data-src="https://cdn-isux.qq.com/upload/covers/582_a.jpg" src="https://cdn-isux.qq.com/upload/covers/582_a.jpg" />
+        <img class="pic js-pic-item clip-animate-item pic-colorful lazy" data-basename="582" data-src="https://cdn-isux.qq.com/upload/covers/582_a_src.jpg" src="https://cdn-isux.qq.com/upload/covers/582_a_src.jpg" />
+
+            <div class="_title-wrapper fade-animate-item">
+                <div class="_title-flex" >
+                    <h3 class="title js-article-title" style="color: #ffffff;">设计策略｜源源不断的创新思路（渐进篇）</h3>
+                    <!-- <p class="tag">
+                        DESIGN
+                    </p> -->
+                </div>
+            </div>
+
+        </a>
+                </li>
+                <li class="_article-item show-animate-item"   data-home-index="11">
+        <a href="../../articles/HD_QQ_emoticon_lottie_202207.html">
+        <img class="pic js-pic-item clip-animate-item pic-gray lazy" data-basename="581" data-src="https://cdn-isux.qq.com/upload/covers/581_a.jpg" src="https://cdn-isux.qq.com/upload/covers/581_a.jpg" />
+        <img class="pic js-pic-item clip-animate-item pic-colorful lazy" data-basename="581" data-src="https://cdn-isux.qq.com/upload/covers/581_a_src.jpg" src="https://cdn-isux.qq.com/upload/covers/581_a_src.jpg" />
+
+            <div class="_title-wrapper fade-animate-item">
+                <div class="_title-flex" >
+                    <h3 class="title js-article-title" style="color: #000000;">QQ新表情 | 实力演绎你的生活</h3>
+                    <!-- <p class="tag">
+                        DESIGN
+                    </p> -->
+                </div>
+            </div>
+
+        </a>
+                </li>
+                <li class="_article-item show-animate-item"   data-home-index="12">
+        <a href="../../about.html">
+        
+        <img class="pic js-pic-item clip-animate-item pic-gray lazy" data-basename="isux" data-src="https://cdn-isux.qq.com/upload/covers/isux_a.jpg" src="https://cdn-isux.qq.com/upload/covers/isux_a.jpg" />
+        <img class="pic js-pic-item clip-animate-item pic-colorful lazy" data-basename="isux" data-src="https://cdn-isux.qq.com/upload/covers/isux_a_src.jpg" src="https://cdn-isux.qq.com/upload/covers/isux_a_src.jpg" />
+
+            <div class="_title-wrapper fade-animate-item">
+                <div class="_title-flex" >
+                    <h3 class="title js-article-title">走近我们的世界</h3>
+                    <!-- <p class="tag">
+                        ABOUT
+                    </p> -->
+                </div>
+            </div>
+
+        </a>
+                </li>
+            </ul>
+        </section>
+    </article>
+</section>
+
+<!-- /文章列表 -->
+
+<!-- /文章列表 --><div id="bottom-mask"></div>
+<div class="mask-strip"></div>
+
+<footer class="mod_site_footer" role="contentinfo">
+    <div class="_footer-prefix">
+        <div class="_inner-wrapper"></div>
+    </div>
+    <div class="_social">
+        <div class="_inner-wrapper">
+            <ul class="_social-media-links">
+                <!-- <li class="-hc -vimeo"><a href="#" title="vimeo"></a></li> -->
+                <li class="-hc -wechat">
+                    <a title="wechat">
+                        <span class="-wechat-qr">
+                            <img class="lazy" data-src="../../static/images/isux_qrcode.jpg" alt="微信公众号二维码" width="230" height="230">
+                        </span>
+                    </a>
+                </li>
+                <!-- <li class="-hc -facebook"><a href="#" title="facebook"></a></li> -->
+                <li class="-hc -weibo"><a href="http://weibo.com/txisux" target="_blank" title="weibo"></a></li>
+
+                <li class="-hc -zcool">
+                    <a href="https://www.zcool.com.cn/u/1936779" target="_blank" title="zcool"></a>
+                </li>
+
+                <li class="-hc -ins">
+                    <a href="https://www.instagram.com/isux_lab" target="_blank" title="instagram"></a>
+                </li>
+
+                <li class="-hc -behance">
+                    <a href="https://www.behance.net/18485758707c20" target="_blank" title="behance"></a>
+                </li>
+
+                <li class="-hc -medium">
+                    <a href="https://medium.com/@tencent.isux" target="_blank" title="medium"></a>
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="_footer-suffix">
+        <div class="_inner-wrapper">
+            <div class="supporting-information">
+                <ul class="_footer-links"><li class="_footer-link"><a href="https://www.tencent.com/" target="_blank">TENCENT</a></li><li class="_footer-link"><a href="https://qqfamily.com" target="_blank">QQfamily</a></li><li class="_footer-link"><a href="https://ycg.qq.com/" target="_blank">YCG</a></li></ul>
+            </div>
+            <div class="copyright">Copyright © 1998 - 2025 Tencent Inc. All Rights Reserved.</div>
+        </div>
+    </div>
+</footer>
+
+
+<div class="isux-qrcode">
+	<img src="../../static/images/qrcode.jpg" alt="ISUX 二维码">
+</div>
+<div class="-search hide" id="search" role="application" aria-hidden="false">
+	<div class="-search-inner">
+		<div class="-search-form">
+			<span class="-search-box">
+				<input type="search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" maxlength="100" class="-search-input" placeholder="keywords" value="" />
+				<button type="button" class="-search-reset" title="Close">&times;</button>
+			</span>
+		</div>
+		<div class="-search-result">
+			<div class="-search-result-head">
+				啥，没结果？别担心，我们为您准备了推荐的文章：
+			</div>
+			<div class="gallery -search-gallery" id="searchResult"></div>
+		</div>
+		<div class="-loading -search-loading hide">
+			<span class="-loading-icon -search-loading-icon"><i></i><i></i></span>
+		</div>
+	</div>
+</div>
+<!-- .-search -->
+<script type="text/tpl" id="itemTpl">
+<div class="gallery-item <%=?cssclass%>"<%=?dataset%>>
+	<a class="gallery-wrapper" href="<%=url%>" target="_blank">
+		<div class="gallery-pics show-search-animate-item">
+			<div class="gallery-pic gallery-pic-gray lazy clip-animate-item" data-src="<%=image%>"></div>
+			<div class="gallery-pic gallery-pic-normal lazy clip-animate-item" data-src="<%=image1x%>"></div>
+		</div>
+		<div class="gallery-info show-search-animate-item">
+			<h3 class="title" title="<%=title%>"><%=title%></h3>
+			<p class="category"><%=category_name%></p>
+			<p class="abstract"><%=abstract%></p>
+		</div>
+	</a>
+</div>
+</script>
+<script>
+var G_csrf = 'w4HAepjhX1s0mlC8acnnZ_g3Zm77HA68';
+</script>
+<script src="../../static/js/lib.js"></script>
+<!-- <script src="/static/js/common/background-check.js"></script>
+<script>
+window.backgroundCheck && backgroundCheck.init({
+    targets: '._title-flex',
+    imgs: '.pic-gray.lazy',
+    parents: '._article-item a',
+    cssclass: '_article-light-item'
+});
+</script> -->
+
+<!-- 页面逻辑js -->
+<script src="../../static/js/home.js"></script>
+<!-- TA -->
+
+<!-- TA -->
+<!-- GA -->
+
+<!-- GA -->
+</body>
+</html>

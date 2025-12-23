@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+<meta charset="utf-8">
+<title>可视化编辑器 - Tencent ISUX Design</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="theme-color" content="#000000">
+<link rel="mask-icon" href="../static/images/favicon.svg" color="#FFFFFF">
+<link rel="shortcut icon" href="../static/images/favicon.ico" type="image/x-icon">
+<link href="../static/css/base.css" rel="stylesheet">
+<script type="text/javascript" src="https://js.aq.qq.com/js/aq_common.js"></script>
+
+<meta name="keywords" content="编辑器,WYSIWYG,可视化,所见即所得">
+<meta name="description" content="可视化编辑器，解决传统文章编辑器编辑及发布页面不一致的痛点，实时同步后台编辑与前端效果，大幅度提升内容管理效率，实现真正的所见即所得——What You See Is What You Get.">
+
+<!-- 社交分享 -->
+<meta itemprop="name" content="可视化编辑器" />
+<meta itemprop="description" content="可视化编辑器，解决传统文章编辑器编辑及发布页面不一致的痛点，实时同步后台编辑与前端效果，大幅度提升内容管理效率，实现真正的所见即所得——What You See Is What You Get." />
+<meta itemprop="image" content="https://cdn-isux.qq.com/upload/detail/LnNBRJOnk4yHNg03I4q3IjX6A830rWgeBjdT1b5BBcm.jpg" />
+<!-- 社交分享 -->
+
+<!-- Facebook Open Graph -->
+<meta property="fb:app_id" content="137155036704975" />
+<meta property="og:url" content="https://isux.tencent.com/articles/visual-editor.html" />
+<meta property="og:title" content="可视化编辑器" />
+<meta property="og:site_name" content="Tencent ISUX Design" />
+<meta property="og:description" content="可视化编辑器，解决传统文章编辑器编辑及发布页面不一致的痛点，实时同步后台编辑与前端效果，大幅度提升内容管理效率，实现真正的所见即所得——What You See Is What You Get." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://cdn-isux.qq.com/upload/detail/LnNBRJOnk4yHNg03I4q3IjX6A830rWgeBjdT1b5BBcm.jpg" />
+<meta property="og:locale" content="en_us" />
+<!-- Facebook Open Graph -->
+
+<!-- home css file -->
+<link href="../static/css/detail.css" rel="stylesheet">
+<!-- home css file -->
+
+</head>
+<body>
+<!-- 移动端的结构，要单独写html，才可以在header下面滑出 -->
+<div class="_m-nav-wrapper">
+    <ul class="_nav-items">
+            <li class="_nav-item active">
+                <a href="index.html">ARTICLES</a>
+            </li>
+            <li class="_nav-item">
+                <a href="../brands/index.html">BRANDS</a>
+            </li>
+            <li class="_nav-item">
+                <a href="../resources/index.html">RESOURCES</a>
+            </li>
+            <li class="_nav-item">
+                <a href="../careers/index.html">CAREERS</a>
+            </li>
+
+        <!-- 移动端的搜索按钮，pc的时候为隐藏状态，功能跟._nav-search一样 -->
+        <div class="nav-item -m-search">
+            <a href="#/search/" data-action="toggle" data-args="body" data-cssclass="xxx"></a>
+        </div>
+    </ul>
+</div>
+
+<header>
+    <div class="_header-wrapper">
+        <nav id="navigator" class="mod_site_nav nav-animate-item js-nav-state">
+            <div class="_nav-logo">
+                <a href="../index.html" class="_nav-flower" ></a>
+                <!-- <a href="/" class="js-nav-isux _nav-isux"></a> -->
+            </div>
+            <!-- pc端的结构 -->
+            <div class="_nav-wrapper">
+                <ul class="_nav-items">
+                        <li class="_nav-item active">
+                            <a href="index.html">ARTICLES</a>
+                        </li>
+                        <li class="_nav-item">
+                            <a href="../brands/index.html">BRANDS</a>
+                        </li>
+                        <li class="_nav-item">
+                            <a href="../resources/index.html">RESOURCES</a>
+                        </li>
+                        <li class="_nav-item">
+                            <a href="../careers/index.html">CAREERS</a>
+                        </li>
+                    <!-- 移动端的搜索按钮，pc的时候为隐藏状态，功能跟._nav-search一样 -->
+                    <div class="nav-item -m-search">
+                        <a href="#/search/" data-action="toggle" data-args="body" data-cssclass="xxx"></a>
+                    </div>
+                </ul>
+            </div>
+
+            <!-- pc端的搜索按钮，移动端时为隐藏状态 -->
+            <div class="_nav-search">
+                <a href="#/search/" data-action="toggle" data-args="body" data-cssclass="xxx"></a>
+            </div>
+
+            <!-- 移动端的菜单list按钮，pc的时候为隐藏状态，在列表icon和close-icon之间切换 -->
+            <div class="_m-nav-list" data-cssclass="_m-nav-close">
+                <a href="#/list/" data-action="toggle" data-args="body" class="lines js-m-navlist">
+                    <span class="line first-line"></span>
+                    <span class="line second-line"></span>
+                    <span class="line third-line"></span>
+                </a>
+            </div>
+
+        </nav>
+    </div>
+</header>
+<div class="_fake-header"></div>
+<!-- 文章详情页 -->
+<div class="_main_content">
+    <!-- 前言模块 -->
+    <section class="_mod_introduce _mod_editor js-mod-introduce">
+
+        <div class="_introduce_title_wrapper show-animate-item">
+            <div class="_article_title_wrapper">
+                <div class="_introduce_title js-intro-title">可视化编辑器</div>
+            </div>
+            <div class="_public_line caretColor" ></div>
+            <div class="_introduce_tag js-intro-tag" >TECH</div>
+        </div>
+        
+        <div class="_public_paragraph js-intro-content show-animate-item">可视化编辑器，解决传统文章编辑器编辑及发布页面不一致的痛点，实时同步后台编辑与前端效果，大幅度提升内容管理效率，实现真正的所见即所得——What You See Is What You Get.</div>
+
+        <div class="_public_banner js-intro-banner js-defualt-banner show-animate-item"><img class="pic js-pic-banner clip-animate-item block-item" data-banner-src="https://cdn-isux.qq.com/upload/detail/LnNBRJOnk4yHNg03I4q3IjX6A830rWgeBjdT1b5BBcm.jpg" data-article-id="148" src="https://cdn-isux.qq.com/upload/detail/LnNBRJOnk4yHNg03I4q3IjX6A830rWgeBjdT1b5BBcm.jpg" alt=""></div>
+    
+    </section>
+
+    <div class="editable" id="editor2">
+        <!-- 正文模块 -->
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <section class="_mod_content _mod_editor">
+                
+                <div class="_public_subtitle show-animate-item js-content-subtitle" data-placeholder="Chapter Title">简介</div>
+                <div class="_public_line show-animate-item caretColor" contenteditable="false"></div>
+                <div class="_public_line_title show-animate-item js-content-title js-content-subtitle" data-placeholder="Section Title">Visual Editor</div>
+                <div class="_public_paragraph show-animate-item js-content-content" data-showbar="true" data-placeholder="Type your text"><b>Visual Editor 是一个可视化编辑器的前端框架，可以添加文字，图片，视频（腾讯视频），支持自定义模块、样式。</b></div><p class="show-animate-item">真正实现&nbsp;“所见即所得” ，后台编辑与前端呈现效果保持高度一致。让用户能够实时编辑改变排版布局，且界面功能规划简单明了、载入速度快，提供用户撰写的最佳沉浸体验，降低用户反覆确认修改的成本，提高在复杂的文章后台编辑界面中的操作效率。<br></p><div class="_public_title show-animate-item" data-placeholder="Section Title">背景</div><p class="show-animate-item">我们在使用以前的文章编辑器时，发现功能混杂、流程繁琐。像表单一样的编辑界面让用户体验极差，反复修改预览操作极大的降低编辑效率。所以，准备从根本上解决问题，在直观、美观、高效、简洁各方面提升用户体验和操作效率，实现真正的所见即所得的可视化编辑器。</p><div class="_public_title show-animate-item" data-placeholder="Section Title">功能介绍</div><p class="show-animate-item">我们从 <b>传统编辑器</b> 和 <b>可视化编辑器</b> 对比来介绍：<br></p><p class="show-animate-item"><br></p><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">丑 vs 美观</div><div class="_public_line show-animate-item"><br><br></div><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="43.01075268817204%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/X5DJO1HeN16Mg5ngSW31WzPRA51hkGyCmVAhtRg6tRa.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item"><br></p><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">抽象 vs 直观</div><div class="_public_line show-animate-item"><br><br></div><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="42.91300097751711%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/KEjcwhuv8W9TSwLGt7dPQKYk96mdJqCLp1yUT1EuBKh.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item">传统编辑器在修改编辑内容时，需要重复N次编辑预览的操作。可视化编辑器，编辑界面与预览界面保持高度一致，编辑即预览，直观的呈现前端界面效果。</p><p class="show-animate-item"><b>下图为操作步骤的简化效果</b></p><p class="show-animate-item"></p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="65.1085141903172%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/AFLByac6yg7YGa2J52yicO3tHNCZti6nIHcqX9vrZjN.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item"><br></p><p class="show-animate-item"></p><p class="show-animate-item"><b>下图为操作编辑界面的对比展示，左图为传统编辑器界面，右图为可视化编辑器界面</b></p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="39.66309341500766%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/82qNe3u48bADhwoBYzi97PXOvB42G0CvFq6gDKvNnDn.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item"><br></p><p class="show-animate-item"></p><p class="show-animate-item"><br></p><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">低效 vs 高效</div><div class="_public_line show-animate-item"><br><br></div><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="42.91300097751711%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/5iIlIuwhHaIE8gDb14PVf9J4BTCl6maqXQKebxXfM09.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item">传统编辑器工具栏置顶，且功能多余，类别混杂，如下所示：</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="10.612244897959183%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/Qwaq1pUFQC3iEdVx0XbNxqBmoiKcRGTCnxeQaxe88S6.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item">可视化编辑器提取核心功能模块，分为 <b>本文编辑</b> 和 <b>添加模块</b> 两大类，以&nbsp;<b>伴随&nbsp;</b>的方式展示工具栏：</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="60.27713625866051%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/uinhnNb1DhQNhj9f5ALSi2aODxVQKU1s5YQs1SGElue.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item">文本编辑工具栏：</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="26.487093153759822%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/RFGSiXKxn6sU1nHwhBqVu5UFCrOnQE1PAnuXiPZQWFg.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item">添加模块工具栏：</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="18.625%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/lFGODXvxsBcyAfjX37vs0JLhiYqLq3ILKKoXEjfy4TZ.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item"><br></p><p class="show-animate-item"><br></p><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">复杂 vs 简洁</div><div class="_public_line show-animate-item"><br><br></div><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="42.96875%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/DEJW8oDexP3o8953IRUqqOJC2Y5wQWnLrWZePxwlIJg.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item">传统编辑器添加视频步骤繁琐，学习成本高</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="78.68544600938966%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/3YJ1xbO1ZH5p1Hc5NPrnaho4ptzPWITBUsjwr5zb9DB.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item"><br></p><p class="show-animate-item">Visual Editor 添加视频<b>一步到位</b>，只需要上图中第一步，复制粘贴回车就搞定：</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="71.02803738317756%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/G2b3p5QUD3PXGCjXGxh9rgHnatS3dxVJTtOin5OaTUt.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item"><br></p><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">其他功能</div><div class="_public_line show-animate-item"><br><br></div><p class="show-animate-item">Visual Editor 还有其他功能，包括插入图片、插入代码、选择文章分类、填写文章其他信息等。同样也是通过伴随工具栏添加，如下：</p><p class="show-animate-item">添加图片：</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="65.18771331058021%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/cE8kikSTU9n2FhndRutVLcP1vFlvqM8bANzuahSQzjz.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item">添加代码：</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="58.84146341463414%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/DMGvHVdOVkuD8kzJRfsk61zg7hEENIdDhlQsd487VkX.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item">选择分类：</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="29.508196721311474%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/yIv8N3FFuGOz01IuTKFXhdOIodGK4yIgqsVGX28adwa.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item"><br></p><div class="_public_title show-animate-item" data-placeholder="Section Title">可扩展API</div><p class="show-animate-item">Visual Editor 开放API，提供项目复用。支持自定义模块、自定义工具栏、定制化前端界面样式、特殊属性设置、分类选项定制化、批量上传图片接口等。</p><p class="show-animate-item"><br></p><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">自定义模块 &amp; 样式</div><div class="_public_line show-animate-item"><br></div><p class="show-animate-item">可配置 <b>module </b>参数，定制化可添加的模块（不限于图片视频等），同样还可以传入class来重写每一个module的样式：</p><div class="_public_code show-animate-item" data-placeholder="Paste your code right here"><p class="show-animate-item">moduleTpl: {</p><p class="show-animate-item">   title: `&lt;div class="_public_title medium-editor-placeholder-relative" data-placeholder="Section Title"&gt;&lt;/div&gt;`,</p><p class="show-animate-item">   image: `&lt;div class="_public_pic block-item block-shadow-item"&gt;&lt;/div&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;`,</p><p class="show-animate-item">   video: `&lt;div class="_public_video block-item block-shadow-item"&gt;&lt;/div&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;`,</p><p class="show-animate-item">   code: `&lt;div class="_public_code medium-editor-placeholder-relative" data-placeholder="Paste your code right here"&gt;&lt;/div&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;`</p><p class="show-animate-item">        }</p></div><p class="show-animate-item"><br></p><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">自定义工具栏</div><div class="_public_line show-animate-item"><br></div><p class="show-animate-item">可配置 modulebar 参数，定制工具栏的内容及样式，也可以任意添加多个可添加的module icon：</p><div class="_public_code show-animate-item" data-placeholder="Paste your code right here"><p class="show-animate-item">modulebar: {</p><p class="show-animate-item">            /* Editor 是否支持显示添加模块工具栏 */</p><p class="show-animate-item">            withModuleBar: true,</p><p class="show-animate-item">            modulebarId: 'modulebar',</p><p class="show-animate-item">            classList: ['modulebar'],</p><p class="show-animate-item">            /* 用于每一个icon提供给js操作的class，对应下面moduleIcons生成的元素中 */</p><p class="show-animate-item">            moduleIconsCommonClassForJS: 'js-visual-module-icon',</p><p class="show-animate-item">            /* 添加模块的 + icon，用于控制展开收起具体的模块icon */</p><p class="show-animate-item">            addIcon: {</p><p class="show-animate-item">                classList: ['visual-add-icon'],      </p><p class="show-animate-item">                addIconClassForJS:'js-visual-add-icon',</p><p class="show-animate-item">                actionClass: 'module-icons',</p><p class="show-animate-item">                actionId: 'module-icons',</p><p class="show-animate-item">                name: 'Add Button',</p><p class="show-animate-item">                contentFA: '&lt;span class="add-icon" title="Add Module"&gt;&lt;/span&gt;'</p><p class="show-animate-item">            },</p><p class="show-animate-item">            moduleIcons:[</p><p class="show-animate-item">                /* 具体每一个模块对应的icon元素，包括class，title，moduleType，icon innerhtml */</p><p class="show-animate-item">                {</p><p class="show-animate-item">                    name: 'titlewithline',</p><p class="show-animate-item">                    classList: ['module-icon'],</p><p class="show-animate-item">                    title:'Add Title With Line',</p><p class="show-animate-item">                    /* moduleType 的值需和 【moduleTpl】 模块的 key 一一对应，详见第七点 */</p><p class="show-animate-item">                    moduleType: 'titlewithline',</p><p class="show-animate-item">                    control: false,</p><p class="show-animate-item">                    contentFA: '&lt;span class="add-titlewithline-icon"&gt;&lt;/span&gt;'</p><p class="show-animate-item">                },</p><p class="show-animate-item">                {</p><p class="show-animate-item">                    name: 'title',</p><p class="show-animate-item">                    fontsize: '28px',</p><p class="show-animate-item">                    classList: ['module-icon'],</p><p class="show-animate-item">                    title: 'Add Title',</p><p class="show-animate-item">                    moduleType: 'title',</p><p class="show-animate-item">                    control: false, </p><p class="show-animate-item">                    contentFA: '&lt;span class="add-title-icon"&gt;&lt;/span&gt;'</p><p class="show-animate-item">                },</p><p class="show-animate-item">                {</p><p class="show-animate-item">                    name: 'image',</p><p class="show-animate-item">                    classList: ['module-icon'],</p><p class="show-animate-item">                    title:'Add Image',</p><p class="show-animate-item">                    moduleType: 'image',</p><p class="show-animate-item">                    control: true,</p><p class="show-animate-item">                    contentFA: '&lt;span class="add-image-icon"&gt;&lt;/span&gt;'</p><p class="show-animate-item">                },</p><p class="show-animate-item">                {</p><p class="show-animate-item">                    name: 'video',</p><p class="show-animate-item">                    classList: ['module-icon'],</p><p class="show-animate-item">                    title:'Add Video',</p><p class="show-animate-item">                    moduleType: 'videolink',</p><p class="show-animate-item">                    control: false,</p><p class="show-animate-item">                    contentFA: '&lt;span class="add-video-icon"&gt;&lt;/span&gt;'</p><p class="show-animate-item">                },</p><p class="show-animate-item">                {</p><p class="show-animate-item">                    name: 'code',</p><p class="show-animate-item">                    classList: ['module-icon'],</p><p class="show-animate-item">                    title:'Add Code',</p><p class="show-animate-item">                    moduleType: 'code',</p><p class="show-animate-item">                    control: false,</p><p class="show-animate-item">                    contentFA: '&lt;span class="add-code-icon"&gt;&lt;/span&gt;'</p><p class="show-animate-item">                }</p><p class="show-animate-item">            ]</p><p class="show-animate-item">        }</p><p class="show-animate-item">     });</p></div><p class="show-animate-item"><br></p><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">定制化页面样式</div><div class="_public_line show-animate-item"><br><br></div><p class="show-animate-item">Visual Editor 提供的所有 API 均有默认样式，但是所有的接口可以重新配置参数，整个页面都可以重写样式，直接替换元素的 class 以及 css 文件即可：<br></p><div class="_public_code show-animate-item" data-placeholder="Paste your code right here"><p class="show-animate-item">&lt;link rel="stylesheet" href="css/medium-editor.css"&gt; &lt;!--默认文字编辑工具栏样式--&gt;</p><p class="show-animate-item">&lt;link rel="stylesheet" href="css/themes/tim.css"&gt; &lt;!--文字编辑工具栏样式可更换主题--&gt;</p><p class="show-animate-item">&lt;link rel="stylesheet" href="css/visualize.css"&gt; &lt;!--默认模块工具栏样式--&gt;</p><p class="show-animate-item">&lt;link rel="stylesheet" href="css/detail.css"&gt; &lt;!--页面定制化样式，主要通过【moduleTpl】模块传入的元素及样式决定--&gt;</p></div><p class="show-animate-item"><br></p><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">特殊属性设置</div><div class="_public_line show-animate-item"><br></div><p class="show-animate-item"><b>·&nbsp;</b>元素加上 <b><i>data-islocked = "true"</i></b>&nbsp; 属性可锁定元素，不允许删除</p><p class="show-animate-item"><b>· </b>元素加上 <b><i>data-disableenter = "true"</i></b> 属性可锁定元素，不允许换行<br></p><p class="show-animate-item"><b>· </b>元素加上 <i><b>data-placeholder =&nbsp; "Paste a Tencent Video link, and press Enter"</b></i>&nbsp; 属性可现实提示文案<br></p><p class="show-animate-item"><b>· </b>元素加上<b><i>js-visual-editor-enter-copy</i></b>&nbsp;这个class，并配合&nbsp;<b><i>data-isentercopy="true"</i></b>&nbsp; <b><i>data-islocked="true"</i></b>&nbsp; <b><i>data-disableenter="false"</i></b>，使用，则可实现为文章大标题定制的换行，有且仅可换两行，实现标题太长不方便一行展示的需求。<br></p><p class="show-animate-item"><br></p><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">其他API</div><div class="_public_line show-animate-item"><br><br></div><p class="show-animate-item">· <b><i>upload</i></b>，批量上传图片接口<br></p><p class="show-animate-item">· <b><i>category</i></b>，文章分类接口，同样可定制化传入多个分类<br></p><p class="show-animate-item">· <b style="font-style: italic;">renderbar</b>，元素布局接口，目前仅支持更换图片，后续将继续开发元素对齐方式等布局工具栏<br></p><p class="show-animate-item"><b>P.S. <i>category，renderbar&nbsp;</i></b>两个 API 同样支持定制化元素及样式。<br></p><p class="show-animate-item"><br></p><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">支持实例化多个Editor</div><div class="_public_line show-animate-item"></div><p class="show-animate-item">Visual Editor 支持同一个页面同时初始化多个 Editor，主要用于页面由两个单独模块组成，可通过配置参数定制化设置其中某一个Editor是否需要&nbsp;<b><i>modulebar&nbsp;</i></b>之类的的特殊需求。<br></p><p class="show-animate-item"><br></p><div class="_public_title show-animate-item" data-placeholder="Section Title">总结</div><p class="show-animate-item"><b>Visual Editor</b> 实时同步后台编辑与前端呈现效果，创造直观、统一的撰写体验，建立更具有规范性、更完整的内容管理架构。同时，也希望此创新技术的实现结果，能为相关项目所复用，共同提升内容管理系统的可用性及效率，营造更优质的后台编辑环境。</p><p class="show-animate-item"><br></p><p class="show-animate-item"><br></p>
+
+            </section>
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+    </div>
+
+    
+
+    <!-- 测试连接 https://v.qq.com/x/page/f0507qj9hhv.html -->
+    <!-- 测试连接 https://v.qq.com/x/page/s05065zrbps.html -->
+
+    <!-- 文章数据模块 -->
+    <section class="_mod_stat show-animate-item">
+        <div class="_stat_wrapper">
+            
+            <div class="_article_date">
+                <span class="date">JANUARY 31, 2018</span>
+            </div>
+
+            <div class="_article_stat">
+
+                <ul class="_stat_list">
+                    <li class="_stat_item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18" class="_stat_view _stat_icon">
+                            <g>
+                                <path class="view_svg" d="M19,9c0,2.5-3.5,8-9,8S1,11.5,1,9s3.5-8,9-8S19,6.5,19,9Z"/>
+                                <circle class="view_svg" cx="10" cy="9" r="3"/>
+                            </g>
+                        </svg>
+                        <span class="_views">319684</span>
+                    </li>
+                    <li class="_stat_item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18.53" class="_stat_like _stat_icon" id="js-like-0" data-id="148">
+                            <g>
+                                <path class="like_svg" d="M17.54,9.54A5,5,0,1,0,10,3,5,5,0,1,0,2.46,9.54L10,17.11Z"/>
+                            </g>
+                        </svg>
+                        <span class="_likes js-like-text">255</span>
+                    </li>
+                </ul>
+
+                <ul class="_stat_share_article js-share-list" data-title="可视化编辑器" data-desc="可视化编辑器，解决传统文章编辑器编辑及发布页面不一致的痛点，实时同步后台编辑与前端效果，大幅度提升内容管理效率，实现真正的所见即所得——What You See Is What You Get." data-pic="https://cdn-isux.qq.com/upload/detail/LnNBRJOnk4yHNg03I4q3IjX6A830rWgeBjdT1b5BBcm.jpg">
+                    <li class="share_article_item share_article_item_qzone js-china-ip" data-href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=%7Burl%7D&amp;title=%7Btitle%7D&amp;desc=&amp;summary=%7Bdesc%7D&amp;site=&amp;pics=%7Bpic%7D"></li>
+                    <li class="share_article_item share_article_item_qq js-china-ip" data-href="http://connect.qq.com/widget/shareqq/index.html?url=%7Burl%7D&amp;title=%7Btitle%7D&amp;desc=&amp;summary=%7Bdesc%7D&amp;site=isux&amp;pics=%7Bpic%7D"></li>
+                    <li class="share_article_item share_article_item_fb" data-href="https://www.facebook.com/sharer/sharer.php?u=%7Burl%7D&amp;t=%7Bdesc%7D"></li>
+                    <li class="share_article_item share_article_item_twitter" data-href="http://twitter.com/home?status=%7Bdesc%7D%20%23%7Btitle%7D%23&amp;url=%7Burl%7D&amp;pic=%7Bpic%7D&amp;desc="></li>
+                    <li class="share_article_item share_article_item_sina js-china-ip" data-href="http://service.weibo.com/share/share.php?title=%7Bdesc%7D%20%23%7Btitle%7D%23&amp;url=%7Burl%7D&amp;pic=%7Bpic%7D&amp;desc="></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作者模块 -->
+    <section class="_mod_authors show-animate-item">
+        <!-- 可以写成这个模块的 border-top -->
+        <!--<div class="_article_line"></div>-->
+        <div class="_authors_title">CONTRIBUTORS</div>
+        <ul class="_authors">
+            <li class="_author">
+                <img class="pic" src="https://isuxdesign-1251263993.file.myqcloud.com/avatars/KgxJz4Dcfj6JTs7mUn0cumQLI5jQgHCrLLNKWp1Tqjn.jpg" alt="">
+                <div class="name">sandy</div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- 相关文章推荐模块 -->
+    <section class="_mod_related show-animate-item">
+        <ul class="related-list clearfix" id="list">
+            <li class="related-item first-item" data-index='1'>
+                <a href="3d-to-h5.html" target="_blank">
+                        <img class="pic clip-animate-item pic-gray" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/564_a.jpg" />
+                        <img class="pic pic-colorful clip-animate-item" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/564_a_src.jpg" />
+
+                    
+                    <div class="_title-wrapper fade-aniamte-item">
+                        <div class="_title-flex">
+                            <h3 class="title js-article-title">3DtoH5工作流应用手册 理论篇</h3>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="related-item" data-index='2'>
+                <a href="isux-ae-play.html" target="_blank">
+                        <img class="pic clip-animate-item pic-gray" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/542_a.jpg" />
+                        <img class="pic pic-colorful clip-animate-item" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/542_a_src.jpg" />
+
+                    
+                    <div class="_title-wrapper fade-aniamte-item">
+                        <div class="_title-flex">
+                            <h3 class="title js-article-title">玩转AE丨动效设计必备指南</h3>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="related-item last-item" data-index='3'>
+                <a href="isux-optimizing-3d-model.html" target="_blank">
+                        <img class="pic clip-animate-item pic-gray" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/372_a.jpg" />
+                        <img class="pic pic-colorful clip-animate-item" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/372_a_src.jpg" />
+
+                    
+                    <div class="_title-wrapper fade-aniamte-item">
+                        <div class="_title-flex">
+                            <h3 class="title js-article-title">如何在页面极速渲染3D模型</h3>
+                        </div>
+                    </div>
+                </a>
+            </li>
+
+        
+        </ul>
+    </section>
+
+</div>
+
+<div class="share_article_scroll share_article_hide">
+    
+    <div class="_mod_stat">
+        <div class="_article_stat">
+
+            <ul class="_stat_list">
+                <li class="_stat_item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18" class="_stat_view _stat_icon">
+                        <g>
+                            <path class="view_svg" d="M19,9c0,2.5-3.5,8-9,8S1,11.5,1,9s3.5-8,9-8S19,6.5,19,9Z"/>
+                            <circle class="view_svg" cx="10" cy="9" r="3"/>
+                        </g>
+                    </svg>
+                    <span class="_views">319684</span>
+                </li>
+                <li class="_stat_item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18.53" class="_stat_like _stat_icon" id="js-like-1" data-id="148">
+                        <g>
+                            <path class="like_svg" d="M17.54,9.54A5,5,0,1,0,10,3,5,5,0,1,0,2.46,9.54L10,17.11Z"/>
+                        </g>
+                    </svg>
+                    <span class="_likes bottom-like-text">255</span>
+                </li>
+            </ul>
+
+            <ul class="_stat_share_article js-share-list" data-title="可视化编辑器" data-desc="可视化编辑器，解决传统文章编辑器编辑及发布页面不一致的痛点，实时同步后台编辑与前端效果，大幅度提升内容管理效率，实现真正的所见即所得——What You See Is What You Get." data-pic="https://cdn-isux.qq.com/upload/detail/LnNBRJOnk4yHNg03I4q3IjX6A830rWgeBjdT1b5BBcm.jpg">
+                <li class="share_article_item share_article_item_qzone" data-href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=%7Burl%7D&amp;title=%7Btitle%7D&amp;desc=&amp;summary=%7Bdesc%7D&amp;site=&amp;pics=%7Bpic%7D"></li>
+                <li class="share_article_item share_article_item_qq" data-href="http://connect.qq.com/widget/shareqq/index.html?url=%7Burl%7D&amp;title=%7Btitle%7D&amp;desc=&amp;summary=%7Bdesc%7D&amp;site=isux&amp;pics=%7Bpic%7D"></li>
+                <li class="share_article_item share_article_item_fb" data-href="https://www.facebook.com/sharer/sharer.php?u=%7Burl%7D&amp;t=%7Bdesc%7D"></li>
+                <li class="share_article_item share_article_item_sina" data-href="http://service.weibo.com/share/share.php?title=%7Bdesc%7D%20%23%7Btitle%7D%23&amp;url=%7Burl%7D&amp;pic=%7Bpic%7D&amp;desc="></li>
+            </ul>
+        </div>
+    </div>
+
+    
+</div>
+<!-- 文章详情页 -->
+
+ <div id="bottom-mask"></div>
+<div class="mask-strip"></div>
+
+<footer class="mod_site_footer" role="contentinfo">
+    <div class="_footer-prefix">
+        <div class="_inner-wrapper"></div>
+    </div>
+    <div class="_social">
+        <div class="_inner-wrapper">
+            <ul class="_social-media-links">
+                <!-- <li class="-hc -vimeo"><a href="#" title="vimeo"></a></li> -->
+                <li class="-hc -wechat">
+                    <a title="wechat">
+                        <span class="-wechat-qr">
+                            <img class="lazy" data-src="../static/images/isux_qrcode.jpg" alt="微信公众号二维码" width="230" height="230">
+                        </span>
+                    </a>
+                </li>
+                <!-- <li class="-hc -facebook"><a href="#" title="facebook"></a></li> -->
+                <li class="-hc -weibo"><a href="http://weibo.com/txisux" target="_blank" title="weibo"></a></li>
+
+                <li class="-hc -zcool">
+                    <a href="https://www.zcool.com.cn/u/1936779" target="_blank" title="zcool"></a>
+                </li>
+
+                <li class="-hc -ins">
+                    <a href="https://www.instagram.com/isux_lab" target="_blank" title="instagram"></a>
+                </li>
+
+                <li class="-hc -behance">
+                    <a href="https://www.behance.net/18485758707c20" target="_blank" title="behance"></a>
+                </li>
+
+                <li class="-hc -medium">
+                    <a href="https://medium.com/@tencent.isux" target="_blank" title="medium"></a>
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="_footer-suffix">
+        <div class="_inner-wrapper">
+            <div class="supporting-information">
+                <ul class="_footer-links"><li class="_footer-link"><a href="https://www.tencent.com/" target="_blank">TENCENT</a></li><li class="_footer-link"><a href="https://qqfamily.com" target="_blank">QQfamily</a></li><li class="_footer-link"><a href="https://ycg.qq.com/" target="_blank">YCG</a></li></ul>
+            </div>
+            <div class="copyright">Copyright © 1998 - 2025 Tencent Inc. All Rights Reserved.</div>
+        </div>
+    </div>
+</footer>
+
+
+<div class="isux-qrcode">
+	<img src="../static/images/qrcode.jpg" alt="ISUX 二维码">
+</div>
+<div class="-search hide" id="search" role="application" aria-hidden="false">
+	<div class="-search-inner">
+		<div class="-search-form">
+			<span class="-search-box">
+				<input type="search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" maxlength="100" class="-search-input" placeholder="keywords" value="" />
+				<button type="button" class="-search-reset" title="Close">&times;</button>
+			</span>
+		</div>
+		<div class="-search-result">
+			<div class="-search-result-head">
+				啥，没结果？别担心，我们为您准备了推荐的文章：
+			</div>
+			<div class="gallery -search-gallery" id="searchResult"></div>
+		</div>
+		<div class="-loading -search-loading hide">
+			<span class="-loading-icon -search-loading-icon"><i></i><i></i></span>
+		</div>
+	</div>
+</div>
+<!-- .-search -->
+<script type="text/tpl" id="itemTpl">
+<div class="gallery-item <%=?cssclass%>"<%=?dataset%>>
+	<a class="gallery-wrapper" href="<%=url%>" target="_blank">
+		<div class="gallery-pics show-search-animate-item">
+			<div class="gallery-pic gallery-pic-gray lazy clip-animate-item" data-src="<%=image%>"></div>
+			<div class="gallery-pic gallery-pic-normal lazy clip-animate-item" data-src="<%=image1x%>"></div>
+		</div>
+		<div class="gallery-info show-search-animate-item">
+			<h3 class="title" title="<%=title%>"><%=title%></h3>
+			<p class="category"><%=category_name%></p>
+			<p class="abstract"><%=abstract%></p>
+		</div>
+	</a>
+</div>
+</script>
+<script>
+var G_csrf = 'w4HAepjhX1s0mlC8acnnZ_g3Zm77HA68';
+</script>
+<script src="../static/js/lib.js"></script>
+
+<!-- 引入腾讯视频JS库 -->
+<script src="https://vm.gtimg.cn/tencentvideo/txp/js/txplayer.js"></script>
+
+<!-- 引入判断背景显示不同字体颜色的组件 -->
+<script src="../static/js/common/background-check.js"></script>
+<script>
+window.backgroundCheck && backgroundCheck.init({
+    targets: '._title-flex',
+    imgs: '.pic-gray',
+    parents: '.related-item a',
+    cssclass: '_article-light-item',
+    lazy: false
+});
+</script>
+
+<!-- 页面逻辑js -->
+<script src="../static/js/detail.js"></script>
+
+<!-- TA -->
+
+<!-- TA -->
+<!-- GA -->
+
+<!-- GA -->
+</body>
+</html>

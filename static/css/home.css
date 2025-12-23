@@ -1,0 +1,407 @@
+/* 隐藏 video play button */
+*::-webkit-media-controls-panel {
+    display: none!important;
+    -webkit-appearance: none;
+  }
+  
+  /* Old shadow dom for play button */
+  
+  *::--webkit-media-controls-play-button {
+    display: none!important;
+    -webkit-appearance: none;
+  }
+  
+  /* New shadow dom for play button */
+  
+  /* This one works */
+  
+  *::-webkit-media-controls-start-playback-button {
+    display: none!important;
+    -webkit-appearance: none;
+  }
+
+/* main content start */
+.mod_main{
+    max-width: 1260px;
+    box-sizing: border-box;
+
+    /*width: 100%;*/
+    margin: 0 auto;
+    -webkit-transition:all 1s ease-in-out;
+       -moz-transition:all 1s ease-in-out;
+        -ms-transition:all 1s ease-in-out;
+         -o-transition:all 1s ease-in-out;
+            transition:all 1s ease-in-out;
+}
+.mod_main ._article-items{
+    position: relative;
+    width: 100%;
+    font-size: 0;
+}
+.mod_main ._article-items ._article-item{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    width: 33.3333%;
+    padding-top: 100%;
+    margin: 0;
+    padding: 0;
+    border-right: 1px solid #fff;
+    margin-bottom: 1px;
+    overflow: hidden;
+}
+.inPCSafari .mod_main ._article-items ._article-item{
+    margin-bottom: 2px;
+}
+.mod_main ._article-items ._article-item .pic{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 101%;
+}
+.mod_main ._article-items ._article-item .featured-video{
+    width: 100%;
+    height: 100%;
+}
+.mod_main ._article-items ._article-item:nth-child(1){
+    width: 66.6666%;
+    padding-top: 33.3333%;
+}
+.mod_main ._article-items ._article-item:nth-child(2){
+    width: 33.3333%;
+    padding-top: 33.3333%;
+}
+
+.mod_main ._article-items ._article-item:nth-child(3){
+    float: left;
+    width: 33.3333%;
+    padding-top: 66.69%;
+    /* padding-top: 66.6666%; */
+}
+.mod_main ._article-items ._article-item:nth-child(4){
+    width: 33.3333%;
+    padding-top: 33.3333%;
+}
+.mod_main ._article-items ._article-item:nth-child(5){
+    float: left;
+    width: 66.6666%;
+    padding-top: 33.3333%;
+}
+.mod_main ._article-items ._article-item:nth-child(6){
+    width: 33.3333%;
+    padding-top: 33.3333%;
+}
+
+/* 新加入 */
+.mod_main ._article-items ._article-item:nth-child(7){
+    width: 33.3333%;
+    padding-top: 33.3333%;
+}
+
+.mod_main ._article-items ._article-item:nth-child(8){
+    width: 33.3333%;
+    padding-top: 33.3333%;
+}
+
+.mod_main ._article-items ._article-item:nth-child(9){
+    width: 33.3333%;
+    padding-top: 33.3333%;
+}
+/* end 新加入 */
+
+
+.mod_main ._article-items ._article-item:nth-child(10){
+    float: right;
+    width: 33.3333%;
+    padding-top: calc(33.3333%);
+    /* left: -1px; */
+}
+.mod_main ._article-items ._article-item:nth-child(11){
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 33.3333%;
+    padding-top: 33.3333%;
+    right: 1px;
+}
+/* 大广告位 */
+.mod_main ._article-items ._article-item:nth-child(12){
+    width: 66.6666%;
+    padding-top: 66.6666%;
+}
+.mod_main ._article-items ._article-item ._title-wrapper{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 28px;
+    /* opacity: 0; */
+}
+
+.mod_main ._article-items ._article-item ._title-wrapper ._title-flex{
+    display: flex;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    width: 320px;
+}
+.mod_main ._article-items ._article-item ._title-wrapper ._title-flex .title{
+    font-family: Gotham-Book;
+    font-size: 20px;
+    line-height: 1.4;
+    font-weight: normal;
+    padding: 20px 0;
+    width: 320px;
+    max-width: 320px;
+    color: #000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition:all .3s ease;
+}
+.mod_main ._article-items ._article-item ._title-wrapper ._title-flex .tag{
+    font-family: Gotham-Medium;
+    font-size: 14px;
+    color: #000;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 1;
+    width: 140px;
+    padding: 15px 0 30px;
+    border-top: 2px solid #000;
+    transition:all .3s ease;
+}
+
+.mod_main ._article-items ._article-light-item ._title-wrapper ._title-flex .title{
+    color: #FFF;
+}
+.mod_main ._article-items ._article-light-item ._title-wrapper ._title-flex .tag{
+    border-top-color:#FFF;
+    color: #FFF;
+}
+.mod_main ._article-items .dark-to-light ._title-wrapper ._title-flex .title{
+    color:#000;
+}
+.mod_main ._article-items .dark-to-light ._title-wrapper ._title-flex .tag{
+    border-top-color:#000;
+    color: #000;
+}
+.mod_main ._article-items .dark-to-light:hover ._title-wrapper ._title-flex .title{
+    color: #FFF;
+}
+.mod_main ._article-items .dark-to-light:hover ._title-wrapper ._title-flex .tag{
+    border-top-color:#FFF;
+    color: #FFF;
+}
+
+.title-white-force{
+    color: #fff !important;
+}
+
+@media screen and (max-width: 1300px){
+    .mod_main{
+        padding: 0 20px;
+    }
+}
+
+@media screen and (min-width: 570px) and (max-width: 700px){
+    .mod_main ._article-items ._article-item ._title-wrapper ._title-flex{
+        width: 240px;
+    }
+
+    .mod_main ._article-items ._article-item ._title-wrapper ._title-flex .title{
+        font-size: 24px;
+        max-width: none;
+        width: 100%;
+    }
+
+    .mod_main ._article-items ._article-item ._title-wrapper ._title-flex .tag{
+        padding-bottom: 20px;
+    }
+
+}
+
+@media screen and (min-width: 414px) and (max-width: 569px){
+    .mod_main ._article-items ._article-item ._title-wrapper ._title-flex{
+        width: 187px;
+    }
+
+    .mod_main ._article-items ._article-item ._title-wrapper ._title-flex .title{
+        font-size: 18px;
+        max-width: none;
+        width: 100%;
+    }
+
+    .mod_main ._article-items ._article-item ._title-wrapper ._title-flex .tag{
+        padding-bottom: 15px;
+        padding-top: 10px;
+    }
+
+}
+
+
+/* 2 column start*/
+@media screen and (min-width:414px) and (max-width:1023px){
+    .mod_main{
+        /*max-width: 840px;*/
+        width: 100%;
+        margin: 0 auto;
+    }
+    .mod_main ._article-items ._article-item:nth-child(1){
+        width: 100%;
+        padding-top: 50%;
+    }
+
+    .mod_main ._article-items ._article-item:nth-child(2){
+        width: 50%;
+        padding-top: 50%;
+    }
+    .mod_main ._article-items ._article-item:nth-child(3){
+        float: right;
+        width: 50%;
+        padding-top: calc(100% + 1px);
+    }
+    .mod_main ._article-items ._article-item:nth-child(4){
+        float:left;
+        width: 50%;
+        padding-top: 50%;
+    }
+    .mod_main ._article-items ._article-item:nth-child(5){
+        float: none;
+        width: 100%;
+        padding-top: 50%;
+    }
+
+    /* .mod_main ._article-items ._article-item:nth-child(6){
+        width: 33.33%;
+        padding-top: 33.33%;
+    }
+    .mod_main ._article-items ._article-item:nth-child(7){
+        width: 33.33%;
+        padding-top: 33.33%;
+    }
+    .mod_main ._article-items ._article-item:nth-child(8){
+        width: 33.33%;
+        padding-top: 33.33%;
+    } */
+
+    
+    .mod_main ._article-items ._article-item:nth-child(9){
+        /* float: left; */
+        width: 50%;
+        padding-top: 50%;
+        left: 0;
+    }
+    .mod_main ._article-items ._article-item:nth-child(10){
+        float: none;
+        width: 50%;
+        padding-top: 50%;
+    }
+    .mod_main ._article-items ._article-item:nth-child(11){
+        position: relative;
+        bottom: auto;
+        right: auto;
+        width: 100%;
+        padding-top: 50%;
+    }
+    /* 大广告位 */
+    .mod_main ._article-items ._article-item:nth-child(12){
+        float: none;
+        width: 100%;
+        padding-top: 100%;
+    }
+}
+
+/* 2 column end*/
+
+/* only 1024px screen start */
+/* diffrent font-size */
+@media screen and (width:1024px){
+    
+}
+/* only 1024px screen end */
+
+/* 1 column start*/
+@media screen and (min-width: 320px) and (max-width: 414px){
+    .mod-main{
+        max-width: 414px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .mod_main ._article-items ._article-item:nth-child(1),
+    .mod_main ._article-items ._article-item:nth-child(2),
+    .mod_main ._article-items ._article-item:nth-child(3),
+    .mod_main ._article-items ._article-item:nth-child(4),
+    .mod_main ._article-items ._article-item:nth-child(5),
+    .mod_main ._article-items ._article-item:nth-child(6),
+    .mod_main ._article-items ._article-item:nth-child(7),
+    .mod_main ._article-items ._article-item:nth-child(8),
+    .mod_main ._article-items ._article-item:nth-child(9),
+    .mod_main ._article-items ._article-item:nth-child(10),
+    .mod_main ._article-items ._article-item:nth-child(11),
+    .mod_main ._article-items ._article-item:nth-child(12){
+        width: 100%;
+        padding-top: 100%;
+        border-right: none;
+        float: none;
+        left: 0px;
+        top: 0px;
+    }
+    .mod_main ._article-items ._article-item .pic {
+        width: 100%;
+    }
+    .mod_main ._article-items ._article-item:nth-child(11){
+        position: relative;
+    }
+
+    .mod_main ._article-items ._article-item ._title-wrapper{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+    .mod_main ._article-items ._article-item ._title-wrapper ._title-flex .title{
+        font-size: 18px;
+        padding: 20px 0;
+    }
+    .mod_main ._article-items ._article-item ._title-wrapper ._title-flex .tag{
+        font-size: 12px;
+        letter-spacing: 2px;
+        width: 90px;
+        padding: 10px 0 20px;
+    }
+}
+/* 1 column end*/
+
+
+
+/* main content end */
+
+/* animation */
+._article-item .pic{
+    transition: 
+        clip 0.4s 0.2s cubic-bezier(0,.3,.6,1),
+        transform 0.4s 0.2s ease,
+        opacity 0.4s 0.2s ease, 
+        -webkit-transform 0.4s 0.2s ease,
+        -webkit-clip 0.4s 0.2s cubic-bezier(0,.3,.6,1);
+}
+._article-item:hover .pic{
+    transform: scale(1.05);
+}    
+.pic-colorful{opacity:0;}
+._article-item:hover .pic-colorful{
+    opacity: 1;
+}
+._article-item:active .pic-colorful{
+    opacity: 1;
+}
+/* mosaic 效果 bugfix */
+.mod_main .mosaic i{
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    box-sizing: border-box;
+}

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+<meta charset="utf-8">
+<title>你离高效制作动画只差一篇文章的距离 - Tencent ISUX Design</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="theme-color" content="#000000">
+<link rel="mask-icon" href="../static/images/favicon.svg" color="#FFFFFF">
+<link rel="shortcut icon" href="../static/images/favicon.ico" type="image/x-icon">
+<link href="../static/css/base.css" rel="stylesheet">
+<script type="text/javascript" src="https://js.aq.qq.com/js/aq_common.js"></script>
+
+<meta name="keywords" content="动画,createjs,animate,flash,高效">
+<meta name="description" content="看完本文，前端能快速开发一些H5动画，设计师也能高效地制作出合自己心意的动画来让别人高保真还原，希望能给大家带来一点帮助。">
+
+<!-- 社交分享 -->
+<meta itemprop="name" content="你离高效制作动画只差一篇文章的距离" />
+<meta itemprop="description" content="看完本文，前端能快速开发一些H5动画，设计师也能高效地制作出合自己心意的动画来让别人高保真还原，希望能给大家带来一点帮助。" />
+<meta itemprop="image" content="https://cdn-isux.qq.com/upload/detail/vnVCvuxS3FH7yrhJda71MFXl4pQoWnc2IWENUgkQqBp.jpg" />
+<!-- 社交分享 -->
+
+<!-- Facebook Open Graph -->
+<meta property="fb:app_id" content="137155036704975" />
+<meta property="og:url" content="https://isux.tencent.com/articles/efficient-animation.html" />
+<meta property="og:title" content="你离高效制作动画只差一篇文章的距离" />
+<meta property="og:site_name" content="Tencent ISUX Design" />
+<meta property="og:description" content="看完本文，前端能快速开发一些H5动画，设计师也能高效地制作出合自己心意的动画来让别人高保真还原，希望能给大家带来一点帮助。" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://cdn-isux.qq.com/upload/detail/vnVCvuxS3FH7yrhJda71MFXl4pQoWnc2IWENUgkQqBp.jpg" />
+<meta property="og:locale" content="en_us" />
+<!-- Facebook Open Graph -->
+
+<!-- home css file -->
+<link href="../static/css/detail.css" rel="stylesheet">
+<!-- home css file -->
+
+</head>
+<body>
+<!-- 移动端的结构，要单独写html，才可以在header下面滑出 -->
+<div class="_m-nav-wrapper">
+    <ul class="_nav-items">
+            <li class="_nav-item active">
+                <a href="index.html">ARTICLES</a>
+            </li>
+            <li class="_nav-item">
+                <a href="../brands/index.html">BRANDS</a>
+            </li>
+            <li class="_nav-item">
+                <a href="../resources/index.html">RESOURCES</a>
+            </li>
+            <li class="_nav-item">
+                <a href="../careers/index.html">CAREERS</a>
+            </li>
+
+        <!-- 移动端的搜索按钮，pc的时候为隐藏状态，功能跟._nav-search一样 -->
+        <div class="nav-item -m-search">
+            <a href="#/search/" data-action="toggle" data-args="body" data-cssclass="xxx"></a>
+        </div>
+    </ul>
+</div>
+
+<header>
+    <div class="_header-wrapper">
+        <nav id="navigator" class="mod_site_nav nav-animate-item js-nav-state">
+            <div class="_nav-logo">
+                <a href="../index.html" class="_nav-flower" ></a>
+                <!-- <a href="/" class="js-nav-isux _nav-isux"></a> -->
+            </div>
+            <!-- pc端的结构 -->
+            <div class="_nav-wrapper">
+                <ul class="_nav-items">
+                        <li class="_nav-item active">
+                            <a href="index.html">ARTICLES</a>
+                        </li>
+                        <li class="_nav-item">
+                            <a href="../brands/index.html">BRANDS</a>
+                        </li>
+                        <li class="_nav-item">
+                            <a href="../resources/index.html">RESOURCES</a>
+                        </li>
+                        <li class="_nav-item">
+                            <a href="../careers/index.html">CAREERS</a>
+                        </li>
+                    <!-- 移动端的搜索按钮，pc的时候为隐藏状态，功能跟._nav-search一样 -->
+                    <div class="nav-item -m-search">
+                        <a href="#/search/" data-action="toggle" data-args="body" data-cssclass="xxx"></a>
+                    </div>
+                </ul>
+            </div>
+
+            <!-- pc端的搜索按钮，移动端时为隐藏状态 -->
+            <div class="_nav-search">
+                <a href="#/search/" data-action="toggle" data-args="body" data-cssclass="xxx"></a>
+            </div>
+
+            <!-- 移动端的菜单list按钮，pc的时候为隐藏状态，在列表icon和close-icon之间切换 -->
+            <div class="_m-nav-list" data-cssclass="_m-nav-close">
+                <a href="#/list/" data-action="toggle" data-args="body" class="lines js-m-navlist">
+                    <span class="line first-line"></span>
+                    <span class="line second-line"></span>
+                    <span class="line third-line"></span>
+                </a>
+            </div>
+
+        </nav>
+    </div>
+</header>
+<div class="_fake-header"></div>
+<!-- 文章详情页 -->
+<div class="_main_content">
+    <!-- 前言模块 -->
+    <section class="_mod_introduce _mod_editor js-mod-introduce">
+
+        <div class="_introduce_title_wrapper show-animate-item">
+            <div class="_article_title_wrapper">
+                <div class="_introduce_title js-intro-title">你离高效制作动画只差一篇文章的距离</div>
+            </div>
+            <div class="_public_line caretColor" ></div>
+            <div class="_introduce_tag js-intro-tag" >TECH</div>
+        </div>
+        
+        <div class="_public_paragraph js-intro-content show-animate-item">看完本文，前端能快速开发一些H5动画，设计师也能高效地制作出合自己心意的动画来让别人高保真还原，希望能给大家带来一点帮助。</div>
+
+        <div class="_public_banner js-intro-banner js-defualt-banner show-animate-item"><img class="pic js-pic-banner clip-animate-item block-item" data-banner-src="https://cdn-isux.qq.com/upload/detail/vnVCvuxS3FH7yrhJda71MFXl4pQoWnc2IWENUgkQqBp.jpg" data-article-id="169" src="https://cdn-isux.qq.com/upload/detail/vnVCvuxS3FH7yrhJda71MFXl4pQoWnc2IWENUgkQqBp.jpg" alt=""></div>
+    
+    </section>
+
+    <div class="editable" id="editor2">
+        <!-- 正文模块 -->
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            <section class="_mod_content _mod_editor">
+                
+                <div class="_public_subtitle show-animate-item js-content-subtitle" data-placeholder="Chapter Title">前言</div>
+                <div class="_public_line show-animate-item caretColor" contenteditable="false"></div><div class="_public_paragraph show-animate-item js-content-content" data-showbar="true" data-placeholder="Type your text">说起动画H5，作为一个前端，可谓是“又爱又恨”。爱的是加上动画动效后H5会变得生动有趣，吸引力Max；恨的是做动画时都是一边在脑海中yy效果，一边用css、js代码模拟出来，既低效又不直观，正所谓“产品一句话，设计一根线，重构一身汗”。庆幸的是，你现在看到了这篇文章了，我将结合实例来介绍一下Adobe Animate CC如何高效直观地实现动画效果，并指出一些2018版本新特性。<br></div><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="31%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/EvFJNx8mfx4iOiznCE1lBCHv771AhQv7vppeCloqyRf.jpg" class="pic block-item clip-animate-item"></div><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title"><br></div><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">好戏来了</div><div class="_public_line show-animate-item"><br></div><p class="show-animate-item">首先我们先来看一个动画，大家估一下这个H5需要做多久时间？ 答案是一天。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="37.75%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/Iq8QjQs6lC1ncM3WZlnVnqPYJxYIWow3bjYacrcHWuS.jpg" class="pic block-item clip-animate-item"></div><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="22.5%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/q8kXgF43vtlPWcstShiCcQpoWzCrmY3vF58ZecDvBwI.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item">能这么快完成这个h5，靠的是可视化动画制作软件Adobe Animate CC。Adobe Animate CC 前身是Adobe FlashProfessional CC，由于H5的出现，很多以前需要用flash才能实现的动画现在也可以用H5来实现了，另外flash一直以来备受不安全的诟病，使得业界越来越排斥flash，例如iphone上的网页上就不能播放flash。Adobe心想不能就此没落啊，于是这个软件就顺势转型，在维持原有 Flash 开发工具基础上，新增制作H5动画功能。对于原flash开发人员来说可以轻松转型，对于新手来说，这个软件也比较容易上手。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="70.32640949554896%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/4sw9IIEYMHziSNr3wKiuwOcEqfNB4PTYwT0pb5oveio.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item">在介绍如何做动画之前，我们先来熟悉一下软件的界面：</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="72.80898876404494%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/OO5Q9kzntDDs7AjmhKVwpWAi0Fhi4V9o2L0FEutYC2H.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item">界面左上方是动画编辑区，区域里有一个舞台，就是我们最终可以看到的动画区域，超出舞台的内容将不会看到。<br></p><p class="show-animate-item">右上方是工具栏，大部分都和photoshop的工具挺相似的，在这就先不详细展开了。工具栏左边有个可调节数值的属性面板，例如目前展示了选中的黄色小圈的位置、宽高等属性。<br></p><p class="show-animate-item">左下方是时间轴编辑区。动画之所以能动，就是我们指定了它在什么时间点上显示什么画面。时间轴里有很多层，上面的层将会盖住下面的层。<br></p><p class="show-animate-item">右下角我拉了一个代码编辑面板，常用于通过代码控制动画的播放和暂停，编写点击物体后的交互逻辑等。</p><p class="show-animate-item">接下来还有几个概念需要先了解一下：<br></p><div class="_public_title show-animate-item" data-placeholder="Section Title">1.关键帧</div><p class="show-animate-item">关键帧用于编辑此刻的动画状态，以下图为例，我们在第10帧添加了一个关键帧，并调整了图形的位置、大小、旋转角度，播放时会看到图形在前9帧都不动，而到了关键帧时就立刻变成了新调整的状态。这可以理解为css3的keyframes里的某个百分比里的状态。<br></p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="67.34848484848484%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/Gpoa85rX3X074OqXHrssQk8jtyi1fVYAALkyVGUpoWr.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item">我们可以在两个关键帧之间添加动作补间，这样图片就会随着时间从初始状态变化到结束状态。<br></p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="83.88829215896885%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/IraW0qPaAJ4kihXKrSrr8Bj54aVVZnyp8EKFKU73mPo.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item">我们还可以在两个形状之间添加形状补间，使得他们自然地进行形状变化。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="59.256449165402124%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/PbuKt1H5v5pUtxb6KkTWdxIPrHZkXv2taEmiXYep1Pv.jpg" class="pic block-item clip-animate-item"></div><div class="_public_title show-animate-item" data-placeholder="Section Title">2.图形graphic和影片剪辑movie clip</div><p class="show-animate-item">这两类元件在制作动画时会经常打交道，这个需要了解清楚。（敲黑板！！！）<br></p><p class="show-animate-item">当我们将图片拖到舞台上时，图片只是一个位图，并没有很多诸如创建补间动画、设置透明度等编辑功能。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="41.578148710166914%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/7r14Xat9S3uQcgl3foKqESx9JULC3YLFYmDNNY6f3GY.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item">而当它转换为图片元件后，就有了上述的功能了。实际上，这是在图片外包了一层，如果双击图片元件，会进入元件内部，看到转换前的图片。在前端开发中，这相当于新建了一个多功能的组件并将图片赋值到里面。<br></p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="44.46130500758726%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/JdbrDW1Posrk5PVaOl3QmS1keWCeNik2Fpyphqmzen4.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item">而影片剪辑就是一个可动的图形元件，它有自己的时间轴。例如下图的气泡动画，就是一个影片剪辑。<br></p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="77.74227902023429%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/obmvxoICifGVEwBoKGoXO4qD7FsSsGICV4aprnZYo5j.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item">元件可以复用，例如在某个画面需要很多气泡，只需要将气泡元件放置多个到舞台上便能实现。通过双击元件对里面的画面进行编辑，将同时改变所有其他该元件的实例的画面。<br></p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="77.74227902023429%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/IK1otu8FtdQweyPXhoPaRj6szWxqm8vvvAGVyFa0OUl.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item">一般来说，添加进来的图片都应该转换为图形元件，如果该图形元件要动，就再转换为影片剪辑。在结构上，相当于影片剪辑里包了一个图形元件，图形元件再包了一个图片。<br></p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="56.986729117876656%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/puVoBIsSMrxiyfULKHfKYegEGB5Os3cMmrDCia5nvIf.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item">好，掌握了以上的基础知识，接下来的内容就比较容易理解了。那我就开始以这个H5动画为例，介绍一下部分动画的制作吧。<br></p><p class="show-animate-item"><br></p><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">实例示范&nbsp;</div><div class="_public_line show-animate-item"><br></div><div class="_public_line_title show-animate-item" data-placeholder="Section Title">吊下来的蜘蛛：</div><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="42.125%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/tIy6ezyyPX132QYZ0NVxKQ8MuqWuYf6MKNg5YfDvds1.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item">这是一个位移动画，我们在开始位置和结束位置将蜘蛛图形摆放好，再添加一个运动渐变就行了。<br></p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="71.79226069246437%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/XZE0cEMArPJD61jInBuIGMxzGBrQoN4Ix1cyS6hwWNf.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item">我们看到例子里蜘蛛的下落有一个duang一下的弹簧效果，这个在补间里设置一下缓动函数就行了。常用缓动函数的选择是2018版本新增的，个人感觉十分实用。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="42.039355992844364%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/pSCVngbqQ4NDNlnADEmyp8K59Ixo6oXz24PJzHqNvuy.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item">在H5里，点击蜘蛛后会继续播放动画，这个点击事件可以让软件自动生成代码。选择蜘蛛图形，在代码面板的事件里双击需要的事件，软件便会立刻生成绑定事件。<br></p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="72.77566539923954%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/wq3tuegtoLPHK21ioRrVxD1B1jjTU8QNeAFdzQPxxKs.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item">我们需要写的只有一句：this.play();<br></p><p class="show-animate-item">关于要学习的代码，使用频率最多的就是这几句：<br></p><div class="_public_code show-animate-item" data-placeholder="Paste your code right here"><p class="show-animate-item">//播放</p><p class="show-animate-item">this.[parent.]play();</p><p class="show-animate-item">//暂停</p><p class="show-animate-item">this.[parent.]stop();</p><p class="show-animate-item">//跳到第num帧然后播放</p><p class="show-animate-item">this.[parent.]gotoAndPlay(num);</p><p class="show-animate-item">//跳到第num帧然后暂停<br></p><p class="show-animate-item">this.[parent.]gotoAndStop(num);</p></div><p class="show-animate-item">大部分的动画内容都可以看作是位移、缩放、旋转的运动渐变，因此只要掌握了这几个操作，恭喜你已经可以胜任一些基本动画了。<br></p><div class="_public_title show-animate-item" data-placeholder="Section Title">彩色场景的转换：</div><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="76.625%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/8pvUsHR1vP41bKA3YS3DV8uRAPNUrlStExjojr5MHTk.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item">这儿主要使用了遮罩和形状渐变。首先在彩色场景图层上面新建一个遮罩层，然后在遮罩层做一个圆形图案逐渐放大的形状渐变就行了。&nbsp;<br></p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="73.18181818181819%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/A8nBuJT4uJXsPJrntqJBnAkbD6p4TtQaIhGgUB0uEpA.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item">遮罩在这个H5动画里用得比较多，仔细观察，会发现开始的打字效果、红包下落至消失不见那一刻、在沸腾的水中上下窜动的红包、伸舌头等地方都用上了遮罩效果。</p><div class="_public_title show-animate-item" data-placeholder="Section Title">气泡效果的实现：</div><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="23%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/Mr2pEdtIQIN77h13m4CHoSjwd2hzjgScaILU6JdpeB3.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item">这儿主要做了一个气泡放大然后消失不见的动画，需要注意的是要将放大的准心往下移，这样才符合实际生活。在气泡最大化后，需要多插上一段空白关键帧，表示气泡爆破后的一小段空白期。<br></p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="51.42857142857142%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/Xiw7vzDn123n8gfBWZhilUDZpGyBRjECqN6NGAjUDW1.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item">画面上有多个气泡，我是用前面说的复用元件的方法去实现的，此外需再调整各个元件实例的位置和大小，以模拟实际气泡的不规则性。<br></p><p class="show-animate-item">为了让气泡整体看起来沸腾得更自然，我给各个元件实例命了名，并用一个随机函数控制元件动画的播放。<br></p><div class="_public_code show-animate-item" data-placeholder="Paste your code right here"><p class="show-animate-item">function bubbleAni(){</p><p class="show-animate-item">	//这次将会有num个气泡随机冒出</p><p class="show-animate-item">	var num = parseInt(Math.random()*7);</p><p class="show-animate-item">	for(var i=0;i&lt;num;i++){</p><p class="show-animate-item">		var target = "bubble"+parseInt(Math.random()*8+1);</p><p class="show-animate-item">		var nextTime = parseInt(Math.random()*100);</p><p class="show-animate-item">		setTimeout(function(){</p><p class="show-animate-item">			_this[target].play();</p><p class="show-animate-item">		},nextTime);</p><p class="show-animate-item">	}</p><p class="show-animate-item">	//下一次的冒泡时间</p><p class="show-animate-item">	var nextTime2 = parseInt(Math.random()*200);</p><p class="show-animate-item">	setTimeout(function(){</p><p class="show-animate-item">		bubbleAni();</p><p class="show-animate-item">	},nextTime2);</p><p class="show-animate-item">}</p><p class="show-animate-item">bubbleAni();</p></div><p class="show-animate-item"><br></p><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">测试动画</div><div class="_public_line show-animate-item"><span style="text-align: justify; background-color: rgb(255, 255, 255);"><br></span></div><p class="show-animate-item"><span style="text-align: justify; background-color: rgb(255, 255, 255);">做动画的过程中，我们可以通过菜单栏的control-&gt;Test将动画放到浏览器里看效果。通过调试生成的h5，我们可以发现Animate CC是在canvas上通过createjs引擎绘制动画的。关于createjs，大家可以看看其</span><a href="http://www.createjs.cc/" style="text-align: justify; background-color: rgb(255, 255, 255);">中文社区</a><span style="text-align: justify; background-color: rgb(255, 255, 255);"> 、或者</span><a href="http://www.ajexoop.com/wordpress/" style="text-align: justify; background-color: rgb(255, 255, 255);">ajex的博客</a><span style="text-align: justify; background-color: rgb(255, 255, 255);">来了解更多。</span></p><div class="_public_line_title show-animate-item" data-placeholder="Section Title"></div><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="83.43265792610251%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/yrHlKkf2aR2INBxcN11RdVA6sDAbM2kwk15cGir72zb.jpg" class="pic block-item clip-animate-item"></div><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">发布动画</div><div class="_public_line show-animate-item"><br><br></div><p class="show-animate-item">完成动画后，就是将动画发布成网页了。通过file-&gt;publish就可以发布，软件会在动画源文件所在目录导出html、js、css等资源文件。要查看导出效果，可以直接双击html打开，但遇到点击事件时会报跨域之类的安全错误。要解决这个问题，只要将所有文件放在服务器里再访问就可以了。<br></p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="23.38568935427574%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/q0PtTVt0YGvnDAta95pt2KrdeJZs8Afo1XVbyEq76Wj.jpg" class="pic block-item clip-animate-item"></div><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">性能优化</div><div class="_public_line show-animate-item"><br><br></div><p class="show-animate-item">当我们在电脑上辛辛苦苦地做完动画后，看着电脑浏览器上自己做出来的赏心悦目的动画，心里的成就感不禁冉冉上升。接着再当你满心欢喜地拿起安卓手机欣赏动画时，顿时就晕了：为什么会卡得那么惨不忍睹？莫急莫急，你该再次庆幸现在看到了这篇文章，让我慢慢道来，给你一些优化建议吧。<br></p><p class="show-animate-item">在Animate CC里制作动画是有fps的概念的，即每秒播放多少帧。在js里我们一般怎样控制帧率呢？没错，就是setTimeout或者setInterval，也正是这个原因，动画在安卓机里播放卡顿。解决办法就是换用requestanimationframe播放，在fnStartAnimation方法里添加createjs.Ticker.timingMode = createjs.Ticker.RAF。<br></p><div class="_public_code show-animate-item" data-placeholder="Paste your code right here"><p class="show-animate-item">fnStartAnimation = function() {</p><p class="show-animate-item">    createjs.Ticker.setFPS(lib.properties.fps);</p><p class="show-animate-item">    createjs.Ticker.addEventListener("tick", stage);</p><p class="show-animate-item">    //默认的设置</p><p class="show-animate-item">    //createjs.Ticker.timingMode = createjs.Ticker.RAF_SYNCHED;</p><p class="show-animate-item">    //建议设置</p><p class="show-animate-item">    createjs.Ticker.timingMode = createjs.Ticker.RAF;		</p><p class="show-animate-item">    customHandleComplete();</p><p class="show-animate-item">}	</p></div><p class="show-animate-item">由于requestanimationframe动画一般是60帧每秒，因此只要先将fps调成60再开始制作动画就可以了。Animate CC 2018 在时间轴上新增了秒数的显示，大大方便了制作动画时的时间考虑，不用再像以前那样用当前帧除以fps来估算目前在什么时间点。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="56.59090909090909%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/Wd3CiyFvLTTj75aSpNE17TOZ3WSSD054rSCePS35k7s.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item">在一次动画测试中，我发现制作的动画在手机上越来越卡。使用chrome的memory检测后，发现了有内存泄露，且上升速度很快。在查阅了相关资料后，我认为一些默认的导出设置不太合理，例如雪碧图尺寸太大，竟然有81928192。于是我将雪碧图改为1024*1024（当位置不够放时，会自动创建新的雪碧图来存放，所以也不用担心），并更改了雪碧图按jpg和png分开放、不导出无用的资源等设置，具体改为下图：</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="109.125%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/eW059rTgHA3JHjyBSw6r13C6y9JHd4To68lLd4d3ojf.jpg" class="pic block-item clip-animate-item"></div><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="65.625%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/aA8GIe1Ug7KURzEn2yr5Y4i22527oeLgiigds4DvCp1.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item">经调整后，内存占用没有快速攀升，而是比较稳定了，占用内存更小了，动画也不会越来越卡了，优化成功！</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="62.375%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/AHrElR8FjdzLCSekpCV433tJlkYHpuf4WIduPLfxj4n.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item">ajex的博客有一篇<a href="http://www.ajexoop.com/wordpress/2016/05/createjs%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.html">《createjs性能优化》</a>，大家可以看看。不过以我目前做动画的经验来看，做了上面2点优化方案，就可以比较流畅了。<br></p><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title"><br></div><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">总结</div><div class="_public_line show-animate-item"><br><br></div><p class="show-animate-item">不知大家看完后是否对这个制作动画的方式产生兴趣呢？本文首先通过指出大家写代码做动画时的痛点和难点，提出了使用Animate CC来高效直观地制作动画的方案，接着结合实例对一些常用的动画效果进行制作示范，并提供一些实用的优化建议。希望大家看完后能比较清晰地了解和入门这个软件，给大家带来一些帮助，friend黎噶嘛。<span style="font-family: Gotham-Medium; font-size: 18px; letter-spacing: 2px; text-align: left;"></span></p>
+
+            </section>
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+    </div>
+
+    
+
+    <!-- 测试连接 https://v.qq.com/x/page/f0507qj9hhv.html -->
+    <!-- 测试连接 https://v.qq.com/x/page/s05065zrbps.html -->
+
+    <!-- 文章数据模块 -->
+    <section class="_mod_stat show-animate-item">
+        <div class="_stat_wrapper">
+            
+            <div class="_article_date">
+                <span class="date">MARCH 29, 2018</span>
+            </div>
+
+            <div class="_article_stat">
+
+                <ul class="_stat_list">
+                    <li class="_stat_item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18" class="_stat_view _stat_icon">
+                            <g>
+                                <path class="view_svg" d="M19,9c0,2.5-3.5,8-9,8S1,11.5,1,9s3.5-8,9-8S19,6.5,19,9Z"/>
+                                <circle class="view_svg" cx="10" cy="9" r="3"/>
+                            </g>
+                        </svg>
+                        <span class="_views">125853</span>
+                    </li>
+                    <li class="_stat_item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18.53" class="_stat_like _stat_icon" id="js-like-0" data-id="169">
+                            <g>
+                                <path class="like_svg" d="M17.54,9.54A5,5,0,1,0,10,3,5,5,0,1,0,2.46,9.54L10,17.11Z"/>
+                            </g>
+                        </svg>
+                        <span class="_likes js-like-text">236</span>
+                    </li>
+                </ul>
+
+                <ul class="_stat_share_article js-share-list" data-title="你离高效制作动画只差一篇文章的距离" data-desc="看完本文，前端能快速开发一些H5动画，设计师也能高效地制作出合自己心意的动画来让别人高保真还原，希望能给大家带来一点帮助。" data-pic="https://cdn-isux.qq.com/upload/detail/vnVCvuxS3FH7yrhJda71MFXl4pQoWnc2IWENUgkQqBp.jpg">
+                    <li class="share_article_item share_article_item_qzone js-china-ip" data-href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=%7Burl%7D&amp;title=%7Btitle%7D&amp;desc=&amp;summary=%7Bdesc%7D&amp;site=&amp;pics=%7Bpic%7D"></li>
+                    <li class="share_article_item share_article_item_qq js-china-ip" data-href="http://connect.qq.com/widget/shareqq/index.html?url=%7Burl%7D&amp;title=%7Btitle%7D&amp;desc=&amp;summary=%7Bdesc%7D&amp;site=isux&amp;pics=%7Bpic%7D"></li>
+                    <li class="share_article_item share_article_item_fb" data-href="https://www.facebook.com/sharer/sharer.php?u=%7Burl%7D&amp;t=%7Bdesc%7D"></li>
+                    <li class="share_article_item share_article_item_twitter" data-href="http://twitter.com/home?status=%7Bdesc%7D%20%23%7Btitle%7D%23&amp;url=%7Burl%7D&amp;pic=%7Bpic%7D&amp;desc="></li>
+                    <li class="share_article_item share_article_item_sina js-china-ip" data-href="http://service.weibo.com/share/share.php?title=%7Bdesc%7D%20%23%7Btitle%7D%23&amp;url=%7Burl%7D&amp;pic=%7Bpic%7D&amp;desc="></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作者模块 -->
+    <section class="_mod_authors show-animate-item">
+        <!-- 可以写成这个模块的 border-top -->
+        <!--<div class="_article_line"></div>-->
+        <div class="_authors_title">CONTRIBUTORS</div>
+        <ul class="_authors">
+            <li class="_author">
+                <img class="pic" src="https://isuxdesign-1251263993.file.myqcloud.com/avatars/IY3sP5urnYAJMu7BNmKSiyjRUjmHwN0F6Rqaj0bDhKN.jpg" alt="">
+                <div class="name">大熊</div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- 相关文章推荐模块 -->
+    <section class="_mod_related show-animate-item">
+        <ul class="related-list clearfix" id="list">
+            <li class="related-item first-item" data-index='1'>
+                <a href="3d-to-h5.html" target="_blank">
+                        <img class="pic clip-animate-item pic-gray" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/564_a.jpg" />
+                        <img class="pic pic-colorful clip-animate-item" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/564_a_src.jpg" />
+
+                    
+                    <div class="_title-wrapper fade-aniamte-item">
+                        <div class="_title-flex">
+                            <h3 class="title js-article-title">3DtoH5工作流应用手册 理论篇</h3>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="related-item" data-index='2'>
+                <a href="isux-ae-play.html" target="_blank">
+                        <img class="pic clip-animate-item pic-gray" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/542_a.jpg" />
+                        <img class="pic pic-colorful clip-animate-item" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/542_a_src.jpg" />
+
+                    
+                    <div class="_title-wrapper fade-aniamte-item">
+                        <div class="_title-flex">
+                            <h3 class="title js-article-title">玩转AE丨动效设计必备指南</h3>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="related-item last-item" data-index='3'>
+                <a href="isux-optimizing-3d-model.html" target="_blank">
+                        <img class="pic clip-animate-item pic-gray" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/372_a.jpg" />
+                        <img class="pic pic-colorful clip-animate-item" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/372_a_src.jpg" />
+
+                    
+                    <div class="_title-wrapper fade-aniamte-item">
+                        <div class="_title-flex">
+                            <h3 class="title js-article-title">如何在页面极速渲染3D模型</h3>
+                        </div>
+                    </div>
+                </a>
+            </li>
+
+        
+        </ul>
+    </section>
+
+</div>
+
+<div class="share_article_scroll share_article_hide">
+    
+    <div class="_mod_stat">
+        <div class="_article_stat">
+
+            <ul class="_stat_list">
+                <li class="_stat_item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18" class="_stat_view _stat_icon">
+                        <g>
+                            <path class="view_svg" d="M19,9c0,2.5-3.5,8-9,8S1,11.5,1,9s3.5-8,9-8S19,6.5,19,9Z"/>
+                            <circle class="view_svg" cx="10" cy="9" r="3"/>
+                        </g>
+                    </svg>
+                    <span class="_views">125853</span>
+                </li>
+                <li class="_stat_item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18.53" class="_stat_like _stat_icon" id="js-like-1" data-id="169">
+                        <g>
+                            <path class="like_svg" d="M17.54,9.54A5,5,0,1,0,10,3,5,5,0,1,0,2.46,9.54L10,17.11Z"/>
+                        </g>
+                    </svg>
+                    <span class="_likes bottom-like-text">236</span>
+                </li>
+            </ul>
+
+            <ul class="_stat_share_article js-share-list" data-title="你离高效制作动画只差一篇文章的距离" data-desc="看完本文，前端能快速开发一些H5动画，设计师也能高效地制作出合自己心意的动画来让别人高保真还原，希望能给大家带来一点帮助。" data-pic="https://cdn-isux.qq.com/upload/detail/vnVCvuxS3FH7yrhJda71MFXl4pQoWnc2IWENUgkQqBp.jpg">
+                <li class="share_article_item share_article_item_qzone" data-href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=%7Burl%7D&amp;title=%7Btitle%7D&amp;desc=&amp;summary=%7Bdesc%7D&amp;site=&amp;pics=%7Bpic%7D"></li>
+                <li class="share_article_item share_article_item_qq" data-href="http://connect.qq.com/widget/shareqq/index.html?url=%7Burl%7D&amp;title=%7Btitle%7D&amp;desc=&amp;summary=%7Bdesc%7D&amp;site=isux&amp;pics=%7Bpic%7D"></li>
+                <li class="share_article_item share_article_item_fb" data-href="https://www.facebook.com/sharer/sharer.php?u=%7Burl%7D&amp;t=%7Bdesc%7D"></li>
+                <li class="share_article_item share_article_item_sina" data-href="http://service.weibo.com/share/share.php?title=%7Bdesc%7D%20%23%7Btitle%7D%23&amp;url=%7Burl%7D&amp;pic=%7Bpic%7D&amp;desc="></li>
+            </ul>
+        </div>
+    </div>
+
+    
+</div>
+<!-- 文章详情页 -->
+
+ <div id="bottom-mask"></div>
+<div class="mask-strip"></div>
+
+<footer class="mod_site_footer" role="contentinfo">
+    <div class="_footer-prefix">
+        <div class="_inner-wrapper"></div>
+    </div>
+    <div class="_social">
+        <div class="_inner-wrapper">
+            <ul class="_social-media-links">
+                <!-- <li class="-hc -vimeo"><a href="#" title="vimeo"></a></li> -->
+                <li class="-hc -wechat">
+                    <a title="wechat">
+                        <span class="-wechat-qr">
+                            <img class="lazy" data-src="../static/images/isux_qrcode.jpg" alt="微信公众号二维码" width="230" height="230">
+                        </span>
+                    </a>
+                </li>
+                <!-- <li class="-hc -facebook"><a href="#" title="facebook"></a></li> -->
+                <li class="-hc -weibo"><a href="http://weibo.com/txisux" target="_blank" title="weibo"></a></li>
+
+                <li class="-hc -zcool">
+                    <a href="https://www.zcool.com.cn/u/1936779" target="_blank" title="zcool"></a>
+                </li>
+
+                <li class="-hc -ins">
+                    <a href="https://www.instagram.com/isux_lab" target="_blank" title="instagram"></a>
+                </li>
+
+                <li class="-hc -behance">
+                    <a href="https://www.behance.net/18485758707c20" target="_blank" title="behance"></a>
+                </li>
+
+                <li class="-hc -medium">
+                    <a href="https://medium.com/@tencent.isux" target="_blank" title="medium"></a>
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="_footer-suffix">
+        <div class="_inner-wrapper">
+            <div class="supporting-information">
+                <ul class="_footer-links"><li class="_footer-link"><a href="https://www.tencent.com/" target="_blank">TENCENT</a></li><li class="_footer-link"><a href="https://qqfamily.com" target="_blank">QQfamily</a></li><li class="_footer-link"><a href="https://ycg.qq.com/" target="_blank">YCG</a></li></ul>
+            </div>
+            <div class="copyright">Copyright © 1998 - 2025 Tencent Inc. All Rights Reserved.</div>
+        </div>
+    </div>
+</footer>
+
+
+<div class="isux-qrcode">
+	<img src="../static/images/qrcode.jpg" alt="ISUX 二维码">
+</div>
+<div class="-search hide" id="search" role="application" aria-hidden="false">
+	<div class="-search-inner">
+		<div class="-search-form">
+			<span class="-search-box">
+				<input type="search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" maxlength="100" class="-search-input" placeholder="keywords" value="" />
+				<button type="button" class="-search-reset" title="Close">&times;</button>
+			</span>
+		</div>
+		<div class="-search-result">
+			<div class="-search-result-head">
+				啥，没结果？别担心，我们为您准备了推荐的文章：
+			</div>
+			<div class="gallery -search-gallery" id="searchResult"></div>
+		</div>
+		<div class="-loading -search-loading hide">
+			<span class="-loading-icon -search-loading-icon"><i></i><i></i></span>
+		</div>
+	</div>
+</div>
+<!-- .-search -->
+<script type="text/tpl" id="itemTpl">
+<div class="gallery-item <%=?cssclass%>"<%=?dataset%>>
+	<a class="gallery-wrapper" href="<%=url%>" target="_blank">
+		<div class="gallery-pics show-search-animate-item">
+			<div class="gallery-pic gallery-pic-gray lazy clip-animate-item" data-src="<%=image%>"></div>
+			<div class="gallery-pic gallery-pic-normal lazy clip-animate-item" data-src="<%=image1x%>"></div>
+		</div>
+		<div class="gallery-info show-search-animate-item">
+			<h3 class="title" title="<%=title%>"><%=title%></h3>
+			<p class="category"><%=category_name%></p>
+			<p class="abstract"><%=abstract%></p>
+		</div>
+	</a>
+</div>
+</script>
+<script>
+var G_csrf = 'w4HAepjhX1s0mlC8acnnZ_g3Zm77HA68';
+</script>
+<script src="../static/js/lib.js"></script>
+
+<!-- 引入腾讯视频JS库 -->
+<script src="https://vm.gtimg.cn/tencentvideo/txp/js/txplayer.js"></script>
+
+<!-- 引入判断背景显示不同字体颜色的组件 -->
+<script src="../static/js/common/background-check.js"></script>
+<script>
+window.backgroundCheck && backgroundCheck.init({
+    targets: '._title-flex',
+    imgs: '.pic-gray',
+    parents: '.related-item a',
+    cssclass: '_article-light-item',
+    lazy: false
+});
+</script>
+
+<!-- 页面逻辑js -->
+<script src="../static/js/detail.js"></script>
+
+<!-- TA -->
+
+<!-- TA -->
+<!-- GA -->
+
+<!-- GA -->
+</body>
+</html>

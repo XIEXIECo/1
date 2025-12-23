@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+<meta charset="utf-8">
+<title>QQ极简与夜间模式设计 - Tencent ISUX Design</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="theme-color" content="#000000">
+<link rel="mask-icon" href="../static/images/favicon.svg" color="#FFFFFF">
+<link rel="shortcut icon" href="../static/images/favicon.ico" type="image/x-icon">
+<link href="../static/css/base.css" rel="stylesheet">
+<script type="text/javascript" src="https://js.aq.qq.com/js/aq_common.js"></script>
+
+<meta name="keywords" content="设计,UI,QQ,用户体验,视觉,设计师">
+<meta name="description" content="   QQ像用户的一个小小星球，可以随意的装点展示自己的个性，同时也能看到其他好友的小星球。然而人是动态成长和变化的，纷繁的世界是否就一直能适合用户的聊天心境呢？">
+
+<!-- 社交分享 -->
+<meta itemprop="name" content="QQ极简与夜间模式设计" />
+<meta itemprop="description" content="   QQ像用户的一个小小星球，可以随意的装点展示自己的个性，同时也能看到其他好友的小星球。然而人是动态成长和变化的，纷繁的世界是否就一直能适合用户的聊天心境呢？" />
+<meta itemprop="image" content="https://cdn-isux.qq.com/upload/detail/zSCeaNKZ6gm3YN1r5kBCKFIIFQRaxbbqPEgoia8UGCb.png" />
+<!-- 社交分享 -->
+
+<!-- Facebook Open Graph -->
+<meta property="fb:app_id" content="137155036704975" />
+<meta property="og:url" content="https://isux.tencent.com/articles/simple-qq.html" />
+<meta property="og:title" content="QQ极简与夜间模式设计" />
+<meta property="og:site_name" content="Tencent ISUX Design" />
+<meta property="og:description" content="   QQ像用户的一个小小星球，可以随意的装点展示自己的个性，同时也能看到其他好友的小星球。然而人是动态成长和变化的，纷繁的世界是否就一直能适合用户的聊天心境呢？" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://cdn-isux.qq.com/upload/detail/zSCeaNKZ6gm3YN1r5kBCKFIIFQRaxbbqPEgoia8UGCb.png" />
+<meta property="og:locale" content="en_us" />
+<!-- Facebook Open Graph -->
+
+<!-- home css file -->
+<link href="../static/css/detail.css" rel="stylesheet">
+<!-- home css file -->
+
+</head>
+<body>
+<!-- 移动端的结构，要单独写html，才可以在header下面滑出 -->
+<div class="_m-nav-wrapper">
+    <ul class="_nav-items">
+            <li class="_nav-item active">
+                <a href="index.html">ARTICLES</a>
+            </li>
+            <li class="_nav-item">
+                <a href="../brands/index.html">BRANDS</a>
+            </li>
+            <li class="_nav-item">
+                <a href="../resources/index.html">RESOURCES</a>
+            </li>
+            <li class="_nav-item">
+                <a href="../careers/index.html">CAREERS</a>
+            </li>
+
+        <!-- 移动端的搜索按钮，pc的时候为隐藏状态，功能跟._nav-search一样 -->
+        <div class="nav-item -m-search">
+            <a href="#/search/" data-action="toggle" data-args="body" data-cssclass="xxx"></a>
+        </div>
+    </ul>
+</div>
+
+<header>
+    <div class="_header-wrapper">
+        <nav id="navigator" class="mod_site_nav nav-animate-item js-nav-state">
+            <div class="_nav-logo">
+                <a href="../index.html" class="_nav-flower" ></a>
+                <!-- <a href="/" class="js-nav-isux _nav-isux"></a> -->
+            </div>
+            <!-- pc端的结构 -->
+            <div class="_nav-wrapper">
+                <ul class="_nav-items">
+                        <li class="_nav-item active">
+                            <a href="index.html">ARTICLES</a>
+                        </li>
+                        <li class="_nav-item">
+                            <a href="../brands/index.html">BRANDS</a>
+                        </li>
+                        <li class="_nav-item">
+                            <a href="../resources/index.html">RESOURCES</a>
+                        </li>
+                        <li class="_nav-item">
+                            <a href="../careers/index.html">CAREERS</a>
+                        </li>
+                    <!-- 移动端的搜索按钮，pc的时候为隐藏状态，功能跟._nav-search一样 -->
+                    <div class="nav-item -m-search">
+                        <a href="#/search/" data-action="toggle" data-args="body" data-cssclass="xxx"></a>
+                    </div>
+                </ul>
+            </div>
+
+            <!-- pc端的搜索按钮，移动端时为隐藏状态 -->
+            <div class="_nav-search">
+                <a href="#/search/" data-action="toggle" data-args="body" data-cssclass="xxx"></a>
+            </div>
+
+            <!-- 移动端的菜单list按钮，pc的时候为隐藏状态，在列表icon和close-icon之间切换 -->
+            <div class="_m-nav-list" data-cssclass="_m-nav-close">
+                <a href="#/list/" data-action="toggle" data-args="body" class="lines js-m-navlist">
+                    <span class="line first-line"></span>
+                    <span class="line second-line"></span>
+                    <span class="line third-line"></span>
+                </a>
+            </div>
+
+        </nav>
+    </div>
+</header>
+<div class="_fake-header"></div>
+<!-- 文章详情页 -->
+<div class="_main_content">
+    <!-- 前言模块 -->
+    <section class="_mod_introduce _mod_editor js-mod-introduce">
+
+        <div class="_introduce_title_wrapper show-animate-item">
+            <div class="_article_title_wrapper">
+                <div class="_introduce_title js-intro-title">QQ极简与夜间模式设计</div>
+            </div>
+            <div class="_public_line caretColor" ></div>
+            <div class="_introduce_tag js-intro-tag" >DESIGN</div>
+        </div>
+        
+        <div class="_public_paragraph js-intro-content show-animate-item">   QQ像用户的一个小小星球，可以随意的装点展示自己的个性，同时也能看到其他好友的小星球。然而人是动态成长和变化的，纷繁的世界是否就一直能适合用户的聊天心境呢？</div>
+
+        <div class="_public_banner js-intro-banner js-defualt-banner show-animate-item"><img class="pic js-pic-banner clip-animate-item block-item" data-banner-src="https://cdn-isux.qq.com/upload/detail/zSCeaNKZ6gm3YN1r5kBCKFIIFQRaxbbqPEgoia8UGCb.png" data-article-id="345" src="https://cdn-isux.qq.com/upload/detail/zSCeaNKZ6gm3YN1r5kBCKFIIFQRaxbbqPEgoia8UGCb.png" alt=""></div>
+    
+    </section>
+
+    <div class="editable" id="editor2">
+        <!-- 正文模块 -->
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <section class="_mod_content _mod_editor">
+                
+                <p class="show-animate-item"><br></p><p class="show-animate-item">都说年轻人喜欢用QQ，他们精力旺盛乐于交友，在社交的同时有强烈的自我表达欲望，QQ里的个性装扮能够满足年轻人的自我展示需求。</p><p class="show-animate-item">随着年轻人的成长和社会角色变化，开始需要和学习、工作中不同的人频繁打交道，涉及的使用场景更为多元化，对沟通逐渐有了效率与特殊场景体验的诉求。本文讲述的是QQ近期在极简设计与人性化体验设计上的探索与思考。</p><div class="_public_title show-animate-item" data-placeholder="Section Title"><b>一.简洁模式</b></div><p class="show-animate-item"></p><div class="_public_line show-animate-item"><br><br></div><p class="show-animate-item"></p><p class="show-animate-item">各类产品相继回归初心追求体验服务的本质，产品体验也正在做减法提炼，更为聚焦用户核心诉求，追求更极简的体验。</p><p class="show-animate-item">        </p><p class="show-animate-item">       用户沟通的本源是信息互换，QQ通过推出极简模式，对聊天进行降噪设计，重新突出聊天信息，回归沟通的本源。</p><p class="show-animate-item">       </p><p class="show-animate-item">       简洁模式，是允许用户切换到更纯粹的聊天体验，但并不改变用户原有的个性化设置，用户可随时根据需要，恢复自己的个性装扮。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="72.421875%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/nsK5VX7JXOuhNSaObv27XLJwR0wL2ebWlfAbto6XtzP.png" class="pic block-item clip-animate-item"></div><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title"><b>QQ简洁模式设计策略</b></div><p class="show-animate-item">QQ拥有庞大的用户量，一直以来用户对纯粹的聊天沟通体验呼声较高，回归到沟通的本源，聚焦极简沟通聊天体验，这是化繁为简的减法过程，我们梳理了QQ简洁模式的设计策略。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="78.125%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/1N7UiNu4mqLPJu6ukAP52VFodqJ5GHzHeTVXExVUKfs.png" class="pic block-item clip-animate-item"></div><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title"><b>信息降噪</b></div><p class="show-animate-item">头像和聊天气泡是承载信息的主要载体，简洁模式屏蔽个性化装扮，使信息的展示更纯粹和清晰。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="72.421875%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/WGbh3EvsNNvS3VRc5ioFYwGWKWlsp24PaDl0gxxvnNm.png" class="pic block-item clip-animate-item"></div><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title"><b>简化功能</b></div><p class="show-animate-item">为了让用户更便捷地发送不同类型的消息，QQ的输入区域展示了相册、拍照、红包等功能。但在非娱乐化场景聊天时，这些功能使用率是较低的。简洁模式简化了工具栏与图标风格，图标造型与色彩化繁为简，利用更纯粹的黑与白，方便界面更好凸显信息和内容，整体与默认模式产生了差异，用户有更强简化感知。<b><br></b></p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="69.21875%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/NUSLMgxC7hyrmUkxcn1XjRB23zPFnI82iyW9UVD921z.png" class="pic block-item clip-animate-item"></div><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title"><b>纯粹交流</b></div><p class="show-animate-item">QQ的等级体验符合部分年轻人的攀比需求，但在某些场景(如办公，学习等），等级可能会对沟通带来一定的压力与干扰。简洁模式仅保留纯粹的聊天信息，让用户感受更清爽无压力的交流。<br></p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="69.21875%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/9xtDTOPnL8wV3vteuCaeEHI1eBoAY46qtfBp9MqB953.png" class="pic block-item clip-animate-item"></div><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title"><b>风格中性</b></div><p class="show-animate-item">简洁模式的界面设计风格更为中性，去个性化。设计细节的优化，如分割线的处理、灰色的运用、图标的形体等，都更为克制精简。整体视觉体验以黑白灰为主基调，辅助色点缀，高对比度，犹如容器一样呈现最具价值的内容和信息。<b><br></b></p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="62.18749999999999%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/ooIoE5HSGaC23UICW88K7DXB3Bap0swVzuLX3roIHx3.png" class="pic block-item clip-animate-item"></div><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title"><b>简化图形</b></div><p class="show-animate-item">极简还体现在界面的图标语言，简洁模式图标延续QQ8.0风格的图标造型，在此基础上追求更极致的减法设计，我们通过提炼图标造型的轮廓，采用更精炼的细线图标，能少画一笔不多出一笔，细节之处方显匠心。<b><br></b></p><div class="_public_pic block-item block-shadow-item show-animate-item _public_pic_gif caretColor"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/kxd2zRPe7TKDl9Nra1zOtwzRz2OSUMEGhEqbl0mGOnL.gif" class="pic block-item clip-animate-item"></div><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title"><b>简洁模式设置路径</b></div><p class="show-animate-item">未来将增设多彩选择，喜欢简约风格的你绝对不容错过QQ简洁模式，欢迎多多体验。</p><p class="show-animate-item">QQ升级至8.1.0版本的用户，可以从抽屉进入设置页，点击进通用，开启简洁模式。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="80.078125%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/cft4Ili2uyAqoSeN18ckjpIPkQD38D1J7PzvXzt8R77.png" class="pic block-item clip-animate-item"></div><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="109.53124999999999%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/hQd9W8EMmd6tlpWrFiHEI0YMo3xIUPOCnsiRB6C5FKU.png" class="pic block-item clip-animate-item"></div><div class="_public_title show-animate-item" data-placeholder="Section Title"><b>二.夜间模式</b></div><div class="_public_line show-animate-item"><br><br></div><p class="show-animate-item">人眼可根据环境光做自动调节，在弱光环境下，人眼对明暗度的辨别更敏锐，对彩色的感知度则更弱。同时人眼还有视觉惰性，晚上长时间使用手机，更容易觉得眼花。</p><p class="show-animate-item">       多数手机系统，主要通过环境光自动调节屏幕的亮度，以降低手机上的明暗对比，减少对眼睛的亮度刺激，同时普遍适用于不同类型的手机应用。</p><p class="show-animate-item">       为了给用户提供更舒适的夜间体验，部分手机系统逐渐推出黑暗模式，一些应用还定制深度的夜间模式。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="72.44791666666667%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/LNBoInYXyQbJVCyQJvobmbF9T2uHFJI6Iop1ArI0RKb.png" class="pic block-item clip-animate-item"></div><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title"><p class="show-animate-item"></p><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title"><b>QQ夜间模式设计策略</b><br></div><p class="show-animate-item"></p><p class="show-animate-item">晚上是QQ用户活跃的高峰期之一，针对夜间场景使用痛点以及业界的趋势。科技向善，设计也应如此，因此QQ夜间模式体验定位希望是更护眼舒适的，为用户提供更人性化体验，我们梳理出夜间模式的设计策略，并重新设计。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="78.125%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/ItU74VKegHavbtTGOYc3zlpc5FFcgOFeAFRgrdye4Uz.png" class="pic block-item clip-animate-item"></div><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title"><span style="font-size: 28px;"><b>护眼舒适</b></span></div><p class="show-animate-item"></p><div class="_public_line show-animate-item"><br><br></div><p class="show-animate-item"></p><p class="show-animate-item"></p><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title"><b>降低对比度</b></div><p class="show-animate-item">夜间模式界面通过降低信息与背景的对比度，对图片/图标带色彩的通过使用遮罩，来达到减少对人眼刺激的目的，用户在夜间弱光环境中使用起来更柔和护眼。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="72.421875%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/zoK805uXuKqro9o5PQGTMtvXnSwBSC5s2VbsaYW5Mrj.png" class="pic block-item clip-animate-item"></div><p class="show-animate-item">降低信息与背景对比度能降低对人眼的刺激，我们分别从降低界面信息对比度和降低色彩明度入手，在不同背景下适配不同亮度的文字信息。通过黑暗环境人眼真机体验测试，又再经过多轮字色与背景对比度的优化，保证识别度的基础上，梳理出在全黑的环境下适合夜间在任何屏幕亮度均可使用的对比度，对比度控制在三个档位进行组合，不出现纯黑白对比。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="72.421875%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/aNIUzyEuYNv3Nzn83FAUSOEUvLueJ4ozx4qCHdAE7dF.png" class="pic block-item clip-animate-item"></div><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title"><b>降低图像与色彩的明度</b></div><p class="show-animate-item">界面信息还包括有色的图文与图形类，高纯度的色彩在深色背景下也容易造成人眼刺激与疲劳。此类信息我们通过使用遮罩来达到降低明度目的的。在保持与系统色彩纯度的基础上，降低明度从而达到柔和护眼的效果。<b><br></b></p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="72.421875%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/UO6envtApTaD4cPiZaLdLFuzbei3U1iKes3UlY85D2Q.png" class="pic block-item clip-animate-item"></div><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title"><b>组件化</b></div><p class="show-animate-item">QQ夜间模式适配覆盖度很高，涉及界面也很多 ，我们梳理适配了夜间模式组件，同时也提升适配的效率。目前已适配核心路径场景的夜间体验，我们与开发同学紧锣密鼓在适配更多界面，随着适配的不断深入，给用户提供更完善舒适的夜间体验。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="72.44791666666667%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/5dbiLW9ooHB0vYj8spiBAAxgS86L4orbBdqzZhGA6Qn.png" class="pic block-item clip-animate-item"></div><div class="_public_title show-animate-item" data-placeholder="Section Title"><b>情感化设计</b></div><p class="show-animate-item">为了强化用户对夜间模式的认知，提升夜间场景用户的使用感受。我们运用了情感化的设计，从以下三个维度体现。</p><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title"><b>主题背景</b></div><p class="show-animate-item">大面积黑色界面难免会些许单调冰冷，有别于手机系统与应用，QQ夜间模式保留前版本的星空元素传承到新版设计中， 夜间模式启动后，通过繁星点点的背景元素建立夜间环境关联。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="72.44791666666667%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/HoK89C1u1ChA8gbZ3tLBCj3mLk4jEGi6AR3EiV1H7Fb.png" class="pic block-item clip-animate-item"></div><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title"><b>趣味图标</b></div><p class="show-animate-item">当用户开启夜间模式时，我们设定了彩蛋，发现个别图标会发生改变，变成带有夜间相关的图形语言，后续更新会增加更多趣味的图标。我们也希望通过带入趣味元素的表达方式，建立用户对QQ夜间模式的好感。<b><br></b></p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="72.44791666666667%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/FmOM5X60V4S7ZW2R0UWRkPOLqkbKwSUbsjnBiBD5PyT.png" class="pic block-item clip-animate-item"></div><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title"><b>动效</b></div><p class="show-animate-item">使用切换操作时，加入适度的过渡动画，进一步强化用户对夜间模式的感知，用户可在抽屉页点击切换至夜间模式。<br></p><div class="_public_pic block-item block-shadow-item show-animate-item _public_pic_gif caretColor"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/YntOpY6nDFv8WDDAuB6RiHE8ubdo5nvy0773Yyz4xrw.gif" class="pic block-item clip-animate-item"></div><p class="show-animate-item">夜间模式体验路径，用户进入QQ后，通过右滑或点击一级界面左上角个人头像，进入抽屉页，点击左下方夜间图标即可切换至夜间模式。<br></p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="109.53124999999999%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/mrxkECjbGtmXbdz79FPB5WPVCHLkfYCoxDNhDlakOem.png" class="pic block-item clip-animate-item"></div><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title"><b>结语</b></div><p class="show-animate-item">除了简洁模式和夜间模式，未来QQ还会有更多专题设计的探索思考，通过挖掘使用场景为用户提供更多人性化好玩的服务。目前这两个模式均已上线，收到了不少反馈和建议，也请用户朋友们多多体验持续关注QQ的更新。</p><p class="show-animate-item"><br></p><p class="show-animate-item">想了解更多QQ设计的故事，请移步至:</p><p class="show-animate-item"><a href="qq-screenshot.html">社交垂直探索 | QQ截图全新设计</a><br></p><p class="show-animate-item"><a href="qq8.html">沟通本源 | QQ8.0有生机的设计</a><br></p><p class="show-animate-item"><a href="qq-voice-message-design.html">点滴匠心，声入人心</a></p><p class="show-animate-item"><a href="qq-relationship.html">QQ亲密关系 ｜ 从工具到情感再到认同</a><br></p><p class="show-animate-item"><a href="our-story-with-QQ.html">《Q友记》我们的QQ故事</a><br></p><p class="show-animate-item"><br></p><p class="show-animate-item"></p></div>
+
+            </section>
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+    </div>
+
+    
+
+    <!-- 测试连接 https://v.qq.com/x/page/f0507qj9hhv.html -->
+    <!-- 测试连接 https://v.qq.com/x/page/s05065zrbps.html -->
+
+    <!-- 文章数据模块 -->
+    <section class="_mod_stat show-animate-item">
+        <div class="_stat_wrapper">
+            
+            <div class="_article_date">
+                <span class="date">SEPTEMBER 5, 2019</span>
+            </div>
+
+            <div class="_article_stat">
+
+                <ul class="_stat_list">
+                    <li class="_stat_item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18" class="_stat_view _stat_icon">
+                            <g>
+                                <path class="view_svg" d="M19,9c0,2.5-3.5,8-9,8S1,11.5,1,9s3.5-8,9-8S19,6.5,19,9Z"/>
+                                <circle class="view_svg" cx="10" cy="9" r="3"/>
+                            </g>
+                        </svg>
+                        <span class="_views">33181</span>
+                    </li>
+                    <li class="_stat_item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18.53" class="_stat_like _stat_icon" id="js-like-0" data-id="345">
+                            <g>
+                                <path class="like_svg" d="M17.54,9.54A5,5,0,1,0,10,3,5,5,0,1,0,2.46,9.54L10,17.11Z"/>
+                            </g>
+                        </svg>
+                        <span class="_likes js-like-text">158</span>
+                    </li>
+                </ul>
+
+                <ul class="_stat_share_article js-share-list" data-title="QQ极简与夜间模式设计" data-desc="   QQ像用户的一个小小星球，可以随意的装点展示自己的个性，同时也能看到其他好友的小星球。然而人是动态成长和变化的，纷繁的世界是否就一直能适合用户的聊天心境呢？" data-pic="https://cdn-isux.qq.com/upload/detail/zSCeaNKZ6gm3YN1r5kBCKFIIFQRaxbbqPEgoia8UGCb.png">
+                    <li class="share_article_item share_article_item_qzone js-china-ip" data-href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=%7Burl%7D&amp;title=%7Btitle%7D&amp;desc=&amp;summary=%7Bdesc%7D&amp;site=&amp;pics=%7Bpic%7D"></li>
+                    <li class="share_article_item share_article_item_qq js-china-ip" data-href="http://connect.qq.com/widget/shareqq/index.html?url=%7Burl%7D&amp;title=%7Btitle%7D&amp;desc=&amp;summary=%7Bdesc%7D&amp;site=isux&amp;pics=%7Bpic%7D"></li>
+                    <li class="share_article_item share_article_item_fb" data-href="https://www.facebook.com/sharer/sharer.php?u=%7Burl%7D&amp;t=%7Bdesc%7D"></li>
+                    <li class="share_article_item share_article_item_twitter" data-href="http://twitter.com/home?status=%7Bdesc%7D%20%23%7Btitle%7D%23&amp;url=%7Burl%7D&amp;pic=%7Bpic%7D&amp;desc="></li>
+                    <li class="share_article_item share_article_item_sina js-china-ip" data-href="http://service.weibo.com/share/share.php?title=%7Bdesc%7D%20%23%7Btitle%7D%23&amp;url=%7Burl%7D&amp;pic=%7Bpic%7D&amp;desc="></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作者模块 -->
+    <section class="_mod_authors show-animate-item">
+        <!-- 可以写成这个模块的 border-top -->
+        <!--<div class="_article_line"></div>-->
+        <div class="_authors_title">CONTRIBUTORS</div>
+        <ul class="_authors">
+            <li class="_author">
+                <img class="pic" src="https://isuxdesign-1251263993.file.myqcloud.com/avatars/pmOySRoukplfcaQ4NjVmdLSnggNnsYlkV5AFroGcfV7.jpeg" alt="">
+                <div class="name">QQ设计团队</div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- 相关文章推荐模块 -->
+    <section class="_mod_related show-animate-item">
+        <ul class="related-list clearfix" id="list">
+            <li class="related-item first-item" data-index='1'>
+                <a href="freshelement.html" target="_blank">
+                        <img class="pic clip-animate-item pic-gray" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/591_a.jpg" />
+                        <img class="pic pic-colorful clip-animate-item" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/591_a_src.jpg" />
+
+                    
+                    <div class="_title-wrapper fade-aniamte-item">
+                        <div class="_title-flex">
+                            <h3 class="title js-article-title">新奇物种：探寻关系链中的陪伴价值</h3>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="related-item" data-index='2'>
+                <a href="Chinese-font.html" target="_blank">
+                        <img class="pic clip-animate-item pic-gray" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/590_a.jpg" />
+                        <img class="pic pic-colorful clip-animate-item" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/590_a_src.jpg" />
+
+                    
+                    <div class="_title-wrapper fade-aniamte-item">
+                        <div class="_title-flex">
+                            <h3 class="title js-article-title">字体设计｜从字体历史中汲取设计的方法</h3>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="related-item last-item" data-index='3'>
+                <a href="Now2022AnnualCeremony.html" target="_blank">
+                        <img class="pic clip-animate-item pic-gray" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/586_a.jpg" />
+                        <img class="pic pic-colorful clip-animate-item" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/586_a_src.jpg" />
+
+                    
+                    <div class="_title-wrapper fade-aniamte-item">
+                        <div class="_title-flex">
+                            <h3 class="title js-article-title">如何打造沉浸式盛典体验</h3>
+                        </div>
+                    </div>
+                </a>
+            </li>
+
+        
+        </ul>
+    </section>
+
+</div>
+
+<div class="share_article_scroll share_article_hide">
+    
+    <div class="_mod_stat">
+        <div class="_article_stat">
+
+            <ul class="_stat_list">
+                <li class="_stat_item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18" class="_stat_view _stat_icon">
+                        <g>
+                            <path class="view_svg" d="M19,9c0,2.5-3.5,8-9,8S1,11.5,1,9s3.5-8,9-8S19,6.5,19,9Z"/>
+                            <circle class="view_svg" cx="10" cy="9" r="3"/>
+                        </g>
+                    </svg>
+                    <span class="_views">33181</span>
+                </li>
+                <li class="_stat_item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18.53" class="_stat_like _stat_icon" id="js-like-1" data-id="345">
+                        <g>
+                            <path class="like_svg" d="M17.54,9.54A5,5,0,1,0,10,3,5,5,0,1,0,2.46,9.54L10,17.11Z"/>
+                        </g>
+                    </svg>
+                    <span class="_likes bottom-like-text">158</span>
+                </li>
+            </ul>
+
+            <ul class="_stat_share_article js-share-list" data-title="QQ极简与夜间模式设计" data-desc="   QQ像用户的一个小小星球，可以随意的装点展示自己的个性，同时也能看到其他好友的小星球。然而人是动态成长和变化的，纷繁的世界是否就一直能适合用户的聊天心境呢？" data-pic="https://cdn-isux.qq.com/upload/detail/zSCeaNKZ6gm3YN1r5kBCKFIIFQRaxbbqPEgoia8UGCb.png">
+                <li class="share_article_item share_article_item_qzone" data-href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=%7Burl%7D&amp;title=%7Btitle%7D&amp;desc=&amp;summary=%7Bdesc%7D&amp;site=&amp;pics=%7Bpic%7D"></li>
+                <li class="share_article_item share_article_item_qq" data-href="http://connect.qq.com/widget/shareqq/index.html?url=%7Burl%7D&amp;title=%7Btitle%7D&amp;desc=&amp;summary=%7Bdesc%7D&amp;site=isux&amp;pics=%7Bpic%7D"></li>
+                <li class="share_article_item share_article_item_fb" data-href="https://www.facebook.com/sharer/sharer.php?u=%7Burl%7D&amp;t=%7Bdesc%7D"></li>
+                <li class="share_article_item share_article_item_sina" data-href="http://service.weibo.com/share/share.php?title=%7Bdesc%7D%20%23%7Btitle%7D%23&amp;url=%7Burl%7D&amp;pic=%7Bpic%7D&amp;desc="></li>
+            </ul>
+        </div>
+    </div>
+
+    
+</div>
+<!-- 文章详情页 -->
+
+ <div id="bottom-mask"></div>
+<div class="mask-strip"></div>
+
+<footer class="mod_site_footer" role="contentinfo">
+    <div class="_footer-prefix">
+        <div class="_inner-wrapper"></div>
+    </div>
+    <div class="_social">
+        <div class="_inner-wrapper">
+            <ul class="_social-media-links">
+                <!-- <li class="-hc -vimeo"><a href="#" title="vimeo"></a></li> -->
+                <li class="-hc -wechat">
+                    <a title="wechat">
+                        <span class="-wechat-qr">
+                            <img class="lazy" data-src="../static/images/isux_qrcode.jpg" alt="微信公众号二维码" width="230" height="230">
+                        </span>
+                    </a>
+                </li>
+                <!-- <li class="-hc -facebook"><a href="#" title="facebook"></a></li> -->
+                <li class="-hc -weibo"><a href="http://weibo.com/txisux" target="_blank" title="weibo"></a></li>
+
+                <li class="-hc -zcool">
+                    <a href="https://www.zcool.com.cn/u/1936779" target="_blank" title="zcool"></a>
+                </li>
+
+                <li class="-hc -ins">
+                    <a href="https://www.instagram.com/isux_lab" target="_blank" title="instagram"></a>
+                </li>
+
+                <li class="-hc -behance">
+                    <a href="https://www.behance.net/18485758707c20" target="_blank" title="behance"></a>
+                </li>
+
+                <li class="-hc -medium">
+                    <a href="https://medium.com/@tencent.isux" target="_blank" title="medium"></a>
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="_footer-suffix">
+        <div class="_inner-wrapper">
+            <div class="supporting-information">
+                <ul class="_footer-links"><li class="_footer-link"><a href="https://www.tencent.com/" target="_blank">TENCENT</a></li><li class="_footer-link"><a href="https://qqfamily.com" target="_blank">QQfamily</a></li><li class="_footer-link"><a href="https://ycg.qq.com/" target="_blank">YCG</a></li></ul>
+            </div>
+            <div class="copyright">Copyright © 1998 - 2025 Tencent Inc. All Rights Reserved.</div>
+        </div>
+    </div>
+</footer>
+
+
+<div class="isux-qrcode">
+	<img src="../static/images/qrcode.jpg" alt="ISUX 二维码">
+</div>
+<div class="-search hide" id="search" role="application" aria-hidden="false">
+	<div class="-search-inner">
+		<div class="-search-form">
+			<span class="-search-box">
+				<input type="search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" maxlength="100" class="-search-input" placeholder="keywords" value="" />
+				<button type="button" class="-search-reset" title="Close">&times;</button>
+			</span>
+		</div>
+		<div class="-search-result">
+			<div class="-search-result-head">
+				啥，没结果？别担心，我们为您准备了推荐的文章：
+			</div>
+			<div class="gallery -search-gallery" id="searchResult"></div>
+		</div>
+		<div class="-loading -search-loading hide">
+			<span class="-loading-icon -search-loading-icon"><i></i><i></i></span>
+		</div>
+	</div>
+</div>
+<!-- .-search -->
+<script type="text/tpl" id="itemTpl">
+<div class="gallery-item <%=?cssclass%>"<%=?dataset%>>
+	<a class="gallery-wrapper" href="<%=url%>" target="_blank">
+		<div class="gallery-pics show-search-animate-item">
+			<div class="gallery-pic gallery-pic-gray lazy clip-animate-item" data-src="<%=image%>"></div>
+			<div class="gallery-pic gallery-pic-normal lazy clip-animate-item" data-src="<%=image1x%>"></div>
+		</div>
+		<div class="gallery-info show-search-animate-item">
+			<h3 class="title" title="<%=title%>"><%=title%></h3>
+			<p class="category"><%=category_name%></p>
+			<p class="abstract"><%=abstract%></p>
+		</div>
+	</a>
+</div>
+</script>
+<script>
+var G_csrf = 'w4HAepjhX1s0mlC8acnnZ_g3Zm77HA68';
+</script>
+<script src="../static/js/lib.js"></script>
+
+<!-- 引入腾讯视频JS库 -->
+<script src="https://vm.gtimg.cn/tencentvideo/txp/js/txplayer.js"></script>
+
+<!-- 引入判断背景显示不同字体颜色的组件 -->
+<script src="../static/js/common/background-check.js"></script>
+<script>
+window.backgroundCheck && backgroundCheck.init({
+    targets: '._title-flex',
+    imgs: '.pic-gray',
+    parents: '.related-item a',
+    cssclass: '_article-light-item',
+    lazy: false
+});
+</script>
+
+<!-- 页面逻辑js -->
+<script src="../static/js/detail.js"></script>
+
+<!-- TA -->
+
+<!-- TA -->
+<!-- GA -->
+
+<!-- GA -->
+</body>
+</html>

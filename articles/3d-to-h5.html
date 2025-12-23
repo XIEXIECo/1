@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+<meta charset="utf-8">
+<title>3DtoH5工作流应用手册 理论篇 - Tencent ISUX Design</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="theme-color" content="#000000">
+<link rel="mask-icon" href="../static/images/favicon.svg" color="#FFFFFF">
+<link rel="shortcut icon" href="../static/images/favicon.ico" type="image/x-icon">
+<link href="../static/css/base.css" rel="stylesheet">
+<script type="text/javascript" src="https://js.aq.qq.com/js/aq_common.js"></script>
+
+<meta name="keywords" content="H5,3D,实时渲染,工作流">
+<meta name="description" content="web/H5中3D图形的实时渲染原理、材质应用及工作流思路">
+
+<!-- 社交分享 -->
+<meta itemprop="name" content="3DtoH5工作流应用手册 理论篇" />
+<meta itemprop="description" content="web/H5中3D图形的实时渲染原理、材质应用及工作流思路" />
+<meta itemprop="image" content="https://cdn-isux.qq.com/upload/detail/fWZEM1PsRFXguoYySFT49wPTgJWq4BVRSCGJBFdi9qa.png" />
+<!-- 社交分享 -->
+
+<!-- Facebook Open Graph -->
+<meta property="fb:app_id" content="137155036704975" />
+<meta property="og:url" content="https://isux.tencent.com/articles/3d-to-h5.html" />
+<meta property="og:title" content="3DtoH5工作流应用手册 理论篇" />
+<meta property="og:site_name" content="Tencent ISUX Design" />
+<meta property="og:description" content="web/H5中3D图形的实时渲染原理、材质应用及工作流思路" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://cdn-isux.qq.com/upload/detail/fWZEM1PsRFXguoYySFT49wPTgJWq4BVRSCGJBFdi9qa.png" />
+<meta property="og:locale" content="en_us" />
+<!-- Facebook Open Graph -->
+
+<!-- home css file -->
+<link href="../static/css/detail.css" rel="stylesheet">
+<!-- home css file -->
+
+</head>
+<body>
+<!-- 移动端的结构，要单独写html，才可以在header下面滑出 -->
+<div class="_m-nav-wrapper">
+    <ul class="_nav-items">
+            <li class="_nav-item active">
+                <a href="index.html">ARTICLES</a>
+            </li>
+            <li class="_nav-item">
+                <a href="../brands/index.html">BRANDS</a>
+            </li>
+            <li class="_nav-item">
+                <a href="../resources/index.html">RESOURCES</a>
+            </li>
+            <li class="_nav-item">
+                <a href="../careers/index.html">CAREERS</a>
+            </li>
+
+        <!-- 移动端的搜索按钮，pc的时候为隐藏状态，功能跟._nav-search一样 -->
+        <div class="nav-item -m-search">
+            <a href="#/search/" data-action="toggle" data-args="body" data-cssclass="xxx"></a>
+        </div>
+    </ul>
+</div>
+
+<header>
+    <div class="_header-wrapper">
+        <nav id="navigator" class="mod_site_nav nav-animate-item js-nav-state">
+            <div class="_nav-logo">
+                <a href="../index.html" class="_nav-flower" ></a>
+                <!-- <a href="/" class="js-nav-isux _nav-isux"></a> -->
+            </div>
+            <!-- pc端的结构 -->
+            <div class="_nav-wrapper">
+                <ul class="_nav-items">
+                        <li class="_nav-item active">
+                            <a href="index.html">ARTICLES</a>
+                        </li>
+                        <li class="_nav-item">
+                            <a href="../brands/index.html">BRANDS</a>
+                        </li>
+                        <li class="_nav-item">
+                            <a href="../resources/index.html">RESOURCES</a>
+                        </li>
+                        <li class="_nav-item">
+                            <a href="../careers/index.html">CAREERS</a>
+                        </li>
+                    <!-- 移动端的搜索按钮，pc的时候为隐藏状态，功能跟._nav-search一样 -->
+                    <div class="nav-item -m-search">
+                        <a href="#/search/" data-action="toggle" data-args="body" data-cssclass="xxx"></a>
+                    </div>
+                </ul>
+            </div>
+
+            <!-- pc端的搜索按钮，移动端时为隐藏状态 -->
+            <div class="_nav-search">
+                <a href="#/search/" data-action="toggle" data-args="body" data-cssclass="xxx"></a>
+            </div>
+
+            <!-- 移动端的菜单list按钮，pc的时候为隐藏状态，在列表icon和close-icon之间切换 -->
+            <div class="_m-nav-list" data-cssclass="_m-nav-close">
+                <a href="#/list/" data-action="toggle" data-args="body" class="lines js-m-navlist">
+                    <span class="line first-line"></span>
+                    <span class="line second-line"></span>
+                    <span class="line third-line"></span>
+                </a>
+            </div>
+
+        </nav>
+    </div>
+</header>
+<div class="_fake-header"></div>
+<!-- 文章详情页 -->
+<div class="_main_content">
+    <!-- 前言模块 -->
+    <section class="_mod_introduce _mod_editor js-mod-introduce">
+
+        <div class="_introduce_title_wrapper show-animate-item">
+            <div class="_article_title_wrapper">
+                <div class="_introduce_title js-intro-title">3DtoH5工作流应用手册 理论篇</div>
+            </div>
+            <div class="_public_line caretColor" ></div>
+            <div class="_introduce_tag js-intro-tag" >TECH</div>
+        </div>
+        
+        <div class="_public_paragraph js-intro-content show-animate-item">web/H5中3D图形的实时渲染原理、材质应用及工作流思路</div>
+
+        <div class="_public_banner js-intro-banner js-defualt-banner show-animate-item"><img class="pic js-pic-banner clip-animate-item block-item" data-banner-src="https://cdn-isux.qq.com/upload/detail/fWZEM1PsRFXguoYySFT49wPTgJWq4BVRSCGJBFdi9qa.png" data-article-id="564" src="https://cdn-isux.qq.com/upload/detail/fWZEM1PsRFXguoYySFT49wPTgJWq4BVRSCGJBFdi9qa.png" alt=""></div>
+    
+    </section>
+
+    <div class="editable" id="editor2">
+        <!-- 正文模块 -->
+        
+            
+            <section class="_mod_content _mod_editor">
+                
+                <div class="_public_subtitle show-animate-item js-content-subtitle medium-editor-placeholder-relative" data-placeholder="Chapter Title"></div>
+                <div class="_public_line show-animate-item caretColor" contenteditable="false"></div>
+                <div class="_public_line_title show-animate-item js-content-title js-content-subtitle" data-placeholder="Section Title">前言</div>
+                <p class="show-animate-item">设计师需求中3D视觉平移到互动H5中的项目越来越多，three.js和PBR工作流的结合却一直没有被系统化地整理。</p><p class="show-animate-item">和各位前端神仙一起做项目，也一起磕磕碰碰出了爱与痛的领悟。小小总结，希望3D去往H5的道路天堑变通途。</p><p class="show-animate-item">本手册主要分为两大部分：</p><p class="show-animate-item">Part 1 理论篇：主要让设计师了解计算机到底是如何理解和实时渲染我们设计的3D项目，以及three.js材质和预期材质的对应关系。</p><p class="show-animate-item">Part 2 实践篇：基于three.js的实现性，提供场景、材质贴图的制作思路、以及gltf工作流，并动态讨论项目常常遇到的还原问题。</p><p class="show-animate-item">本文主要for刚接触3D图形学的设计师，仅截取了最常用的理论知识和大家一起学习；</p><p class="show-animate-item">部分涉及技术美术或计算机图形学的描述可能不甚严谨，希望大家多多交流讨论哈。</p><p class="show-animate-item">其实无论H5开发用到的是哪种webGL，设计相关的材质制作基本还是基于PBR思路进行的，所以这边建议各位亲可以先去阅读一下Substance官方宝册《The PBR Guide》。</p><p class="show-animate-item"><br></p><div class="_public_subtitle show-animate-item medium-editor-placeholder-relative" data-placeholder="Chapter Title"></div><div class="_public_line show-animate-item"></div><div class="_public_line_title show-animate-item" data-placeholder="Section Title">Part 1 理论篇</div><p class="show-animate-item">设计师在还原3D类型的互动H5项目的时候一定想过这个宇宙终极问题：为什么H5/Web实现的3D效果和C4D里渲染出来的差异那么大？</p><p class="show-animate-item">其实这是我们对实时渲染引擎（UE、Unity、three.js等）和离线渲染工具（Redshift、Octane、Vray等）的差异存在误解：一是离线渲染工具是基于真实光照环境来计算每颗像素的着色，实时渲染如果要实现这种效果需要耗费更多硬件基础和算力去模拟光照（没个好显卡都开不动光追）。</p><p class="show-animate-item">虽然UE5的实时渲染技术和硬件兼容性已经让大家大吃一惊，但在实际项目，尤其是需要兼容低端设备的H5来说，渲染能力还是相对有限的。二是对于游戏或H5互动网站实际应用来说，流畅的互动体验优先级往往高于画面精细度，所以牺牲视觉保性能也是常见情况。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="112.5%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/wmF1GymFZTy3wSkfIF2KB1EL1LlyUh9o6TUu9MnKzyB.jpeg" class="pic block-item clip-animate-item"><b style="text-align: justify;">图1-Octane离线渲染效果 vs three.js 实时渲染效果：材质细节、全局光照及投影、以及抗锯齿表现差距明显</b></div><p class="show-animate-item"><br></p><p class="show-animate-item">当实时渲染效果与设计预期差距过大时，设计师能多了解一些基础的计算机图形学，也许就能更好地和开发同学商讨性价比更高的视觉实现和资源优化方案（以及更多Battle的筹码）。</p><p class="show-animate-item"><br></p><div class="_public_title show-animate-item" data-placeholder="Section Title">一、着色器与着色算法差异（靴靴微硬核预警）</div><p class="show-animate-item"><br></p><p class="show-animate-item">首先我们要知道计算机之所以能在2D屏幕上画出3D的图像，是因为有着色器（Shader）在绘制，它将我们三维空间里的模型与光照信息进行转换，并光栅化为二维图像。在计算机图形学中，着色器是用于对图像的材质（光照、亮度、颜色）进行处理的程式。</p><p class="show-animate-item">常用的着色器分为四种：像素/片元着色器（Pixel/Fragment Shader）、顶点着色器（Vertex Shader）、几何着色器（Geometry Shader）、细分曲面着色器（Tessellation Shader）。</p><p class="show-animate-item">像素/片元着色器与顶点着色器（Vertex Shader）在webGL处理过程中都有使用，顶点着色器先将模型中每个顶点的位置、纹理坐标、颜色等信息进行转换装配，再由片元着色器对3D信息光栅化并转换成2D屏幕信息。（关于着色器差异，感兴趣的同学可以直接跳到附录查看。）</p><p class="show-animate-item">着色器是怎么把顶点中所带有光照、纹理等信息转换并重建在二维图像的像素中呢？GPU中是透过不同的着色算法来实现的。</p><p class="show-animate-item">一种是获取每个三角形的插值（Interpolate）来实现，这种方法称作Per Vertex Lighting，但是当三角型很大的时候，插值往往不够精准。此时还可以引用另一种方法Per Pixel Lighting，计算每个像素的光照信息，获得更好的渲染效果，但是往往也带来更大的计算量。</p><p class="show-animate-item">一般常见计算机图形着色算法有三类：Flat Shading、Gouraud Shading、Phong Shading。这些算法虽然看起来和我们设计师没啥关系，但事实上在后面了解three.js材质时，就会发现他们在呈现时的差异。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="44.84375%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/Gr0uSfozgLuUH7IQCENNFV0X7ywmySJbNuxsFLErpes.png" class="pic block-item clip-animate-item"><b style="text-align: justify;">图2-Flat、Gouraud、Blinn-Phong着色法比较 [ F1, ©️Stefano Scheggi ]</b></div><p class="show-animate-item"><b>1. 平直着色法 Flat Shading</b></p><p class="show-animate-item">这种着色法认为模型中所有面都是平的，同一个多边形的上任意点的法线方向都相同。着色时，会优先选择多边形的第一个顶点或三角形的几何中心计算颜色。这种着色法实践上的效果很像低面模型，也比较适合使用在高速渲染的场景。值得注意的是，这种着色法难以做出平滑高光效果。</p><p class="show-animate-item"><br></p><p class="show-animate-item"><b>2. 高洛德平滑着色法 Gouraud Shading</b></p><p class="show-animate-item">这是一种平滑的着色方法，在着色时会先计算三角形每个顶点的光照特性，利用双线插值去补齐三角形区域内其他像素的颜色。这个着色法的比起平直着色法增加了插值的细节，而且也比Phong着色法渲染单个像素的光照特性的性能要高。</p><p class="show-animate-item">但是在渲染高光时，可能会因为无法获取精确的光照值而出现一些不自然的过渡（或T型连接容易被错误绘制），此时可以考虑对模型进行细分或使用漫反射材质。</p><p class="show-animate-item"><br></p><p class="show-animate-item"><b>3. Phong平滑着色法 Phong Shading</b></p><p class="show-animate-item">与Gouraud Shading不同的是，它会对顶点的法线进行插值，并透过每个像素的法向量计算光照特性。这种做法能绘制出精致、精准的曲面，但是计算量较大。Blinn-Phong是Phong的进阶版，着色性能更好，且高光弥散更自然。</p><p class="show-animate-item"><br></p><div class="_public_title show-animate-item" data-placeholder="Section Title">二、基本光照模型 Illumination Model</div><p class="show-animate-item"><br></p><p class="show-animate-item">简单了解计算机如何绘制3D图形后，再来看看它要如何具体理解我们所设计的3D场景。</p><p class="show-animate-item">3D转换成2D，也就是3D栅格化的过程中，每一个像素的颜色是需要基于它所在的环境计算出来，而基于被渲染物体表面某个点的光强度计算模型就被称为光照明模型（Illumination Model）或光照模型（Light Model），透过计算光照模型所得到表面位置对应像素颜色的过程被称为表面绘制（Surface Render）。</p><p class="show-animate-item">*请注意这里说的光照模型并不是指设计师理解的3D立体模型，而是指模型对象表面光照效果的数学计算模型。</p><p class="show-animate-item">影响光照模型的因素有两大方面，一是本身给渲染物体材质设置的各种光学特性（颜色反射系数、表面纹理、透明度等），二是场景中光源光及环境光（场景中各个被照明对象的反射光）。</p><p class="show-animate-item">传统光照模型都是对漫反射和镜面反射的理想化模拟，如果要还原基于真实物理世界的效果，光照模型需要遵循能量守恒定律：一个物体能反射的光必然少于它接受的光。在实践层面则表现为，一个漫反射更强且更粗糙的物体会反射更暗且范围更大的高光，反之亦反。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="18.802083333333332%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/lgPaaQqCjHHhdh1oak9WwoR0egdjtxYODuGDMj8n8jv.png" class="pic block-item clip-animate-item"><b style="text-align: justify;">图3-基于PBR的光照模型需要遵循能量守恒定律 [ F2, ©️Joe Wilson ]</b></div><p class="show-animate-item">光照模型与着色组合在不同的渲染需求下也会有不同的应用：</p><p class="show-animate-item">● 真实感渲染（Photorealistic Rendering）：目的是基于真实物理世界对3D场景进行仿真还原。</p><p class="show-animate-item">● 非真实感渲染（Unphotorealistic Rendering）：也被成为风格化渲染（Stylistic Rendering），会更抽象化地对模型进行重绘。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="38.645833333333336%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/kRVsFrT4aeVxjkkpso9TUnMwmoVbmkMHMKWnFGfO0MR.png" class="pic block-item clip-animate-item"><b style="text-align: justify;">图4-真实感渲染及非真实感渲染对比 [ F3, ©️Autodesk ]</b></div><div class="_public_title show-animate-item" data-placeholder="Section Title">1. 真实感渲染 Photorealistic Rendering</div><p class="show-animate-item">考虑到真实感渲染对硬件的依赖，目前webGL中使用的一般以简单的局部光照模型为主（只计算光源对物体的光照效果，不计算物体间的相互影响，我们看到的“假反射”通常透过贴图来进行模拟），根据反射形态，经典的光照模型有下列几种：</p><p class="show-animate-item"><b>Lambert 漫反射模型：</b></p><p class="show-animate-item">这种模型的粗糙表面（如塑料、石材等）会将反射光从各个方向反射出去，而这种光反射也称为漫反射。理想的漫反射体我们通常称作郎伯反射体（Lambertian Reflectors），也就是我们熟悉的橡胶材质。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="22.8125%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/VW7ELi7cWNAtsv39Mssoysi73PbWzg5UByFXVTP0Xiz.png" class="pic block-item clip-animate-item"><b style="text-align: justify;">图5-漫反射模型与其他光照模型对比 [ F4, ©️ViroCore ]</b></div><p class="show-animate-item"><b><br></b></p><p class="show-animate-item"><b>Phong 镜面反射模型：</b></p><p class="show-animate-item">这是一种以实验及观察为合成基础的非物理模型。它的表面反射同时结合了粗糙表面漫反射和光滑表面镜面反射，但Phong模型在高光处的表现有过渡瑕疵。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="27.760416666666664%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/fttw73wcLWOyE0woufTQCDAn6gU3A9qKRUMaLvsaIDy.png" class="pic block-item clip-animate-item"><b style="text-align: justify;">图6-Phong镜面反射模型视觉构成 [ F5 ]</b></div><p class="show-animate-item"><b>Blinn–Phong 模型：</b></p><p class="show-animate-item">是在OpenGL和Direct3D里默认的着色模型，一种调优后的非物理的Phong模型，顶点间的像素插值使用Gouraud着色算法，比Phong着色算法性能更好，而且高光效果也更平滑。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="27.760416666666664%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/7GXOLyrxNBuSfa2D4sdFX3zFvs2PNYSoz096q6eBPbn.png" class="pic block-item clip-animate-item"><b style="text-align: justify;">图7-Phong及Blinn-Phong镜面反射模型对比 [ F6 ]</b></div><p class="show-animate-item"><b>Cook-Torrance/GGX 光照模型：</b></p><p class="show-animate-item">如果你用过C4D的默认渲染器，那么一定在材质的反射通道设置中见过它俩。</p><p class="show-animate-item">这是相对高级的光照模型，不同于Phong和Blinn-Phong模型仅仅对漫反射及镜面反射进行理想化模拟，这两个光照模型基于不同物理材质加入了微表面（Microfacet）的概念，并考虑到表面粗糙度对反射的影响，对镜面反射进行了调优，使得高光的长尾弥散更加自然，也是目前PBR渲染管线（Unity、UE）中较常用的光照模型。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="33.77693282636248%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/SjVps5ma0GFEJ2xS9S6nys1JfgFlKSxDJxlOcT6RKz1.png" class="pic block-item clip-animate-item"><b style="text-align: justify;">图8-Phong、Blinn-Phong与GGX镜面反射模型对比 [ F7, ©️ridgestd ]</b></div><p class="show-animate-item"><b>次表面散射模型 Subsurface scattering/SSS：</b></p><p class="show-animate-item">终于有一个设计师们常见的概念了。次表面散射是指光穿透不透明物体时（皮肤、液体、毛玻璃等）的散射现象。现实生活中，大部分物体都是半透明的，光会先穿透物体表面，继而在物体内被吸收、多次反射、然后在不同的点穿出物体。以皮肤为例，只有大概6%的反射是直接反射，而94%的反射都是次表面散射。 </p><p class="show-animate-item">BSSRDF（双向次表面反射分布函数）是用于描述入射光在介质内部的光照模型，目前也被应用在最新的虚拟角色皮肤实时渲染中；但由于SSS材质的计算需要依赖深度/厚度数据，所以webGL对这种高级光照效果的还原程度还是相对有限的。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="56.92708333333333%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/5Gnq97dnHt1OVnKm3S8ORT6ANgGCTaiOJBtJFiI3lyj.png" class="pic block-item clip-animate-item"><b style="text-align: justify;">图9-Unity中模拟次表面散射光照模型效果 [ F8, ©️Alan Zucconi ]</b></div><div class="_public_title show-animate-item" data-placeholder="Section Title">2. 非真实感渲染 Unphotorealistic Rendering</div><p class="show-animate-item">也就是我们常说的3渲2，非写实渲染风格也是从人们对3D场景套以2D绘画或自然媒体材质需求而演化过来的。因此非写实渲染技术实际上是不同光照模型+不同着色处理共同作用的风格化输出，目前也被大量应用在动画及游戏中，像《英雄联盟：双城之战》《蜘蛛侠：平行宇宙》都是顶级三渲二大作。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="56.25651720542232%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/spag30Wn33ekFnRCd7Ad9muISAlgszNzKRNdTvs13vz.jpeg" class="pic block-item clip-animate-item"><b style="text-align: justify;">图10-在不同通道中混合应用真实感渲染及非真实感渲染效果 [ F9, ©️Polygon Runway]</b></div><p class="show-animate-item"><b><br></b></p><p class="show-animate-item"><b>Cel Shading/Toon Shading: </b></p><p class="show-animate-item">卡通着色，一种最常见的以3D技术模拟扁平风格的着色形式，通常以极简的颜色、渐变及明确的外框线等漫画元素作为风格特征。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="39.62460896767466%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/IA2L4vCvqrKc7wsYJD7qWPAsbY3rV2zJo2EJ9IbC9DS.png" class="pic block-item clip-animate-item"><b style="text-align: justify;">图11-Blender中不同类型的Toon Shader效果 [ F10, ©️Blendernpr]</b></div><p class="show-animate-item">日本创意编程师Misaki Nakano制作了一个非常有趣的Toon Shading H5互动页面，大家可以体验一下不同着色形态下非常模型的视觉表现。点击体验：https://mnmxmx.github.io/toon-shading/dst/index.html</p><div class="_public_pic block-item block-shadow-item show-animate-item _public_pic_gif caretColor"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/PIE5aeS8Sc2FcvzryxW3DASpGwxcTAcrJvNxOSpmOng.gif" class="pic block-item clip-animate-item"></div><p class="show-animate-item"><b style="text-align: justify;">图12-Misaki Nakano的Toon Shader互动网站 [ F11, ©️Misaki Nakano]</b></p><p class="show-animate-item"><br></p><p class="show-animate-item"><b>Customized Shading：</b></p><p class="show-animate-item">目前越来越多渲染器可支持设计师及工程师根据项目需求对着色进行定制化处理，以产出更具风格化和艺术化的着色效果。例如工业界插画常用的冷暖着色（Gooch Shading），以及更具绘画质感的素描着色（Hatching）及油画水墨画等自然媒体着色，都已经深入到了我们日常的创作之中。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="29.114583333333332%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/k3BhQ4p8ggAoHG2yh6hon84B1sgySCJXCYZuUHufv1O.png" class="pic block-item clip-animate-item"><b style="text-align: justify;">图13-在Unity中，基于真实感渲染的贴图效果与NPR水墨风格化着色效果对比 [ F11, ©️邓佳迪]</b></div><div class="_public_title show-animate-item" data-placeholder="Section Title"><br></div><div class="_public_title show-animate-item" data-placeholder="Section Title">三、Three.js材质着色对比</div><p class="show-animate-item"><br></p><p class="show-animate-item">说完真实感与非真实感渲染差异后，我们再来看看Three.js中的材质。</p><p class="show-animate-item">和许多渲染引擎一样，除了原生材质外，webGL的材质和着色都是可以根据需求进行定制的，但这往往会也带来较高的开发成本及兼容性风险。考虑到H5项目的实际应用场景，下表罗列了Three.js原生材质的对比，包含了材质特性优势、贴图差异及适用场景，大家可以基于项目需求快速选择并混合使用：</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="205.61656730467524%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/SxbRCWolSe9JSyC5jWFvzhTTXCw7eWBKzCrWm46T3Hf.jpeg" class="pic block-item clip-animate-item"><b style="text-align: justify;">图15 - three.js材质对比表</b></div><p class="show-animate-item"><br></p><div class="_public_title show-animate-item" data-placeholder="Section Title">四、色彩描述与管理 Color Space</div><p class="show-animate-item">虽然着色、光照模型以及材质渲染对3D表现有着最为直观的影响，但3D工作流仍有一个隐秘而关键的环节——色彩管理。</p><p class="show-animate-item">真实世界中按照物理定律，如果光的强度增加一倍，那么亮度也会增加一倍，这是线性的关系。理想状态下，像素在显示屏上的亮度也应为线性关系，才能符合人眼对真实世界的观察效果（如图b：横坐标为像素的物理亮度，纵坐标为像素显示时的实际亮度）。</p><p class="show-animate-item">但是显示器的成像由于电压的影响，导致输出亮度与电压的关系是一个亮度等于电压的1.7-2.3次幂的非线性关系，这就导致了当电压线性变化时，亮度的变化在暗处转换时变慢，如果显示器不经过矫正，暗部成色也会整体偏暗（如图c）。目前大多数显示器的Gamma值约为2.2，所以也可以理解Gamma2.2是所有显示器自带的一个遗传病。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="36.99248120300752%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/urPtojK49GDYB9xy8JSajKsDSVqBdjJdovLa2TQInS1.png" class="pic block-item clip-animate-item"></div><p class="show-animate-item"><b>图15-红色上曲线=Gamma0.45=sRGB Space</b></p><p class="show-animate-item"><b>绿色下曲线=Gamma2.2=显示器真实成像缺陷</b></p><p class="show-animate-item"><b>蓝色斜线=Gamma1.0=Linear Space 真实物理世界线性关系</b></p><p class="show-animate-item"><b><br></b></p><p class="show-animate-item">为了矫正显示器的非线性问题（从图c校正回图b），我们需要对它进行一个2.2次幂的逆运算（如图a），在数学上，这是一个约0.45的幂运算（Gamma0.45）。经过0.45幂运算，再由显示器经过2.2次幂输出，最后的颜色就和实际物理空间的一致了，这套校正的操作就是伽马校正（Gamma Correction）。</p><p class="show-animate-item">而我们常见的sRGB就是Gamma0.45所在的色彩空间，是1996由微软与惠普共同开发的标准色彩空间。当照片素材一开始储存成sRGB空间，相当于自带一个Gamma0.45的遗传病抗体，当它被显示器显示时，就自动中和了显示器Gamma2.2的缺陷，从而显示出与物理世界相符的亮度。</p><p class="show-animate-item">另一个校正原因是因为人眼在接受光线时的敏感度也不是线性的，人对于暗部的感知更敏感，对高亮区域感知较弱，而且人眼感知光强度与光的物理强度也刚好是对数关系。为了在暗部呈现更多人眼可感知的细节，Gamma0.45的色彩空间中（如图a），像素的实际亮度也会高于它的物理亮度。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="28.71475054229935%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/78oB8BsHNt965IDoJx5LRqxfpFTqvh92PzlwIlRprSm.png" class="pic block-item clip-animate-item"><b style="text-align: justify;">图16-人眼感知光强度与发射光真实物理强度对比</b></div><p class="show-animate-item">上面那一大段确实有点绕，但也就说回来为什么建议渲染时使用线性空间（Linear Space）了。因为在计算机图形中，着色器的运算基本上都是基于物理世界的光照模型来保证渲染真实性的，如果模型的纹理输入值是非线性的（sRGB），那么运算的前提就不统一，输出的结果自然就不那么真实了。</p><p class="show-animate-item">而在大多数工作流及渲染软件中，大部分贴图资源都是默认输出sRGB的（设计师作图环境一般也在sRGB，所见即所得），而法线贴图、光线贴图等纹理（纯数值类纹理，只用于计算）又是Linear的，这个部分就需要我们根据渲染引擎本身的特性，来判断是否需要对不同的贴图进行不同的"去Gamma化"处理了（WebGL、Unity、Octane等）。</p><p class="show-animate-item">将所有贴图进行去Gamma化，统一为Linear空间后，再在渲染输出时由引擎统一进行Gamma校正，这个时候在显示屏里显示的就是接近真实世界的效果了。</p><p class="show-animate-item">更多色彩空间的实际效果比较，大家可以看下Unity的文档：《Linear/Gamma渲染比较》：</p><p class="show-animate-item">https://docs.unity3d.com/Manual/LinearRendering-LinearOrGammaWorkflow.html</p><p class="show-animate-item">回到H5所用的Three.js，它的着色器计算也是默认在Linear空间，如果最终渲染时不转化为sRGB，在设备显示时可能会造成色彩失真。在three.js中色彩管理的工作流会根据导入模型Asset的差异而有所不同，如果贴图与模型是分别导入场景，则建议可尝试以下流程：</p><p class="show-animate-item"><b>1. 输入贴图数据 sRGB to Linear: </b>含色彩的贴图（基础材质、环境、发光）设编码为sRGB（texture.encoding = sRGBEncoding），或将渲染设置renderer.gammaInput设为True，可将原为sRGB的贴图转换为Linear，而原纯数值类贴图（法线、凹凸等）仍旧保持Linear；这一操作可保证贴图输入数据的正确性与统一性。</p><p class="show-animate-item"><b>2. 刷新材质：</b>当材质编码类型被修改后，需要设置Material.needsUpdate为True，以重新编译材质。</p><p class="show-animate-item"><b>3. 输出渲染 Linear to sRGB: 校正渲染输出值的Gamma：</b></p><p class="show-animate-item">renderer.gammaOutput = true; renderer.gammaFactor = 2.2；以供显示屏正确显色。</p><p class="show-animate-item"><br></p><p class="show-animate-item"><br></p><p class="show-animate-item">《Part1-理论篇》就先告一段落啦，如果你偶发失眠，建议可以反复咀嚼延伸阅读的内容。</p><p class="show-animate-item">《Part2-实践篇》会继续完善three.js场景、材质贴图的制作思路、以及gltf工作流，并动态讨论项目常常遇到的还原问题。</p><p class="show-animate-item">2022，咱们需求再见。</p><p class="show-animate-item"><br></p><div class="_public_subtitle show-animate-item medium-editor-placeholder-relative" data-placeholder="Chapter Title"></div><div class="_public_line show-animate-item"></div><div class="_public_line_title show-animate-item" data-placeholder="Section Title">附录</div><div class="_public_title show-animate-item" data-placeholder="Section Title">一、着色器差异</div><p class="show-animate-item"><b>1.像素着色器 Pixel Shader</b></p><p class="show-animate-item">也称为片元/片段着色器（Fragment Shader）, 为二维着色器。它记录了每一个像素的颜色、深度、透明度信息。最简单的像素着色器可用于记录颜色，像素着色器通常使用相同的色阶来表示光照属性，以实现凹凸、阴影、高光、透明度等贴图。同时，他们也可以用来修改每个像素的深度（Z-buffering）。</p><p class="show-animate-item">但是在3D图像中，像素着色器可能无法实现一些复杂的效果，因为它只能控制独立的像素而并不含有场景中模型的顶点信息。不过，像素着色器拥有屏幕的坐标信息，可以依据屏幕或邻近像素的的材质进行采样并增强，例如，Cel Shader的边缘强化或一些后期的模糊效果。</p><p class="show-animate-item"><b>2.顶点着色器 Vextex Shader</b></p><p class="show-animate-item">是最常见的3D着色器，他记录了模型每个顶点的位置、纹理坐标、颜色等信息。它将每个顶点的3D位置信息转换成2D屏幕坐标。顶点着色器可以处理位置、颜色、纹理的坐标，但是无法增加新的顶点。</p><p class="show-animate-item"><b>3.几何着色器 Geometry Shader</b></p><p class="show-animate-item">是最近新兴的着色器，在Direct3D 10 和Open GL3.2中被引用。这种着色器可以在图元外生成新的顶点，从而转换成新的图元（例如点、线、三角等），而优势也是在于可以直接在着色中增加模型细节，减低CPU负担。集合着色器的常用场景包括点精灵（Point Sprite）生成（粒子动画），细分曲面，体积阴影等。</p><p class="show-animate-item"><b>4.细分曲面着色器 Tessellation Shader</b></p><p class="show-animate-item">在OpenGL4.0和 Direct3D 11中出现，它可以在图元内镶嵌更多三角体。为传统模型新增了两个着色步骤（一是细分控制着色，又称为Hull Shader，二是细分评估着色，又称为Domain Shader），两者结合可以让简单的模型快速获得细分曲面。（例如，含细分曲面效果的模型加上置换贴图就可以获得极其逼真细腻的模型）</p><p class="show-animate-item"><br><br></p><div class="_public_line show-animate-item"><br><br></div><div class="_public_title show-animate-item" data-placeholder="Section Title">二、一些术语的简单理解</div><p class="show-animate-item"><b>GL: </b>Graphics Library, 图形函数库。</p><p class="show-animate-item"><b>webGL：</b>Web Graphics Library，Html 5可接入的3D绘图协议/函数库，可以为H5 Canvas提供3D渲染的各类API。</p><p class="show-animate-item"><b>Z-Buffering：</b>深度缓冲，3D图像在渲物体的时候，每一个生成的像素的深度会存储在缓冲区中。如果另一个物体也在同一个像素中产生渲染结果，那么GPU会比较两个物体的深度，优先渲染距离更近的物体，这个过程叫做Z-Culling。当两个物体靠很近的时候（16-bit），可能会出现Z-Fighting，也就是交叠闪烁的现象，使用24或32bit的Buffer可以有效缓解。</p><p class="show-animate-item"><b>Rendering Pipeline：</b>渲染管线/渲染流水线/像素流水线，为GPU的处理工作流，是GPU负责给图形配上颜色的专门通道。管线越多，画面越流畅精美。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="22.55083179297597%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/Q2wgG5tvcSgAW3LdybO1u6FiTDRe4jnGIW3U6nSIRAR.png" class="pic block-item clip-animate-item"><b style="text-align: justify;">图17-渲染管道细节工作流 [ F12 ]</b></div><p class="show-animate-item">Rasterization：光栅化/点阵化/栅格化，就是将管线处理完的图元转换成一系列屏幕可视的像素，过程包括：图元拼装（Primitive assembly）-三角形遍历（Triangle Traversal）- Pixel Processing-Merging。</p><p class="show-animate-item"><br></p><div class="_public_title show-animate-item" data-placeholder="Section Title">三、参考文献</div><p class="show-animate-item">[1] Hearn, D. and Baker, M.P., 2004. Computer graphics with OpenGL, 计算机图形学第四版 . Upper Saddle River, NJ: Pearson Prentice Hall,.</p><p class="show-animate-item">[2] Akenine-Möller, T., Haines, E. and Hoffman, N., 2019.&nbsp;Real-time rendering. Crc Press.</p><p class="show-animate-item">[3] 锐萌瑞, 经典光照模型（illumination model）</p><p class="show-animate-item">https://blog.csdn.net/qq_34552886/article/details/79089418</p><p class="show-animate-item">[4]&nbsp;Krishnaswamy, A; Baronoski, GVG (2004). "A Biophysically-based Spectral Model of Light Interaction with Human Skin" (PDF). </p><p class="show-animate-item">[5] List of Common Shading Algorithm：</p><p class="show-animate-item">https://en.wikipedia.org/wiki/List_of_common_shading_algorithms</p><p class="show-animate-item">[6] 0向往0, 剖析Unreal Engine超真实人类的渲染技术Part 1 - 概述和皮肤渲染</p><p class="show-animate-item">https://www.cnblogs.com/timlly/p/11098212.html</p><p class="show-animate-item">[7] 毛星云, 【《Real-Time Rendering 3rd》 提炼总结】(十) 第十一章 · 非真实感渲染(NPR)相关技术总结</p><p class="show-animate-item">https://zhuanlan.zhihu.com/p/31194204</p><p class="show-animate-item">[8] 卜噪大仙，局部光照模型杂记【Lambert/Phong/Blin-Phong/BRDF/BSSRDF/Cook-Torrance】</p><p class="show-animate-item">https://www.jianshu.com/p/96ca495669d6</p><p class="show-animate-item">[9] puppet_masterm, Unity Shader-Matcap（材质捕获）</p><p class="show-animate-item">https://blog.csdn.net/puppet_master/article/details/83582477</p><p class="show-animate-item">[10] WestLangley, documentation on gamma correction incorrect? #11110</p><p class="show-animate-item">https://github.com/mrdoob/three.js/issues/11110</p><p class="show-animate-item">[11] donmccurdy, Best practise for color management</p><p class="show-animate-item">https://github.com/aframevr/aframe/issues/3509</p><p class="show-animate-item">https://github.com/mrdoob/three.js/issues/11337#issuecomment-440795075</p><p class="show-animate-item">[12] alteredq, Questions about the use of Gamma Correction in the WebGL Renderer #1488</p><p class="show-animate-item">https://github.com/mrdoob/three.js/issues/1488</p><p class="show-animate-item">[13] Friksel, What’s this about gammaFactor?</p><p class="show-animate-item">https://discourse.threejs.org/t/whats-this-about-gammafactor/4264/3</p><p class="show-animate-item">[14] PZZZB，Linear Space Lightning、Gamma、sRGB详情讲解：</p><p class="show-animate-item">https://zhuanlan.zhihu.com/p/66558476</p><p class="show-animate-item">[15] Learn OpenGL, Gamma Correction</p><p class="show-animate-item">https://learnopengl.com/Advanced-Lighting/Gamma-Correction</p><p class="show-animate-item">[16] 柯灵杰，3D图形学基础：</p><p class="show-animate-item">https://zhuanlan.zhihu.com/p/27846162</p><p class="show-animate-item">[17] Klayge游戏引擎，关于D3D11你必须了解的几件事情（三）</p><p class="show-animate-item">http://www.klayge.org/?p=1404</p><p class="show-animate-item">[18] 拓荒犬, GPU渲染流水线简介</p><p class="show-animate-item">https://zhuanlan.zhihu.com/p/61949898</p><p class="show-animate-item">[19] Steve Baker, Learning to Love your Z-buffer.</p><p class="show-animate-item">https://www.sjbaker.org/steve/omniv/love_your_z_buffer.html</p><p class="show-animate-item">[20] Steve Baker, Alpha-blending and the Z-buffer.</p><p class="show-animate-item">https://www.sjbaker.org/steve/omniv/alpha_sorting.html</p><p class="show-animate-item">[21] Microsoft, Direct3D 11 Graphics-Tessellation Stages</p><p class="show-animate-item">https://docs.microsoft.com/en-us/windows/win32/direct3d11/direct3d-11-advanced-stages-tessellation#domain-shader-stage</p><p class="show-animate-item">[F1] Stefano Scheggi, Flat shading vs. Gouraud shading vs. Blinn-Phong shading</p><p class="show-animate-item">https://www.youtube.com/watch?v=VRw3GuVdldo</p><p class="show-animate-item">[F2] Joe Wilson, Physically-Based Rendering, And You Can Too!</p><p class="show-animate-item">https://marmoset.co/posts/basic-theory-of-physically-based-rendering/</p><p class="show-animate-item">[F3] Autodesk, Apply Visual Effects </p><p class="show-animate-item">https://download.autodesk.com/us/mudbox/help2011_5/index.html?url=./files/WS1a9193826455f5ff5cf1d02511b1d000978-6b44.htm,topicNumber=d0e8759</p><p class="show-animate-item">[F4] Virocore, Lighting and Materials</p><p class="show-animate-item">https://virocore.viromedia.com/v1.0.0/docs/3d-scene-lighting</p><p class="show-animate-item">[F5] Wikipedia,  Phong Reflection Model</p><p class="show-animate-item">https://en.wikipedia.org/wiki/Phong_reflection_model</p><p class="show-animate-item">[F6] Wikipedia, Blinn–Phong reflection model</p><p class="show-animate-item">https://en.wikipedia.org/wiki/Blinn%E2%80%93Phong_reflection_model#cite_note-4</p><p class="show-animate-item">[F7] Ridgestd，从Microfacet到GGX反射模型</p><p class="show-animate-item">http://ridgestd.github.io/2019/03/18/ggx-shader/</p><p class="show-animate-item">[F8] Alan Zucconi, Fast Subsurface Scattering in Unity (Part 2)</p><p class="show-animate-item">https://www.alanzucconi.com/tag/sss/</p><p class="show-animate-item">[F9] Polygon Runway, Toon Shading Tutorial for Blender 2.8 with Commentary</p><p class="show-animate-item">https://www.youtube.com/watch?v=kriKwtzZWFg</p><p class="show-animate-item">[F10] Blendernpr, Basic Toon Shaders with Blender http://blendernpr.org/basic-toon-shaders-with-blender-internal/</p><p class="show-animate-item">[F11] 邓佳笛，在Unity进行水墨风3D渲染的尝试，https://zhuanlan.zhihu.com/p/25346977</p><p class="show-animate-item">[F12]  Wikipedia, Graphics_pipeline，https://en.wikipedia.org/wiki/Graphics_pipeline</p><p class="show-animate-item"><br></p><p class="show-animate-item"><br></p><p class="show-animate-item"><br></p><p class="show-animate-item"><br></p><div class="_public_line_title show-animate-item" data-placeholder="Section Title"></div>
+
+            </section>
+
+        
+    
+
+        
+    
+    </div>
+
+    
+
+    <!-- 测试连接 https://v.qq.com/x/page/f0507qj9hhv.html -->
+    <!-- 测试连接 https://v.qq.com/x/page/s05065zrbps.html -->
+
+    <!-- 文章数据模块 -->
+    <section class="_mod_stat show-animate-item">
+        <div class="_stat_wrapper">
+            
+            <div class="_article_date">
+                <span class="date">JANUARY 17, 2022</span>
+            </div>
+
+            <div class="_article_stat">
+
+                <ul class="_stat_list">
+                    <li class="_stat_item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18" class="_stat_view _stat_icon">
+                            <g>
+                                <path class="view_svg" d="M19,9c0,2.5-3.5,8-9,8S1,11.5,1,9s3.5-8,9-8S19,6.5,19,9Z"/>
+                                <circle class="view_svg" cx="10" cy="9" r="3"/>
+                            </g>
+                        </svg>
+                        <span class="_views">17956</span>
+                    </li>
+                    <li class="_stat_item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18.53" class="_stat_like _stat_icon" id="js-like-0" data-id="564">
+                            <g>
+                                <path class="like_svg" d="M17.54,9.54A5,5,0,1,0,10,3,5,5,0,1,0,2.46,9.54L10,17.11Z"/>
+                            </g>
+                        </svg>
+                        <span class="_likes js-like-text">105</span>
+                    </li>
+                </ul>
+
+                <ul class="_stat_share_article js-share-list" data-title="3DtoH5工作流应用手册 理论篇" data-desc="web/H5中3D图形的实时渲染原理、材质应用及工作流思路" data-pic="https://cdn-isux.qq.com/upload/detail/fWZEM1PsRFXguoYySFT49wPTgJWq4BVRSCGJBFdi9qa.png">
+                    <li class="share_article_item share_article_item_qzone js-china-ip" data-href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=%7Burl%7D&amp;title=%7Btitle%7D&amp;desc=&amp;summary=%7Bdesc%7D&amp;site=&amp;pics=%7Bpic%7D"></li>
+                    <li class="share_article_item share_article_item_qq js-china-ip" data-href="http://connect.qq.com/widget/shareqq/index.html?url=%7Burl%7D&amp;title=%7Btitle%7D&amp;desc=&amp;summary=%7Bdesc%7D&amp;site=isux&amp;pics=%7Bpic%7D"></li>
+                    <li class="share_article_item share_article_item_fb" data-href="https://www.facebook.com/sharer/sharer.php?u=%7Burl%7D&amp;t=%7Bdesc%7D"></li>
+                    <li class="share_article_item share_article_item_twitter" data-href="http://twitter.com/home?status=%7Bdesc%7D%20%23%7Btitle%7D%23&amp;url=%7Burl%7D&amp;pic=%7Bpic%7D&amp;desc="></li>
+                    <li class="share_article_item share_article_item_sina js-china-ip" data-href="http://service.weibo.com/share/share.php?title=%7Bdesc%7D%20%23%7Btitle%7D%23&amp;url=%7Burl%7D&amp;pic=%7Bpic%7D&amp;desc="></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作者模块 -->
+    <section class="_mod_authors show-animate-item">
+        <!-- 可以写成这个模块的 border-top -->
+        <!--<div class="_article_line"></div>-->
+        <div class="_authors_title">CONTRIBUTORS</div>
+        <ul class="_authors">
+            <li class="_author">
+                <img class="pic" src="https://isuxdesign-1251263993.file.myqcloud.com/avatars/MqOnLzZYfbo35R7wb102TfmAUHakcSQ5AemPkWkaXNm.jpeg" alt="">
+                <div class="name">CIRCLE</div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- 相关文章推荐模块 -->
+    <section class="_mod_related show-animate-item">
+        <ul class="related-list clearfix" id="list">
+            <li class="related-item first-item" data-index='1'>
+                <a href="3d-to-h5.html" target="_blank">
+                        <img class="pic clip-animate-item pic-gray" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/564_a.jpg" />
+                        <img class="pic pic-colorful clip-animate-item" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/564_a_src.jpg" />
+
+                    
+                    <div class="_title-wrapper fade-aniamte-item">
+                        <div class="_title-flex">
+                            <h3 class="title js-article-title">3DtoH5工作流应用手册 理论篇</h3>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="related-item" data-index='2'>
+                <a href="isux-ae-play.html" target="_blank">
+                        <img class="pic clip-animate-item pic-gray" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/542_a.jpg" />
+                        <img class="pic pic-colorful clip-animate-item" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/542_a_src.jpg" />
+
+                    
+                    <div class="_title-wrapper fade-aniamte-item">
+                        <div class="_title-flex">
+                            <h3 class="title js-article-title">玩转AE丨动效设计必备指南</h3>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="related-item last-item" data-index='3'>
+                <a href="isux-optimizing-3d-model.html" target="_blank">
+                        <img class="pic clip-animate-item pic-gray" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/372_a.jpg" />
+                        <img class="pic pic-colorful clip-animate-item" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/372_a_src.jpg" />
+
+                    
+                    <div class="_title-wrapper fade-aniamte-item">
+                        <div class="_title-flex">
+                            <h3 class="title js-article-title">如何在页面极速渲染3D模型</h3>
+                        </div>
+                    </div>
+                </a>
+            </li>
+
+        
+        </ul>
+    </section>
+
+</div>
+
+<div class="share_article_scroll share_article_hide">
+    
+    <div class="_mod_stat">
+        <div class="_article_stat">
+
+            <ul class="_stat_list">
+                <li class="_stat_item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18" class="_stat_view _stat_icon">
+                        <g>
+                            <path class="view_svg" d="M19,9c0,2.5-3.5,8-9,8S1,11.5,1,9s3.5-8,9-8S19,6.5,19,9Z"/>
+                            <circle class="view_svg" cx="10" cy="9" r="3"/>
+                        </g>
+                    </svg>
+                    <span class="_views">17956</span>
+                </li>
+                <li class="_stat_item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18.53" class="_stat_like _stat_icon" id="js-like-1" data-id="564">
+                        <g>
+                            <path class="like_svg" d="M17.54,9.54A5,5,0,1,0,10,3,5,5,0,1,0,2.46,9.54L10,17.11Z"/>
+                        </g>
+                    </svg>
+                    <span class="_likes bottom-like-text">105</span>
+                </li>
+            </ul>
+
+            <ul class="_stat_share_article js-share-list" data-title="3DtoH5工作流应用手册 理论篇" data-desc="web/H5中3D图形的实时渲染原理、材质应用及工作流思路" data-pic="https://cdn-isux.qq.com/upload/detail/fWZEM1PsRFXguoYySFT49wPTgJWq4BVRSCGJBFdi9qa.png">
+                <li class="share_article_item share_article_item_qzone" data-href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=%7Burl%7D&amp;title=%7Btitle%7D&amp;desc=&amp;summary=%7Bdesc%7D&amp;site=&amp;pics=%7Bpic%7D"></li>
+                <li class="share_article_item share_article_item_qq" data-href="http://connect.qq.com/widget/shareqq/index.html?url=%7Burl%7D&amp;title=%7Btitle%7D&amp;desc=&amp;summary=%7Bdesc%7D&amp;site=isux&amp;pics=%7Bpic%7D"></li>
+                <li class="share_article_item share_article_item_fb" data-href="https://www.facebook.com/sharer/sharer.php?u=%7Burl%7D&amp;t=%7Bdesc%7D"></li>
+                <li class="share_article_item share_article_item_sina" data-href="http://service.weibo.com/share/share.php?title=%7Bdesc%7D%20%23%7Btitle%7D%23&amp;url=%7Burl%7D&amp;pic=%7Bpic%7D&amp;desc="></li>
+            </ul>
+        </div>
+    </div>
+
+    
+</div>
+<!-- 文章详情页 -->
+
+ <div id="bottom-mask"></div>
+<div class="mask-strip"></div>
+
+<footer class="mod_site_footer" role="contentinfo">
+    <div class="_footer-prefix">
+        <div class="_inner-wrapper"></div>
+    </div>
+    <div class="_social">
+        <div class="_inner-wrapper">
+            <ul class="_social-media-links">
+                <!-- <li class="-hc -vimeo"><a href="#" title="vimeo"></a></li> -->
+                <li class="-hc -wechat">
+                    <a title="wechat">
+                        <span class="-wechat-qr">
+                            <img class="lazy" data-src="../static/images/isux_qrcode.jpg" alt="微信公众号二维码" width="230" height="230">
+                        </span>
+                    </a>
+                </li>
+                <!-- <li class="-hc -facebook"><a href="#" title="facebook"></a></li> -->
+                <li class="-hc -weibo"><a href="http://weibo.com/txisux" target="_blank" title="weibo"></a></li>
+
+                <li class="-hc -zcool">
+                    <a href="https://www.zcool.com.cn/u/1936779" target="_blank" title="zcool"></a>
+                </li>
+
+                <li class="-hc -ins">
+                    <a href="https://www.instagram.com/isux_lab" target="_blank" title="instagram"></a>
+                </li>
+
+                <li class="-hc -behance">
+                    <a href="https://www.behance.net/18485758707c20" target="_blank" title="behance"></a>
+                </li>
+
+                <li class="-hc -medium">
+                    <a href="https://medium.com/@tencent.isux" target="_blank" title="medium"></a>
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="_footer-suffix">
+        <div class="_inner-wrapper">
+            <div class="supporting-information">
+                <ul class="_footer-links"><li class="_footer-link"><a href="https://www.tencent.com/" target="_blank">TENCENT</a></li><li class="_footer-link"><a href="https://qqfamily.com" target="_blank">QQfamily</a></li><li class="_footer-link"><a href="https://ycg.qq.com/" target="_blank">YCG</a></li></ul>
+            </div>
+            <div class="copyright">Copyright © 1998 - 2025 Tencent Inc. All Rights Reserved.</div>
+        </div>
+    </div>
+</footer>
+
+
+<div class="isux-qrcode">
+	<img src="../static/images/qrcode.jpg" alt="ISUX 二维码">
+</div>
+<div class="-search hide" id="search" role="application" aria-hidden="false">
+	<div class="-search-inner">
+		<div class="-search-form">
+			<span class="-search-box">
+				<input type="search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" maxlength="100" class="-search-input" placeholder="keywords" value="" />
+				<button type="button" class="-search-reset" title="Close">&times;</button>
+			</span>
+		</div>
+		<div class="-search-result">
+			<div class="-search-result-head">
+				啥，没结果？别担心，我们为您准备了推荐的文章：
+			</div>
+			<div class="gallery -search-gallery" id="searchResult"></div>
+		</div>
+		<div class="-loading -search-loading hide">
+			<span class="-loading-icon -search-loading-icon"><i></i><i></i></span>
+		</div>
+	</div>
+</div>
+<!-- .-search -->
+<script type="text/tpl" id="itemTpl">
+<div class="gallery-item <%=?cssclass%>"<%=?dataset%>>
+	<a class="gallery-wrapper" href="<%=url%>" target="_blank">
+		<div class="gallery-pics show-search-animate-item">
+			<div class="gallery-pic gallery-pic-gray lazy clip-animate-item" data-src="<%=image%>"></div>
+			<div class="gallery-pic gallery-pic-normal lazy clip-animate-item" data-src="<%=image1x%>"></div>
+		</div>
+		<div class="gallery-info show-search-animate-item">
+			<h3 class="title" title="<%=title%>"><%=title%></h3>
+			<p class="category"><%=category_name%></p>
+			<p class="abstract"><%=abstract%></p>
+		</div>
+	</a>
+</div>
+</script>
+<script>
+var G_csrf = 'w4HAepjhX1s0mlC8acnnZ_g3Zm77HA68';
+</script>
+<script src="../static/js/lib.js"></script>
+
+<!-- 引入腾讯视频JS库 -->
+<script src="https://vm.gtimg.cn/tencentvideo/txp/js/txplayer.js"></script>
+
+<!-- 引入判断背景显示不同字体颜色的组件 -->
+<script src="../static/js/common/background-check.js"></script>
+<script>
+window.backgroundCheck && backgroundCheck.init({
+    targets: '._title-flex',
+    imgs: '.pic-gray',
+    parents: '.related-item a',
+    cssclass: '_article-light-item',
+    lazy: false
+});
+</script>
+
+<!-- 页面逻辑js -->
+<script src="../static/js/detail.js"></script>
+
+<!-- TA -->
+
+<!-- TA -->
+<!-- GA -->
+
+<!-- GA -->
+</body>
+</html>

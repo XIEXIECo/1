@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+<meta charset="utf-8">
+<title>玩转 SVG 让设计更出彩 - Tencent ISUX Design</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="theme-color" content="#000000">
+<link rel="mask-icon" href="../static/images/favicon.svg" color="#FFFFFF">
+<link rel="shortcut icon" href="../static/images/favicon.ico" type="image/x-icon">
+<link href="../static/css/base.css" rel="stylesheet">
+<script type="text/javascript" src="https://js.aq.qq.com/js/aq_common.js"></script>
+
+<meta name="keywords" content="svg,svg动画,描边动画,morphing动画,svg mask,svg渐变,svg icon">
+<meta name="description" content=" 使用SVG，提升视觉设计表现力，让设计更出彩。">
+
+<!-- 社交分享 -->
+<meta itemprop="name" content="玩转 SVG 让设计更出彩" />
+<meta itemprop="description" content=" 使用SVG，提升视觉设计表现力，让设计更出彩。" />
+<meta itemprop="image" content="https://cdn-isux.qq.com/upload/detail/hqlw6lzZ9DflDl9K3r8auXrtPO6i1AnkQvTN34BKUMi.png" />
+<!-- 社交分享 -->
+
+<!-- Facebook Open Graph -->
+<meta property="fb:app_id" content="137155036704975" />
+<meta property="og:url" content="https://isux.tencent.com/articles/svg-for-web.html" />
+<meta property="og:title" content="玩转 SVG 让设计更出彩" />
+<meta property="og:site_name" content="Tencent ISUX Design" />
+<meta property="og:description" content=" 使用SVG，提升视觉设计表现力，让设计更出彩。" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://cdn-isux.qq.com/upload/detail/hqlw6lzZ9DflDl9K3r8auXrtPO6i1AnkQvTN34BKUMi.png" />
+<meta property="og:locale" content="en_us" />
+<!-- Facebook Open Graph -->
+
+<!-- home css file -->
+<link href="../static/css/detail.css" rel="stylesheet">
+<!-- home css file -->
+
+</head>
+<body>
+<!-- 移动端的结构，要单独写html，才可以在header下面滑出 -->
+<div class="_m-nav-wrapper">
+    <ul class="_nav-items">
+            <li class="_nav-item active">
+                <a href="index.html">ARTICLES</a>
+            </li>
+            <li class="_nav-item">
+                <a href="../brands/index.html">BRANDS</a>
+            </li>
+            <li class="_nav-item">
+                <a href="../resources/index.html">RESOURCES</a>
+            </li>
+            <li class="_nav-item">
+                <a href="../careers/index.html">CAREERS</a>
+            </li>
+
+        <!-- 移动端的搜索按钮，pc的时候为隐藏状态，功能跟._nav-search一样 -->
+        <div class="nav-item -m-search">
+            <a href="#/search/" data-action="toggle" data-args="body" data-cssclass="xxx"></a>
+        </div>
+    </ul>
+</div>
+
+<header>
+    <div class="_header-wrapper">
+        <nav id="navigator" class="mod_site_nav nav-animate-item js-nav-state">
+            <div class="_nav-logo">
+                <a href="../index.html" class="_nav-flower" ></a>
+                <!-- <a href="/" class="js-nav-isux _nav-isux"></a> -->
+            </div>
+            <!-- pc端的结构 -->
+            <div class="_nav-wrapper">
+                <ul class="_nav-items">
+                        <li class="_nav-item active">
+                            <a href="index.html">ARTICLES</a>
+                        </li>
+                        <li class="_nav-item">
+                            <a href="../brands/index.html">BRANDS</a>
+                        </li>
+                        <li class="_nav-item">
+                            <a href="../resources/index.html">RESOURCES</a>
+                        </li>
+                        <li class="_nav-item">
+                            <a href="../careers/index.html">CAREERS</a>
+                        </li>
+                    <!-- 移动端的搜索按钮，pc的时候为隐藏状态，功能跟._nav-search一样 -->
+                    <div class="nav-item -m-search">
+                        <a href="#/search/" data-action="toggle" data-args="body" data-cssclass="xxx"></a>
+                    </div>
+                </ul>
+            </div>
+
+            <!-- pc端的搜索按钮，移动端时为隐藏状态 -->
+            <div class="_nav-search">
+                <a href="#/search/" data-action="toggle" data-args="body" data-cssclass="xxx"></a>
+            </div>
+
+            <!-- 移动端的菜单list按钮，pc的时候为隐藏状态，在列表icon和close-icon之间切换 -->
+            <div class="_m-nav-list" data-cssclass="_m-nav-close">
+                <a href="#/list/" data-action="toggle" data-args="body" class="lines js-m-navlist">
+                    <span class="line first-line"></span>
+                    <span class="line second-line"></span>
+                    <span class="line third-line"></span>
+                </a>
+            </div>
+
+        </nav>
+    </div>
+</header>
+<div class="_fake-header"></div>
+<!-- 文章详情页 -->
+<div class="_main_content">
+    <!-- 前言模块 -->
+    <section class="_mod_introduce _mod_editor js-mod-introduce">
+
+        <div class="_introduce_title_wrapper show-animate-item">
+            <div class="_article_title_wrapper">
+                <div class="_introduce_title js-intro-title">玩转 SVG 让设计更出彩</div>
+            </div>
+            <div class="_public_line caretColor" ></div>
+            <div class="_introduce_tag js-intro-tag" >TECH</div>
+        </div>
+        
+        <div class="_public_paragraph js-intro-content show-animate-item"> 使用SVG，提升视觉设计表现力，让设计更出彩。</div>
+
+        <div class="_public_banner js-intro-banner js-defualt-banner show-animate-item"><img class="pic js-pic-banner clip-animate-item block-item" data-banner-src="https://cdn-isux.qq.com/upload/detail/hqlw6lzZ9DflDl9K3r8auXrtPO6i1AnkQvTN34BKUMi.png" data-article-id="291" src="https://cdn-isux.qq.com/upload/detail/hqlw6lzZ9DflDl9K3r8auXrtPO6i1AnkQvTN34BKUMi.png" alt=""></div>
+    
+    </section>
+
+    <div class="editable" id="editor2">
+        <!-- 正文模块 -->
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            <section class="_mod_content _mod_editor">
+                
+                <div class="_public_subtitle show-animate-item js-content-subtitle" data-placeholder="Chapter Title">前言</div>
+                <div class="_public_line show-animate-item caretColor" contenteditable="false"></div>
+                <div class="_public_line_title show-animate-item js-content-title js-content-subtitle" data-placeholder="Section Title">SVG 概述</div>
+                <div class="_public_paragraph show-animate-item js-content-content" data-showbar="true" data-placeholder="Type your text"><p class="show-animate-item">随着浏览器对矢量图形的支持越来越好。在这两年的web设计中，可以发现矢量图形即SVG应用的越来越广泛，使用SVG可以大大的提升视觉设计的表现力和设计体验。</p><p class="show-animate-item">这篇文章就来讲讲SVG在web设计中的一些应用场景，希望可以给大家带来一些灵感。</p><p class="show-animate-item">先还是简要的介绍下SVG：</p><p class="show-animate-item">SVG意为可缩放矢量图形（Scalable Vector Graphics）。它是由万维网联盟(W3C)开发并进行维护的。</p><p class="show-animate-item">SVG对于Web来说有着其它图片格式无可比拟的优势，尤其是现在，因为它不必考虑屏幕分辨率的问题。不论你新入手的智能手机的像素如何密集（分辨率有多高），矢量始终显示得如同刚下的雪一样清晰。</p><p class="show-animate-item">时至今日，无论是设计工具还是浏览器对SVG的支持越来越好，可以放心大胆的使用它来使设计更出彩。</p><p class="show-animate-item">比如设计工具就有强大的Sketch和Adobe Illustrator。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="53.294117647058826%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/LBzqWOMSnXnbUva6sjE4KXuoCjRt8tECjeqfnefq2ii.jpeg" class="pic block-item clip-animate-item"></div><p class="show-animate-item">浏览器几乎也是一片绿的，当然这里指的移动端。PC端的话，还是要注意下IE。<br></p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="37.646484375%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/xPu5uPpkjlRwBjkxZyzhqQifNYarX4AsG3HlUf6DPis.jpeg" class="pic block-item clip-animate-item"></div><p class="show-animate-item">总结下SVG的一些优势：<br></p><p class="show-animate-item"><b>1、跟分辨率无关，完美显示，一图可以适配各种尺寸</b><br></p><p class="show-animate-item"><b>2、强大的设计工具支持</b></p><p class="show-animate-item"><b>3、方便交互，方便编写动效</b><br></p><p class="show-animate-item"></p><div class="_public_title show-animate-item" data-placeholder="Section Title">ICON应用</div><p class="show-animate-item">ICON是SVG的一个典型应用场景，由于它是矢量图形的关系，所以不需要考虑像以前一样要切各种倍数的图来适配高清设备，直接一张图就可以搞定所有的设备。</p><p class="show-animate-item"></p><p class="show-animate-item">可以体验下下面这个demo，只需要一个SVG，无论多么变态的分辨率都可以完美的高清显示：</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="40.39125431530495%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/KV29ceM7P6U3e373c9lmUhVLnzldOGT76iVIIQO26Br.png" class="pic block-item clip-animate-item"></div><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">ICON应用</div><div class="_public_line show-animate-item"></div><div class="_public_line_title show-animate-item" data-placeholder="Section Title">icon换肤</div><p class="show-animate-item">由于SVG是一种XML格式来描述的矢量图形，自带了很多的属性来定制它的表现。比如填充颜色，使用SVG可以很方便改变图形的填充颜色，这对于一些需要换肤的场景就就派上用场了。比如下面这个demo：<br></p><div class="_public_pic block-item block-shadow-item show-animate-item _public_pic_gif caretColor"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/TQQsHFA9nKkWzdOPQG2dqeBxAIcPgGzCbgXIMagMnjw.gif" class="pic block-item clip-animate-item"></div><p class="show-animate-item">扫码体验：</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="34.883720930232556%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/yQuMLb3y261974UL2WulSIcZATUCVSmdOcbHeTRk9nJ.png" class="pic block-item clip-animate-item"></div><p class="show-animate-item"><br></p><p class="show-animate-item">仅仅只需要改变一句代码，就可以随心所欲的改变icon的颜色。<br></p><p class="show-animate-item"><br></p><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">ICON应用</div><div class="_public_line show-animate-item"></div><div class="_public_line_title show-animate-item" data-placeholder="Section Title">ICON Morphing 动画</div><p class="show-animate-item">所谓Morphing动画是表示，同一个模型，从一个形状变到另一个形状。这两年来，这种微动效在web应用的越来越多，特别是一些按钮的交互操作上，比如youtube上播放器的按钮交互就使用了morphing动画：<br></p><div class="_public_pic block-item block-shadow-item show-animate-item _public_pic_gif caretColor"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/rqAOOu23vLKvPw9N7Y46E3bYCzcO2Sd6SUH33WJeN7r.gif" class="pic block-item clip-animate-item"></div><p class="show-animate-item">可以扫码来感受下这种微动画，使用在一些按钮的交互上，可以使交互更加细腻。而不是像以前那样硬生生的直接切换图片。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="34.883720930232556%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/iVLU1UOQ1fMVIqMAoS27AH50CqmjQPZEqLdRkT3kHDJ.png" class="pic block-item clip-animate-item"></div><p class="show-animate-item"><br></p><p class="show-animate-item">具体怎么实现 morphing 动画，敬请期待后面的教程。<br></p><div class="_public_title show-animate-item" data-placeholder="Section Title">SVG 在文字中的应用</div><p class="show-animate-item">在web世界中，文字占据了一个重要的位置。在之前，文字一般是通过不同的字体来提高它的表现力和美感。</p><p class="show-animate-item">最近这两年随着W3C标准不断地发展，通过CSS和SVG的一些属性，可以实现以前只能靠Photoshop等设计软件才能实现的效果。下面就来说说SVG在文字中的应用，当然有些效果使用CSS也能实现。</p><p class="show-animate-item"><br></p><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">SVG在文字中的应用</div><div class="_public_line show-animate-item"></div><div class="_public_line_title show-animate-item" data-placeholder="Section Title">渐变文字效果</div><p class="show-animate-item">渐变文字，故名思议就是使用渐变的颜色来填充文字。以前这种文字的效果只能靠photoshop等设计工具来实现，限制大不灵活。而使用SVG的话，则可以非常的灵活使用它，一句代码就可以搞定（现在使用CSS也可以使用这个效果）。<br></p><div class="_public_code show-animate-item" data-placeholder="Paste your code right here"><p class="show-animate-item">&lt;svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1000" height="400"&gt; </p><p class="show-animate-item">    &lt;title&gt;Applying a gradient background to text in SVG&lt;/title&gt; </p><p class="show-animate-item">    &lt;defs&gt;</p><p class="show-animate-item">       &lt;linearGradient id="filler" x="0%" y="100%"&gt;</p><p class="show-animate-item">           &lt;stop stop-color="olivedrab" offset="0%"&gt;&lt;/stop&gt;</p><p class="show-animate-item">           &lt;stop stop-color="peru" offset="20%"&gt;&lt;/stop&gt;</p><p class="show-animate-item">           &lt;stop stop-color="goldenrod" offset="40%"&gt;&lt;/stop&gt;</p><p class="show-animate-item">           &lt;stop stop-color="firebrick" offset="60%"&gt;&lt;/stop&gt;</p><p class="show-animate-item">           &lt;stop stop-color="thistle" offset="80%"&gt;&lt;/stop&gt;</p><p class="show-animate-item">           &lt;stop stop-color="sandybrown" offset="100%"&gt;&lt;/stop&gt;</p><p class="show-animate-item">       &lt;/linearGradient&gt;</p><p class="show-animate-item">    &lt;/defs&gt;</p><p class="show-animate-item">    &lt;text x="100" y="70%" font-size="205" fill="url(#filler)"&gt;ISUX Design&lt;/text&gt;</p><p class="show-animate-item">&lt;/svg&gt;</p></div><p class="show-animate-item">简单几行代码就可以搞定渐变文字的效果，文字可以自定义。<br></p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="44.9685534591195%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/QYjinIKvUy5BAZpOq9kNqeQxQaPuxcdbk4X3auDg5De.jpeg" class="pic block-item clip-animate-item"></div><p class="show-animate-item">扫码体验：</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="34.883720930232556%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/LHTCcJsUVvxeih3JK2npVBuy4p1kHBG0pXilVSHBcsj.png" class="pic block-item clip-animate-item"></div><p class="show-animate-item"><br></p><p class="show-animate-item">这里不只是可以填充渐变，也可以使用图片来填充文字，来实现你想要的文字效果。<br></p><p class="show-animate-item"><br></p><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">SVG 在文字中的应用</div><div class="_public_line show-animate-item"></div><div class="_public_line_title show-animate-item" data-placeholder="Section Title">动态文字效果</div><p class="show-animate-item">除了颜色的填充，还可以使用视频或者是gif动图来填充文字，可以实现各种脑洞大开的文字效果。</p><p class="show-animate-item">比如下面这个火焰在燃烧的文字效果，就是使用gif图来填充的。</p><div class="_public_pic block-item block-shadow-item show-animate-item _public_pic_gif caretColor"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/tHDz5gLqDfsOJ8l877BQC4hdphUlQC6zNoQXCoxZXBT.gif" class="pic block-item clip-animate-item"></div><p class="show-animate-item">上面是gif图填充的动态效果，同样可以使用视频来填充在文字实现动态效果。扫码来体验下：<br></p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="34.883720930232556%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/yWht7CJkuCBQOl0TNAkHFDNkGBFhWe0VKhfm6YsHeVs.png" class="pic block-item clip-animate-item"></div><p class="show-animate-item"><span style="font-size: 28px; text-align: left;">SVG 蒙版的应用</span><br></p><p class="show-animate-item">蒙版，一直是各种设计工具中一个强大的工具，利用它可以实现各种特殊的图形效果。以前，要想在web中实现特殊的图形效果，只能靠设计师先设计好效果，然后切图利用图片来在网页中实现。</p><p class="show-animate-item">而使用SVG中的蒙版属性则可以轻松实现各种各样的特殊图形效果。比如下面这样的图形效果：</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="42.493946731234864%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/dMNywqUi9NrfNV1ZCpmh1sBG7RJPfB9p7lGHuNhon0H.png" class="pic block-item clip-animate-item"></div><p class="show-animate-item">以前只能靠切图来实现，而现在也只需要几行代码就可以实现。</p><p class="show-animate-item"><br></p><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">SVG 蒙版应用</div><div class="_public_line show-animate-item"></div><div class="_public_line_title show-animate-item" data-placeholder="Section Title">SVG 镂空文字效果</div><p class="show-animate-item">同样蒙版也可以应用到文字中，来实现一些镂空透明的文字视觉效果：</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="61.73688736027515%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/eSz7NrfoaWnZiPkZYPEp55ErXJUdMZLIy2MwG1z1Xab.png" class="pic block-item clip-animate-item"></div><p class="show-animate-item">扫码体验：</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="34.883720930232556%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/WcLE4iOt6PbNGCtRoSRO52Mv9IQ8P5pf8qzAq82H7uA.png" class="pic block-item clip-animate-item"></div><p class="show-animate-item">除了实现一些静态的特殊图片效果，使用蒙版配合其它的元素还可以实现一些动画效果。<br></p><p class="show-animate-item"><br></p><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">SVG 蒙版应用</div><div class="_public_line show-animate-item"></div><div class="_public_line_title show-animate-item" data-placeholder="Section Title">蒙版动画效果</div><p class="show-animate-item">利用SVG蒙版，我们可以制作类似下面这样类似霓虹灯的文字动画效果。<br></p><div class="_public_pic block-item block-shadow-item show-animate-item _public_pic_gif caretColor"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/Qw2wbazVu7KfxosE8M6ek5py4mjLWhfS96BTBSLjO8t.gif" class="pic block-item clip-animate-item"></div><p class="show-animate-item">扫码体验：<br></p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="34.883720930232556%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/mdq5KV5pQcw1vUhz12lg72IHAc9xRyqsTDPMYfEPzyD.png" class="pic block-item clip-animate-item"></div><p class="show-animate-item">还可以结合视频实现特殊形状的动态效果：<br></p><div class="_public_pic block-item block-shadow-item show-animate-item _public_pic_gif caretColor"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/1yy4xk1VNGvlYRwFfwk8kSGJyVkbVYGC8pUPI6lDQRk.gif" class="pic block-item clip-animate-item"></div><p class="show-animate-item">具体效果可以去这里体验下：<a href="http://dspolitical.com/">http://dspolitical.com/</a><br></p><p class="show-animate-item">使用蒙版实现下面这样的聚光灯的动画效果，也非常简单：<br></p><div class="_public_pic block-item block-shadow-item show-animate-item _public_pic_gif caretColor"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/IrHbVjKXHvUD4ZVvrvu7xVxh0gF5mtwTGA7l2Z70Hek.gif" class="pic block-item clip-animate-item"></div><div class="_public_title show-animate-item" data-placeholder="Section Title">SVG 动画应用</div><p class="show-animate-item">动画也是SVG的一个典型应用，特别是最近这两年，应用的特别多。下面就来看看SVG动画的一些应用。<br></p><p class="show-animate-item"><br></p><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">SVG 动画应用</div><div class="_public_line show-animate-item"></div><div class="_public_line_title show-animate-item" data-placeholder="Section Title">描边动画</div><p class="show-animate-item">描边动画是啥呢，看个图就知道了。<br></p><div class="_public_pic block-item block-shadow-item show-animate-item _public_pic_gif caretColor"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/6NBH2SHrlzw7j4C1gzhVEsFxeDkXCfsCdo8RQxCeAnm.gif" class="pic block-item clip-animate-item"></div><p class="show-animate-item">看完图是不是感觉熟悉，这种使用SVG来实现的描边动画，这两年在web上大行其道。随时随地都可以看见它的使用，以及变着各种法子来使用。</p><p class="show-animate-item">比如常见的表单也可以使用描边动画来实现有趣的交互动画效果：</p><div class="_public_pic block-item block-shadow-item show-animate-item _public_pic_gif caretColor"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/DCUluBn9Jn1hcfuJ6gNWYP66CAHgozFjWB1vmEYju4h.gif" class="pic block-item clip-animate-item"></div><p class="show-animate-item">这种描边动画使用SVG来实现成本极低，基本上只需要设计师是导出矢量图形的SVG格式再加上几句代码就可以轻松实现。<br></p><p class="show-animate-item"><br></p><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">SVG 动画应用</div><div class="_public_line show-animate-item"></div><div class="_public_line_title show-animate-item" data-placeholder="Section Title">Morphing 动画</div><p class="show-animate-item">morphing动画在上面icon那部分已经介绍过了，在icon上使用只是小试牛刀。它的用处远不止如此。比如：<br></p><div class="_public_pic block-item block-shadow-item show-animate-item _public_pic_gif caretColor"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/PCbgGpogDUeOPqExxvBLmKsMpqbYOPqDllngbE4Wx53.gif" class="pic block-item clip-animate-item"></div><p class="show-animate-item">有了 SVG，实现这样的形变动画，都变的非常的轻松简单。剩下就是你的想象力了。<br></p><p class="show-animate-item">比如，我想做一个苹果公司产品之间的一个演变，就可以使用 SVG 来实现产品之间的演变的动画，扫码体验下：<br></p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="34.883720930232556%"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/7cX1n8ty7I4TCo958GK79Bt2Ik2WccIZSaOEtrNBaSo.png" class="pic block-item clip-animate-item"></div><p class="show-animate-item">借助SVG，可以充分发挥脑洞，来实现各种有意思的morphing动画。<br></p><p class="show-animate-item"><br></p><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">SVG动画应用</div><div class="_public_line show-animate-item"></div><div class="_public_line_title show-animate-item" data-placeholder="Section Title">转场动画</div><p class="show-animate-item">结合上面说的morphing动画和描边动画，我们可以实现一些酷炫的转场动画即不同页面之间的转场效果。<br></p><div class="_public_pic block-item block-shadow-item show-animate-item _public_pic_gif caretColor"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/omWsMOk57uUM42nVkMck8iQSmwSXbw4ahqV1wWkb8RL.gif" class="pic block-item clip-animate-item"></div><p class="show-animate-item">或者是下面这种：<br></p><div class="_public_pic block-item block-shadow-item show-animate-item _public_pic_gif caretColor"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/ifEm72w7IeKNkJeCO9K3t0U3iYxDplhK9PNte09fBcH.gif" class="pic block-item clip-animate-item"></div><p class="show-animate-item"><a href="https://lmgonzalves.github.io/splash-transition/">体验地址</a></p><p class="show-animate-item"><br></p><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">SVG 动画</div><div class="_public_line show-animate-item"></div><div class="_public_line_title show-animate-item" data-placeholder="Section Title">滤镜动画</div><p class="show-animate-item">说到SVG动画，那SVG滤镜动画是不能不提的了，使用SVG的滤镜，我们可以实现一些非常强大的动画效果。</p><p class="show-animate-item">比如，类似下图所示的gooey效果，使用SVG滤镜就可以轻松实现：<br></p><div class="_public_pic block-item block-shadow-item show-animate-item _public_pic_gif caretColor"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/fIg1McHlsOLLYIfW7fKIbNtMVSMoHWtPH2ty2k2HLKm.gif" class="pic block-item clip-animate-item"></div><p class="show-animate-item">或者是这种炫酷的图片动效，使用SVG滤镜也是轻轻松松可以实现：<br></p><div class="_public_pic block-item block-shadow-item show-animate-item _public_pic_gif caretColor"><img src="https://isuxdesign-1251263993.file.myqcloud.com/upload/detail/KBJzKisFxkOTsaBR6RjToSQvJK3GtatXAVVPuKwbmw5.gif" class="pic block-item clip-animate-item"></div><p class="show-animate-item">这里也是举了些常见的应用，只要发挥想象力，用好SVG滤镜，可以是实现更多有趣的动画效果。可以多看看文章后面的参考链接，找找灵感。<br></p><div class="_public_title show-animate-item" data-placeholder="Section Title">总结</div><p class="show-animate-item">随着浏览器对web标准支持的越来越好，现在完全可以放心大胆的使用SVG。本文总结一些SVG典型的应用场景，比如icon、文字效果以及动画等应用。大家在进行视觉设计或者一些动画设计的时候，可以结合具体项目的特点来应用SVG，也可以翻翻本文，来找找灵感。</p><p class="show-animate-item">大家对于SVG还有什么样玩法，欢迎留言一起讨论。有疏漏或者理解不到位的地方，还请多多指教！</p><p class="show-animate-item">参考资料：</p><p class="show-animate-item"><a href="https://www.newmediacampaigns.com/blog/2017-web-design-trends">https://www.newmediacampaigns.com/blog/2017-web-design-trends</a><br></p><p class="show-animate-item"><a href="https://www.awwwards.com/websites/svg/">https://www.awwwards.com/websites/svg/</a><br></p><p class="show-animate-item"><a href="https://scotch.io/tutorials/creative-splash-transition-with-css-and-svg">https://scotch.io/tutorials/creative-splash-transition-with-css-and-svg</a><br></p><p class="show-animate-item"><a href="https://css-tricks.com/how-to-do-knockout-text/">https://css-tricks.com/how-to-do-knockout-text/</a><br></p><p class="show-animate-item"><a href="https://tympanus.net/codrops/2015/02/16/create-animated-text-fills/">https://tympanus.net/codrops/2015/02/16/create-animated-text-fills/</a><br></p><p class="show-animate-item"><a href="http://tympanus.net/Development/AnimatedCheckboxes/">http://tympanus.net/Development/AnimatedCheckboxes/</a><br></p><p class="show-animate-item"><a href="https://tympanus.net/codrops/2019/03/12/image-distortion-effects-with-svg-filters/">https://tympanus.net/codrops/2019/03/12/image-distortion-effects-with-svg-filters/</a><br></p><p class="show-animate-item"><a href="https://tympanus.net/codrops/2013/10/15/animated-checkboxes-and-radio-buttons-with-svg/">https://tympanus.net/codrops/2013/10/15/animated-checkboxes-and-radio-buttons-with-svg/</a><br></p><p class="show-animate-item"><br></p></div>
+
+            </section>
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+    </div>
+
+    
+
+    <!-- 测试连接 https://v.qq.com/x/page/f0507qj9hhv.html -->
+    <!-- 测试连接 https://v.qq.com/x/page/s05065zrbps.html -->
+
+    <!-- 文章数据模块 -->
+    <section class="_mod_stat show-animate-item">
+        <div class="_stat_wrapper">
+            
+            <div class="_article_date">
+                <span class="date">APRIL 9, 2019</span>
+            </div>
+
+            <div class="_article_stat">
+
+                <ul class="_stat_list">
+                    <li class="_stat_item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18" class="_stat_view _stat_icon">
+                            <g>
+                                <path class="view_svg" d="M19,9c0,2.5-3.5,8-9,8S1,11.5,1,9s3.5-8,9-8S19,6.5,19,9Z"/>
+                                <circle class="view_svg" cx="10" cy="9" r="3"/>
+                            </g>
+                        </svg>
+                        <span class="_views">30280</span>
+                    </li>
+                    <li class="_stat_item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18.53" class="_stat_like _stat_icon" id="js-like-0" data-id="291">
+                            <g>
+                                <path class="like_svg" d="M17.54,9.54A5,5,0,1,0,10,3,5,5,0,1,0,2.46,9.54L10,17.11Z"/>
+                            </g>
+                        </svg>
+                        <span class="_likes js-like-text">197</span>
+                    </li>
+                </ul>
+
+                <ul class="_stat_share_article js-share-list" data-title="玩转 SVG 让设计更出彩" data-desc=" 使用SVG，提升视觉设计表现力，让设计更出彩。" data-pic="https://cdn-isux.qq.com/upload/detail/hqlw6lzZ9DflDl9K3r8auXrtPO6i1AnkQvTN34BKUMi.png">
+                    <li class="share_article_item share_article_item_qzone js-china-ip" data-href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=%7Burl%7D&amp;title=%7Btitle%7D&amp;desc=&amp;summary=%7Bdesc%7D&amp;site=&amp;pics=%7Bpic%7D"></li>
+                    <li class="share_article_item share_article_item_qq js-china-ip" data-href="http://connect.qq.com/widget/shareqq/index.html?url=%7Burl%7D&amp;title=%7Btitle%7D&amp;desc=&amp;summary=%7Bdesc%7D&amp;site=isux&amp;pics=%7Bpic%7D"></li>
+                    <li class="share_article_item share_article_item_fb" data-href="https://www.facebook.com/sharer/sharer.php?u=%7Burl%7D&amp;t=%7Bdesc%7D"></li>
+                    <li class="share_article_item share_article_item_twitter" data-href="http://twitter.com/home?status=%7Bdesc%7D%20%23%7Btitle%7D%23&amp;url=%7Burl%7D&amp;pic=%7Bpic%7D&amp;desc="></li>
+                    <li class="share_article_item share_article_item_sina js-china-ip" data-href="http://service.weibo.com/share/share.php?title=%7Bdesc%7D%20%23%7Btitle%7D%23&amp;url=%7Burl%7D&amp;pic=%7Bpic%7D&amp;desc="></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作者模块 -->
+    <section class="_mod_authors show-animate-item">
+        <!-- 可以写成这个模块的 border-top -->
+        <!--<div class="_article_line"></div>-->
+        <div class="_authors_title">CONTRIBUTORS</div>
+        <ul class="_authors">
+            <li class="_author">
+                <img class="pic" src="http://isuxdesign-1251263993.file.myqcloud.com/avatars/avatar.jpg" alt="">
+                <div class="name">聆木</div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- 相关文章推荐模块 -->
+    <section class="_mod_related show-animate-item">
+        <ul class="related-list clearfix" id="list">
+            <li class="related-item first-item" data-index='1'>
+                <a href="3d-to-h5.html" target="_blank">
+                        <img class="pic clip-animate-item pic-gray" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/564_a.jpg" />
+                        <img class="pic pic-colorful clip-animate-item" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/564_a_src.jpg" />
+
+                    
+                    <div class="_title-wrapper fade-aniamte-item">
+                        <div class="_title-flex">
+                            <h3 class="title js-article-title">3DtoH5工作流应用手册 理论篇</h3>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="related-item" data-index='2'>
+                <a href="isux-ae-play.html" target="_blank">
+                        <img class="pic clip-animate-item pic-gray" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/542_a.jpg" />
+                        <img class="pic pic-colorful clip-animate-item" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/542_a_src.jpg" />
+
+                    
+                    <div class="_title-wrapper fade-aniamte-item">
+                        <div class="_title-flex">
+                            <h3 class="title js-article-title">玩转AE丨动效设计必备指南</h3>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="related-item last-item" data-index='3'>
+                <a href="isux-optimizing-3d-model.html" target="_blank">
+                        <img class="pic clip-animate-item pic-gray" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/372_a.jpg" />
+                        <img class="pic pic-colorful clip-animate-item" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/372_a_src.jpg" />
+
+                    
+                    <div class="_title-wrapper fade-aniamte-item">
+                        <div class="_title-flex">
+                            <h3 class="title js-article-title">如何在页面极速渲染3D模型</h3>
+                        </div>
+                    </div>
+                </a>
+            </li>
+
+        
+        </ul>
+    </section>
+
+</div>
+
+<div class="share_article_scroll share_article_hide">
+    
+    <div class="_mod_stat">
+        <div class="_article_stat">
+
+            <ul class="_stat_list">
+                <li class="_stat_item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18" class="_stat_view _stat_icon">
+                        <g>
+                            <path class="view_svg" d="M19,9c0,2.5-3.5,8-9,8S1,11.5,1,9s3.5-8,9-8S19,6.5,19,9Z"/>
+                            <circle class="view_svg" cx="10" cy="9" r="3"/>
+                        </g>
+                    </svg>
+                    <span class="_views">30280</span>
+                </li>
+                <li class="_stat_item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18.53" class="_stat_like _stat_icon" id="js-like-1" data-id="291">
+                        <g>
+                            <path class="like_svg" d="M17.54,9.54A5,5,0,1,0,10,3,5,5,0,1,0,2.46,9.54L10,17.11Z"/>
+                        </g>
+                    </svg>
+                    <span class="_likes bottom-like-text">197</span>
+                </li>
+            </ul>
+
+            <ul class="_stat_share_article js-share-list" data-title="玩转 SVG 让设计更出彩" data-desc=" 使用SVG，提升视觉设计表现力，让设计更出彩。" data-pic="https://cdn-isux.qq.com/upload/detail/hqlw6lzZ9DflDl9K3r8auXrtPO6i1AnkQvTN34BKUMi.png">
+                <li class="share_article_item share_article_item_qzone" data-href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=%7Burl%7D&amp;title=%7Btitle%7D&amp;desc=&amp;summary=%7Bdesc%7D&amp;site=&amp;pics=%7Bpic%7D"></li>
+                <li class="share_article_item share_article_item_qq" data-href="http://connect.qq.com/widget/shareqq/index.html?url=%7Burl%7D&amp;title=%7Btitle%7D&amp;desc=&amp;summary=%7Bdesc%7D&amp;site=isux&amp;pics=%7Bpic%7D"></li>
+                <li class="share_article_item share_article_item_fb" data-href="https://www.facebook.com/sharer/sharer.php?u=%7Burl%7D&amp;t=%7Bdesc%7D"></li>
+                <li class="share_article_item share_article_item_sina" data-href="http://service.weibo.com/share/share.php?title=%7Bdesc%7D%20%23%7Btitle%7D%23&amp;url=%7Burl%7D&amp;pic=%7Bpic%7D&amp;desc="></li>
+            </ul>
+        </div>
+    </div>
+
+    
+</div>
+<!-- 文章详情页 -->
+
+ <div id="bottom-mask"></div>
+<div class="mask-strip"></div>
+
+<footer class="mod_site_footer" role="contentinfo">
+    <div class="_footer-prefix">
+        <div class="_inner-wrapper"></div>
+    </div>
+    <div class="_social">
+        <div class="_inner-wrapper">
+            <ul class="_social-media-links">
+                <!-- <li class="-hc -vimeo"><a href="#" title="vimeo"></a></li> -->
+                <li class="-hc -wechat">
+                    <a title="wechat">
+                        <span class="-wechat-qr">
+                            <img class="lazy" data-src="../static/images/isux_qrcode.jpg" alt="微信公众号二维码" width="230" height="230">
+                        </span>
+                    </a>
+                </li>
+                <!-- <li class="-hc -facebook"><a href="#" title="facebook"></a></li> -->
+                <li class="-hc -weibo"><a href="http://weibo.com/txisux" target="_blank" title="weibo"></a></li>
+
+                <li class="-hc -zcool">
+                    <a href="https://www.zcool.com.cn/u/1936779" target="_blank" title="zcool"></a>
+                </li>
+
+                <li class="-hc -ins">
+                    <a href="https://www.instagram.com/isux_lab" target="_blank" title="instagram"></a>
+                </li>
+
+                <li class="-hc -behance">
+                    <a href="https://www.behance.net/18485758707c20" target="_blank" title="behance"></a>
+                </li>
+
+                <li class="-hc -medium">
+                    <a href="https://medium.com/@tencent.isux" target="_blank" title="medium"></a>
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="_footer-suffix">
+        <div class="_inner-wrapper">
+            <div class="supporting-information">
+                <ul class="_footer-links"><li class="_footer-link"><a href="https://www.tencent.com/" target="_blank">TENCENT</a></li><li class="_footer-link"><a href="https://qqfamily.com" target="_blank">QQfamily</a></li><li class="_footer-link"><a href="https://ycg.qq.com/" target="_blank">YCG</a></li></ul>
+            </div>
+            <div class="copyright">Copyright © 1998 - 2025 Tencent Inc. All Rights Reserved.</div>
+        </div>
+    </div>
+</footer>
+
+
+<div class="isux-qrcode">
+	<img src="../static/images/qrcode.jpg" alt="ISUX 二维码">
+</div>
+<div class="-search hide" id="search" role="application" aria-hidden="false">
+	<div class="-search-inner">
+		<div class="-search-form">
+			<span class="-search-box">
+				<input type="search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" maxlength="100" class="-search-input" placeholder="keywords" value="" />
+				<button type="button" class="-search-reset" title="Close">&times;</button>
+			</span>
+		</div>
+		<div class="-search-result">
+			<div class="-search-result-head">
+				啥，没结果？别担心，我们为您准备了推荐的文章：
+			</div>
+			<div class="gallery -search-gallery" id="searchResult"></div>
+		</div>
+		<div class="-loading -search-loading hide">
+			<span class="-loading-icon -search-loading-icon"><i></i><i></i></span>
+		</div>
+	</div>
+</div>
+<!-- .-search -->
+<script type="text/tpl" id="itemTpl">
+<div class="gallery-item <%=?cssclass%>"<%=?dataset%>>
+	<a class="gallery-wrapper" href="<%=url%>" target="_blank">
+		<div class="gallery-pics show-search-animate-item">
+			<div class="gallery-pic gallery-pic-gray lazy clip-animate-item" data-src="<%=image%>"></div>
+			<div class="gallery-pic gallery-pic-normal lazy clip-animate-item" data-src="<%=image1x%>"></div>
+		</div>
+		<div class="gallery-info show-search-animate-item">
+			<h3 class="title" title="<%=title%>"><%=title%></h3>
+			<p class="category"><%=category_name%></p>
+			<p class="abstract"><%=abstract%></p>
+		</div>
+	</a>
+</div>
+</script>
+<script>
+var G_csrf = 'w4HAepjhX1s0mlC8acnnZ_g3Zm77HA68';
+</script>
+<script src="../static/js/lib.js"></script>
+
+<!-- 引入腾讯视频JS库 -->
+<script src="https://vm.gtimg.cn/tencentvideo/txp/js/txplayer.js"></script>
+
+<!-- 引入判断背景显示不同字体颜色的组件 -->
+<script src="../static/js/common/background-check.js"></script>
+<script>
+window.backgroundCheck && backgroundCheck.init({
+    targets: '._title-flex',
+    imgs: '.pic-gray',
+    parents: '.related-item a',
+    cssclass: '_article-light-item',
+    lazy: false
+});
+</script>
+
+<!-- 页面逻辑js -->
+<script src="../static/js/detail.js"></script>
+
+<!-- TA -->
+
+<!-- TA -->
+<!-- GA -->
+
+<!-- GA -->
+</body>
+</html>

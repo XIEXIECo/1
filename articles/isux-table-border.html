@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+<meta charset="utf-8">
+<title>表格边框你知多少 - Tencent ISUX Design</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="theme-color" content="#000000">
+<link rel="mask-icon" href="../static/images/favicon.svg" color="#FFFFFF">
+<link rel="shortcut icon" href="../static/images/favicon.ico" type="image/x-icon">
+<link href="../static/css/base.css" rel="stylesheet">
+<script type="text/javascript" src="https://js.aq.qq.com/js/aq_common.js"></script>
+
+<meta name="keywords" content="table,表格,表格边框,边框冲突,表格高亮列,表格解决方案">
+<meta name="description" content="table之间的边框存在共用问题，自然而然就存在冲突。既然存在冲突，那么就势必涉及到最后渲染哪一个样式的问题。本文就主要研究当冲突产生时，如何让浏览器按照自己意愿渲染冲突边框。在这篇文章中都有介绍，以及对表格的边框渲染原理进行了深度的剖析">
+
+<!-- 社交分享 -->
+<meta itemprop="name" content="表格边框你知多少" />
+<meta itemprop="description" content="table之间的边框存在共用问题，自然而然就存在冲突。既然存在冲突，那么就势必涉及到最后渲染哪一个样式的问题。本文就主要研究当冲突产生时，如何让浏览器按照自己意愿渲染冲突边框。在这篇文章中都有介绍，以及对表格的边框渲染原理进行了深度的剖析" />
+<meta itemprop="image" content="https://cdn-isux.qq.com/upload/detail/big.jpg" />
+<!-- 社交分享 -->
+
+<!-- Facebook Open Graph -->
+<meta property="fb:app_id" content="137155036704975" />
+<meta property="og:url" content="https://isux.tencent.com/articles/isux-table-border.html" />
+<meta property="og:title" content="表格边框你知多少" />
+<meta property="og:site_name" content="Tencent ISUX Design" />
+<meta property="og:description" content="table之间的边框存在共用问题，自然而然就存在冲突。既然存在冲突，那么就势必涉及到最后渲染哪一个样式的问题。本文就主要研究当冲突产生时，如何让浏览器按照自己意愿渲染冲突边框。在这篇文章中都有介绍，以及对表格的边框渲染原理进行了深度的剖析" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://cdn-isux.qq.com/upload/detail/big.jpg" />
+<meta property="og:locale" content="en_us" />
+<!-- Facebook Open Graph -->
+
+<!-- home css file -->
+<link href="../static/css/detail.css" rel="stylesheet">
+<!-- home css file -->
+
+</head>
+<body>
+<!-- 移动端的结构，要单独写html，才可以在header下面滑出 -->
+<div class="_m-nav-wrapper">
+    <ul class="_nav-items">
+            <li class="_nav-item active">
+                <a href="index.html">ARTICLES</a>
+            </li>
+            <li class="_nav-item">
+                <a href="../brands/index.html">BRANDS</a>
+            </li>
+            <li class="_nav-item">
+                <a href="../resources/index.html">RESOURCES</a>
+            </li>
+            <li class="_nav-item">
+                <a href="../careers/index.html">CAREERS</a>
+            </li>
+
+        <!-- 移动端的搜索按钮，pc的时候为隐藏状态，功能跟._nav-search一样 -->
+        <div class="nav-item -m-search">
+            <a href="#/search/" data-action="toggle" data-args="body" data-cssclass="xxx"></a>
+        </div>
+    </ul>
+</div>
+
+<header>
+    <div class="_header-wrapper">
+        <nav id="navigator" class="mod_site_nav nav-animate-item js-nav-state">
+            <div class="_nav-logo">
+                <a href="../index.html" class="_nav-flower" ></a>
+                <!-- <a href="/" class="js-nav-isux _nav-isux"></a> -->
+            </div>
+            <!-- pc端的结构 -->
+            <div class="_nav-wrapper">
+                <ul class="_nav-items">
+                        <li class="_nav-item active">
+                            <a href="index.html">ARTICLES</a>
+                        </li>
+                        <li class="_nav-item">
+                            <a href="../brands/index.html">BRANDS</a>
+                        </li>
+                        <li class="_nav-item">
+                            <a href="../resources/index.html">RESOURCES</a>
+                        </li>
+                        <li class="_nav-item">
+                            <a href="../careers/index.html">CAREERS</a>
+                        </li>
+                    <!-- 移动端的搜索按钮，pc的时候为隐藏状态，功能跟._nav-search一样 -->
+                    <div class="nav-item -m-search">
+                        <a href="#/search/" data-action="toggle" data-args="body" data-cssclass="xxx"></a>
+                    </div>
+                </ul>
+            </div>
+
+            <!-- pc端的搜索按钮，移动端时为隐藏状态 -->
+            <div class="_nav-search">
+                <a href="#/search/" data-action="toggle" data-args="body" data-cssclass="xxx"></a>
+            </div>
+
+            <!-- 移动端的菜单list按钮，pc的时候为隐藏状态，在列表icon和close-icon之间切换 -->
+            <div class="_m-nav-list" data-cssclass="_m-nav-close">
+                <a href="#/list/" data-action="toggle" data-args="body" class="lines js-m-navlist">
+                    <span class="line first-line"></span>
+                    <span class="line second-line"></span>
+                    <span class="line third-line"></span>
+                </a>
+            </div>
+
+        </nav>
+    </div>
+</header>
+<div class="_fake-header"></div>
+<!-- 文章详情页 -->
+<div class="_main_content">
+    <!-- 前言模块 -->
+    <section class="_mod_introduce _mod_editor js-mod-introduce">
+
+        <div class="_introduce_title_wrapper show-animate-item">
+            <div class="_article_title_wrapper">
+                <div class="_introduce_title js-intro-title">表格边框你知多少</div>
+            </div>
+            <div class="_public_line caretColor" ></div>
+            <div class="_introduce_tag js-intro-tag" >TECH</div>
+        </div>
+        
+        <div class="_public_paragraph js-intro-content show-animate-item">table之间的边框存在共用问题，自然而然就存在冲突。既然存在冲突，那么就势必涉及到最后渲染哪一个样式的问题。本文就主要研究当冲突产生时，如何让浏览器按照自己意愿渲染冲突边框。在这篇文章中都有介绍，以及对表格的边框渲染原理进行了深度的剖析</div>
+
+        <div class="_public_banner js-intro-banner js-defualt-banner show-animate-item"><img class="pic js-pic-banner clip-animate-item block-item" data-banner-src="https://cdn-isux.qq.com/upload/detail/big.jpg" data-article-id="127" src="https://cdn-isux.qq.com/upload/detail/big.jpg" alt=""></div>
+    
+    </section>
+
+    <div class="editable" id="editor2">
+        <!-- 正文模块 -->
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <section class="_mod_content _mod_editor">
+                
+                <div class="_public_subtitle show-animate-item js-content-subtitle" data-placeholder="Chapter Title">原理分析</div>
+                <div class="_public_line show-animate-item caretColor" contenteditable="false"></div>
+                <div class="_public_line_title show-animate-item js-content-title js-content-subtitle" data-placeholder="Section Title">表格行与列边框样式处理的原理分析<br></div>
+                <div class="_public_paragraph show-animate-item js-content-content" data-placeholder="Type your text"><div class="_public_title show-animate-item" data-placeholder="Section Title">1、<a href="https://www.chengrang.com/demo/table-border/demo-1.html" class="">border-style:none优先级最低</a></div><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="27.375%"><br><img src="https://cdn-isux.qq.com/upload/detail/1%20-%20%E5%89%AF%E6%9C%AC.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item"><b class="">结论</b><br></p><p class="show-animate-item"></p><p class="show-animate-item">&nbsp; &nbsp; a）当且仅当两个相邻产生冲突的边框的border-style为none时，冲突边框才不会显示</p><p class="show-animate-item"><br></p><div class="_public_title show-animate-item" data-placeholder="Section Title">2、<a href="https://www.chengrang.com/demo/table-border/demo-2.html">border-style:hidden优先级高于border-style:solid</a></div><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="22.875%"><img src="https://cdn-isux.qq.com/upload/detail/2.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item"><b>结论</b><br></p><p class="show-animate-item">&nbsp; &nbsp; a）border-style:hidden;边框的优先级高于solid样式的边框</p><p class="show-animate-item"><br></p><div class="_public_title show-animate-item" data-placeholder="Section Title">3、<a href="https://www.chengrang.com/demo/table-border/demo-3.html">border-style优先级</a></div><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="34.625%"><img src="https://cdn-isux.qq.com/upload/detail/3.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item"><b>结论</b><br></p><p class="show-animate-item">&nbsp; &nbsp; a）hidden &gt; double &gt; solid &gt; dashed &gt; dotted &gt; none（默认值）</p><p class="show-animate-item"><br></p><div class="_public_title show-animate-item" data-placeholder="Section Title">4、<a href="https://www.chengrang.com/demo/table-border/demo-4.html">边框的溢出与style属性有关</a></div><p class="show-animate-item"><b>结论</b></p><p class="show-animate-item">&nbsp; &nbsp; a）上面两个角中水平方向紧贴着table边框的边很重要，如若border-style为hidden，则边框会溢出</p><p class="show-animate-item">&nbsp; &nbsp; b）垂直方向上不会发生溢出情况</p><p class="show-animate-item">&nbsp; &nbsp; c）溢出的边框不会占用文本流的空间</p><p class="show-animate-item"><b>理由</b></p><p class="show-animate-item">&nbsp; &nbsp; 具体实例可以查看<a href="https://www.chengrang.com/demo/table-border/demo-3.html">border-style优先级</a></p><p class="show-animate-item"><br></p><div class="_public_title show-animate-item" data-placeholder="Section Title">5、<a href="https://www.chengrang.com/demo/table-border/demo-5.html">border-width较大者优先渲染</a></div><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="27.750000000000004%"><img src="https://cdn-isux.qq.com/upload/detail/4.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item"><b>结论</b><br></p><p class="show-animate-item">&nbsp; &nbsp; a）border-width较大者边框样式将被渲染</p><p class="show-animate-item"><b>理由</b></p><p class="show-animate-item">&nbsp; &nbsp; 命名为“中”的单元格边框比其他边框都要大，因此渲染的是“中”单元格的边框，因而得出较大边框样式将被渲染，也符合W3C里面对哪条边渲染的解释：“The rule of thumb is that at each edge the most "eye catching" border style is chosen”</p><p class="show-animate-item"><br></p><div class="_public_title show-animate-item" data-placeholder="Section Title">6、<a href="https://www.chengrang.com/demo/table-border/demo-6.html">table-border优先级</a></div><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="23.375%"><img src="https://cdn-isux.qq.com/upload/detail/5.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item"><b>结论</b><br></p><p class="show-animate-item"></p><p class="show-animate-item">&nbsp; &nbsp; a）优先级如下：'table-cell'，'table-row'，'table-row-group'，'table-col'，'table-col-group', 'table'<br></p><p class="show-animate-item"><b>理由</b></p><p class="show-animate-item">&nbsp; &nbsp; 可以到<a href="https://www.chengrang.com/demo/table-border/demo-6.html">table-border优先级</a>启用审查工具逐层去掉'table-cell'，'table-row'，'table-row-group'，'table-col'，'table-col-group', 'table'边框，即可看到效果</p><p class="show-animate-item"><br></p><div class="_public_title show-animate-item" data-placeholder="Section Title">7、<a href="https://www.chengrang.com/demo/table-border/demo-7.html">左上优先渲染原则</a></div><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="27.375%"><img src="https://cdn-isux.qq.com/upload/detail/6.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item"><b>结论</b><br></p><p class="show-animate-item">&nbsp; &nbsp; a）水平方向上：当两个单元格只存在颜色不一致的情况下，发生冲突的单元格相对较左侧单元格的样式</p><p class="show-animate-item">&nbsp; &nbsp; b）垂直方向上：当两个单元格只存在颜色不一致的情况下，发生冲突的单元格相对较顶部单元格的样式</p><p class="show-animate-item"><br></p><div class="_public_title show-animate-item" data-placeholder="Section Title">8、<a href="https://www.chengrang.com/demo/table-border/demo-8.html">border-style:double四个角的渲染方式</a></div><p class="show-animate-item"><b>chorme</b></p><p class="show-animate-item"></p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="27.500000000000004%"><img src="https://cdn-isux.qq.com/upload/detail/7.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item"><b>FF</b><br></p><p class="show-animate-item"></p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="27.375%"><img src="https://cdn-isux.qq.com/upload/detail/8.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item"><b>IE</b></p><p class="show-animate-item"><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="26.25%"><img src="https://cdn-isux.qq.com/upload/detail/9%20-%20%E5%89%AF%E6%9C%AC.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item"><b>结论</b><br></p></p><p class="show-animate-item"></p><p class="show-animate-item"></p><p class="show-animate-item"></p><p class="show-animate-item">&nbsp; &nbsp; a）四个角重合之处采用组合层叠的方式进行渲染，而不是单一的选择某一种样式,而四条边框则非重合（单一选择某一条边进行渲染）（chrome与IE，FF四个角重合之处不会采用组合层叠的方式进行渲染）</p><p class="show-animate-item">&nbsp; &nbsp; b）可以看出在FF下，四个角重合之处渲染优先级是，垂直方向上的两个相邻单元格，相对偏下的单元格的冲突边进行渲染</p><p class="show-animate-item"><b>理由</b></p><p class="show-animate-item">&nbsp; &nbsp; 从“中”这个单元格的四个角可以看出，四个角除了会的底边是有其他叫层叠而来，而不是单一的去选择某种边框去渲染</p><p class="show-animate-item"><br></p><div class="_public_title show-animate-item" data-placeholder="Section Title">9、<a href="https://www.chengrang.com/demo/table-border/demo-9.html">border-style:double表现形式</a></div><p class="show-animate-item"><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="54.87499999999999%"><img src="https://cdn-isux.qq.com/upload/detail/10%20-%20%E5%89%AF%E6%9C%AC.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item"><b>结论</b><br></p></p><p class="show-animate-item">&nbsp; &nbsp; a）border-style:double;宽度需要大于等于3px才能体现，否则，样式与solid无异</p><p class="show-animate-item">&nbsp; &nbsp; b）border-style:double;会发生溢出，并且左右溢出值不一致</p><p class="show-animate-item"><br></p><div class="_public_title show-animate-item" data-placeholder="Section Title">10、<a href="https://www.chengrang.com/demo/table-border/demo-10.html">border-style:ridge与border-style:groove的表现形式</a></div><p class="show-animate-item"><b>结论</b></p><p class="show-animate-item">&nbsp; &nbsp; a）table2 ~ table5发生冲突边渲染情况可以得出 ridge &gt; groove</p><p class="show-animate-item">&nbsp; &nbsp; b）当ridge 与 groove冲突并且在表格 非 第一行发生冲突时，两个冲突单元格的左上角和右上角以及冲突边的上角都存在问题</p><p class="show-animate-item">&nbsp; &nbsp; c）从table2、table3、table4中可以看出，当outset 与 inset冲突且在表格 非 第一行发生冲突时，groove ==&gt; outset， ridge ==&gt; inset</p><p class="show-animate-item"><b>理由</b></p><p class="show-animate-item">&nbsp; &nbsp; 例10~例14可以到线上例子详细查看</p><p class="show-animate-item"><br></p><div class="_public_title show-animate-item" data-placeholder="Section Title">11、<a href="https://www.chengrang.com/demo/table-border/demo-11.html">border-style:outset与border-style:inset的表现形式</a></div><p class="show-animate-item"><b>结论</b></p><p class="show-animate-item">&nbsp; &nbsp; a）从table2~table5发生冲突边渲染情况可以得出 outset &gt; inset</p><p class="show-animate-item">&nbsp; &nbsp; b）从table2、table4、table5中可以看出，当outset 与 inset冲突且在表格第一行发生冲突时，两个冲突单元格的左上角和右上角以及冲突边的上角都存在问题</p><p class="show-animate-item">&nbsp; &nbsp; c）从table2、table4、table5中可以看出，当outset 与 inset冲突且在表格第一行发生冲突时，outset ==&gt; groove， inset ==&gt; ridge</p><p class="show-animate-item"><b>理由</b></p><p class="show-animate-item">&nbsp; &nbsp; 例10~例14可以到线上例子详细查看</p><p class="show-animate-item"><br></p><div class="_public_title show-animate-item" data-placeholder="Section Title">12、<a href="https://www.chengrang.com/demo/table-border/demo-12.html">border-style:outset与border-style:ridge的表现形式</a></div><p class="show-animate-item"><b>结论</b></p><p class="show-animate-item">&nbsp; &nbsp; a）table2~table5发生冲突边渲染情况可以得出 ridge &gt; outset</p><p class="show-animate-item">&nbsp; &nbsp; b）两个单元格发生冲突以后，左上角都存在渲染问题</p><p class="show-animate-item">&nbsp; &nbsp; c）当outset 与 inset冲突且在表格第一行发生冲突时，两个冲突单元格的左上角和右上角以及冲突边的上角都存在问题</p><p class="show-animate-item">&nbsp; &nbsp; d）综合上部表现可以看出，当两个单元格发生冲突以后，处于表格的最后一行时，冲突边的上部（角）存在渲染问题</p><p class="show-animate-item">&nbsp; &nbsp; e）综合上部表现可以看出，outset未发生冲突的边框的上部角会出现渲染问题</p><p class="show-animate-item"><b>理由</b></p><p class="show-animate-item">&nbsp; &nbsp; 例10~例14可以到线上例子详细查看</p><p class="show-animate-item"><br></p><div class="_public_title show-animate-item" data-placeholder="Section Title">13、<a href="https://www.chengrang.com/demo/table-border/demo-13.html">border-style:groove与border-style:inset的表现形式</a></div><p class="show-animate-item"><b>结论</b></p><p class="show-animate-item">&nbsp; &nbsp; a）table2~table5发生冲突边渲染情况可以得出 groove &gt; inset</p><p class="show-animate-item">&nbsp; &nbsp; b）groove与outset可以相互转化，ridge与inset可以相互转化</p><p class="show-animate-item"><b>理由</b></p><p class="show-animate-item">&nbsp; &nbsp; 例10~例14可以到线上例子详细查看</p><p class="show-animate-item"><br></p><div class="_public_title show-animate-item" data-placeholder="Section Title">14、<a href="https://www.chengrang.com/demo/table-border/demo-14.html">border-style:groove与border-style:outset的表现形式</a></div><p class="show-animate-item"><b>结论</b><br></p><p class="show-animate-item">&nbsp; &nbsp; a）table2~table5发生冲突边渲染情况可以得出 outset &gt; groove</p><p class="show-animate-item"><b>理由</b></p><p class="show-animate-item">&nbsp; &nbsp; 例10~例14可以到线上例子详细查看</p><p class="show-animate-item"><br></p><div class="_public_title show-animate-item" data-placeholder="Section Title">15、<a href="https://www.chengrang.com/demo/table-border/demo-15.html">direction属性对table-border的影响</a></div><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="89.25%"><img src="https://cdn-isux.qq.com/upload/detail/11.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item"><b>FF</b></p><p class="show-animate-item"></p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="89.625%"><img src="https://cdn-isux.qq.com/upload/detail/12.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item"><b>结论</b><br></p><p class="show-animate-item"></p><p class="show-animate-item">&nbsp; &nbsp; a）tr上使用direction: rtl;属性，单元格（只是边框，内容不变）并不会左右调换，而是边框向后推了（最后一个边框使用了渲染成第二个边框，倒数第二个边框渲染成倒数第三个边框，依此列推）</p><p class="show-animate-item">&nbsp; &nbsp; b）table上使用direction: rtl;属性,会使单元格左右调换，并且发生冲突的单元格相对较右侧单元格的样式</p><p class="show-animate-item"><b>备注</b></p><p class="show-animate-item">&nbsp; &nbsp; 在tr上使用direction: rtl;属性，仅在google下生效，其他浏览器下不会生效</p><p class="show-animate-item"><br></p><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">小结</div><div class="_public_line show-animate-item"></div><div class="_public_line_title show-animate-item" data-placeholder="Section Title">实战应用小结</div><p class="show-animate-item">&nbsp; &nbsp; 1、border-collapse: collapse;存在冲突情况，border-collapse: separate;不存在冲突情况（理所当然）；</p><p class="show-animate-item">&nbsp; &nbsp; 2、border-style: hidden;边框优先级最高，hidden属性优先于所有其他边界的冲突；</p><p class="show-animate-item">&nbsp; &nbsp; 3、border-style: none;是边框样式的默认值，其优先级最低，只有当发生冲突的所有元素的边框属性都为"none"时，边框才会被省略；</p><p class="show-animate-item">&nbsp; &nbsp; 4、border-width的值不相同时，窄边界将会被舍弃，较宽的边界会被显示；</p><p class="show-animate-item">&nbsp; &nbsp; 5、border-width的值相同时，border-style样式优先级顺序为'double'， 'solid''， 'dotted'， 'ridge'， 'outset'， ' 'inset'；</p><p class="show-animate-item">&nbsp; &nbsp; 6、border-color的值不相同时，border-color最终显示的颜色优先级如下为'table-cell'，'table-row'，'table-row-group'，'table-col'，'table-col-group'，'table'；</p><p class="show-animate-item">&nbsp; &nbsp; 7、border-color的值不相同时，但都是同一类型（如：table-cell），水平方向由direction属性决定，若direction:ltr属则采用相对较左侧的元素样式，若direction:rtl属则采用相对较右侧的元素样式；垂直方向上则采用相对较靠近顶部的元素样式；</p><p class="show-animate-item">&nbsp; &nbsp; 8、border-collapse: collapse;相邻的边框存在冲突，但两对角的两个单元格是不存在冲突现象；</p><p class="show-animate-item">&nbsp; &nbsp; 9、border-style:double;宽度渲染与设置值不一致；</p><p class="show-animate-item">&nbsp; &nbsp; 10、border-style:double;宽度需要大于3px才能体现，否则，样式与solid无异；</p><p class="show-animate-item">&nbsp; &nbsp; 11、水平方向上：当两个单元格只存在颜色不一致的情况下，冲突边界渲染的样式与direction（table上设置该属性）有关。若direction:ltr属则采用相对较左侧的元素样式，若direction:rtl属则采用相对较右侧的元素样式；垂直方向上：当两个单元格只存在颜色不一致的情况下，较靠近顶部的边框样式将被渲染；</p><p class="show-animate-item">&nbsp; &nbsp; 12、四个角重合之处采用组合层叠的方式进行渲染，而不是单一的选择某一种样式,而四条边框则非重合（单一选择某一条边进行渲染）</p><p class="show-animate-item">&nbsp; &nbsp; 13、上面两个角中水平方向紧贴着table边框的边很重要，如若border-style为hidden，则边框会，溢出垂直方向上不会发生溢出情况，溢出的边框不会占用文本流的空间</p><p class="show-animate-item"><br></p><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">兼容性问题</div><div class="_public_line show-animate-item"></div><div class="_public_line_title show-animate-item" data-placeholder="Section Title">表格在各个浏览器下的兼容性问题</div><p class="show-animate-item">&nbsp; &nbsp; 1、水平方向上：当两个单元格只存在颜色不一致的情况下，冲突边界渲染的样式与direction（tr上设置该属性在chrome有效，在其他浏览器上设置无任何效果）有关。若direction:ltr属则采用相对较左侧的元素样式，若direction:rtl属则导致渲染失常（无法解释）</p><p class="show-animate-item">&nbsp; &nbsp; 2、四个角重合之处采用组合层叠的方式进行渲染，而不是单一的选择某一种样式,而四条边框则非重合（单一选择某一条边进行渲染）（chrome与IE）</p><p class="show-animate-item">&nbsp; &nbsp; 3、在FF下，FF四个角重合之处不会采用组合层叠的方式进行渲染，四个角重合之处渲染规则是采用垂直方向上的两个相邻单元格，相对偏下的单元格的冲突边进行渲染</p><p class="show-animate-item">&nbsp; &nbsp; &nbsp; &nbsp; a）在FF和IE下，ridge和inset渲染是一样的，groove和outset渲染是一样的；</p><p class="show-animate-item">&nbsp; &nbsp; &nbsp; &nbsp; b）在chrome下，当outset 与 inset冲突且在表格第一行发生冲突时，outset ==&gt; groove， inset ==&gt; ridge，当outset 与 inset冲突且在表格 非 第一行发生冲突时，groove ==&gt; outset，ridge ==&gt; inset</p><p class="show-animate-item"><br></p><div class="_public_subtitle show-animate-item" data-placeholder="Chapter Title">实战应用</div><div class="_public_line show-animate-item"></div><div class="_public_line_title show-animate-item" data-placeholder="Section Title">表格行与列边框样式处理的实战应用</div><p class="show-animate-item">上面分享了一些实用表格时，常遇到的一些冲突；</p><p class="show-animate-item">下面内容是对上述文章中提到的一些知识点加以运用，用到具体的例子上。</p><p class="show-animate-item">采用表格布局最远可以追溯到上个世纪90年代，当时使用table进行布局是没有办法的办法。从css2.0以后以table为主的网页布局慢慢的退出历史舞台，而采用现在为大家所熟悉的div + css的布局方式。</p><p class="show-animate-item">table网页布局方式退出历史舞台并不等于table也退出舞台，table有它自身的好处。目前大家使用table多数用于数据展示，数据展示必然会涉及到数据的对比，突出重点数据的需求。因此则产生了类似下图的展示样式。</p><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="37.5%"><img src="https://cdn-isux.qq.com/upload/detail/13.jpg" class="pic block-item clip-animate-item"></div><div class="_public_pic block-item block-shadow-item show-animate-item caretColor" data-paddingtop="33.125%"><img src="https://cdn-isux.qq.com/upload/detail/14.jpg" class="pic block-item clip-animate-item"></div><p class="show-animate-item">看到这个视觉稿，想必大家第一反应是高亮列的实现方式应该是在td上面添加高亮边框即可，没什么难度的。如果你这样认为那就错了。<br></p><p class="show-animate-item">在td上面直接添加border，会在造成左侧边缺失，具体原因可以参考（<a href="https://www.chengrang.com/demo/table-border/demo-7.html">左上优先渲染原则</a>），如果要在高亮列的单元格直接实现缺失的左边框(采用行内样式或者加权重的方法，也是实现不了的)，暂时是没有什么办法的。如果有请联系笔者。</p><p class="show-animate-item">如果你查阅了上面推荐的文章，那么你就知道产生这种现象的原因。</p><p class="show-animate-item">解决方法是在<b>高亮列的前一列的右边框添加高亮边框</b>。</p><p class="show-animate-item">看到解决方法有没有一种很蛋疼的感觉，高亮列产生的问题，要跑到高亮列的前一列去解决。</p><p class="show-animate-item">今天我就针对这一类的问题进行研究并提供相关解决方法</p><p class="show-animate-item">解决上面的问题很简单</p><div class="_public_title show-animate-item" data-placeholder="Section Title">style.css</div><div class="_public_code show-animate-item" data-placeholder="Paste your code right here"><p class="show-animate-item">/*公共 start*/</p><p class="show-animate-item">* {</p><p class="show-animate-item">  margin: 0;</p><p class="show-animate-item">  padding: 0;</p><p class="show-animate-item">}</p><p class="show-animate-item">table {</p><p class="show-animate-item">  border-collapse: collapse;</p><p class="show-animate-item">  font-size: 14px;</p><p class="show-animate-item">  width: 30%;</p><p class="show-animate-item">  margin-top: 200px;</p><p class="show-animate-item">  margin-left: auto;</p><p class="show-animate-item">  margin-right: auto;</p><p class="show-animate-item">}</p><p class="show-animate-item">table tr td:first-child {</p><p class="show-animate-item">  font-weight: bold;</p><p class="show-animate-item">}</p><p class="show-animate-item">th {</p><p class="show-animate-item">  background-color: #f3f3f3;</p><p class="show-animate-item">}</p><p class="show-animate-item">/*公共 end*/</p><p class="show-animate-item">.comparison-table {</p><p class="show-animate-item">  width: 30%;</p><p class="show-animate-item">  border: 1px solid;</p><p class="show-animate-item">  border-color: #e6ebf2;</p><p class="show-animate-item">  color: #333;</p><p class="show-animate-item">  text-align: left;</p><p class="show-animate-item">  font-size: 14px;</p><p class="show-animate-item">  border-collapse: collapse;</p><p class="show-animate-item">}</p><p class="show-animate-item">.comparison-table th,</p><p class="show-animate-item">.comparison-table td {</p><p class="show-animate-item">  vertical-align: top;</p><p class="show-animate-item">  line-height: 1.7;</p><p class="show-animate-item">  padding: 0;</p><p class="show-animate-item">  border: 1px solid #d7e7f3;</p><p class="show-animate-item">}</p><p class="show-animate-item">.comparison-table thead th {</p><p class="show-animate-item">  background-color: #f6f8fa;</p><p class="show-animate-item">  line-height: 1;</p><p class="show-animate-item">}</p><p class="show-animate-item">.comparison-table .comparison-table-inner {</p><p class="show-animate-item">  padding: 15px 40px;</p><p class="show-animate-item">  color: inherit;</p><p class="show-animate-item">}</p><p class="show-animate-item">.comparison-table tbody tr td:first-child {</p><p class="show-animate-item">  font-weight: bold;</p><p class="show-animate-item">}</p><p class="show-animate-item">.comparison-table tr td:nth-child(2),</p><p class="show-animate-item">.comparison-table tr th:nth-child(2) {</p><p class="show-animate-item">  border: 1px double #22d1b4;</p><p class="show-animate-item">}</p><p class="show-animate-item">.comparison-table colgroup col:nth-child(2) {</p><p class="show-animate-item">  border: 1px double #22d1b4;</p><p class="show-animate-item">}</p><p class="show-animate-item">.comparison-table tr th:nth-child(2) {</p><p class="show-animate-item">  background-color: #ccf0ec;</p><p class="show-animate-item">  color: #22d1b4;</p><p class="show-animate-item">}</p></div><div class="_public_title show-animate-item" data-placeholder="Section Title">demo.html</div><div class="_public_code show-animate-item" data-placeholder="Paste your code right here"><p class="show-animate-item">&lt;table class="comparison-table"&gt;</p><p class="show-animate-item">  &lt;colgroup&gt;</p><p class="show-animate-item">    &lt;col style="width:22%;"&gt;</p><p class="show-animate-item">    &lt;col style=""&gt;</p><p class="show-animate-item">    &lt;col style=""&gt;</p><p class="show-animate-item">  &lt;/colgroup&gt;</p><p class="show-animate-item">  &lt;thead&gt;</p><p class="show-animate-item">    &lt;tr&gt;</p><p class="show-animate-item">      &lt;th&gt;</p><p class="show-animate-item">        &lt;div class="comparison-table-inner"&gt;</p><p class="show-animate-item">	    &lt;p&gt;优势&lt;/p&gt;</p><p class="show-animate-item">	&lt;/div&gt;</p><p class="show-animate-item">      &lt;/th&gt;</p><p class="show-animate-item">      &lt;th&gt;</p><p class="show-animate-item">	&lt;div class="comparison-table-inner"&gt;</p><p class="show-animate-item">	    &lt;p&gt;云服务器&lt;/p&gt;</p><p class="show-animate-item">	&lt;/div&gt;</p><p class="show-animate-item">      &lt;/th&gt;</p><p class="show-animate-item">      &lt;th&gt;</p><p class="show-animate-item">	&lt;div class="comparison-table-inner"&gt;</p><p class="show-animate-item">	  &lt;p&gt;传统服务器&lt;/p&gt;</p><p class="show-animate-item">	&lt;/div&gt;</p><p class="show-animate-item">      &lt;/th&gt;</p><p class="show-animate-item">    &lt;/tr&gt;</p><p class="show-animate-item">  &lt;/thead&gt;</p><p class="show-animate-item">  &lt;tbody&gt;</p><p class="show-animate-item">    &lt;tr&gt;</p><p class="show-animate-item">      &lt;td&gt;</p><p class="show-animate-item">	&lt;div class="comparison-table-inner"&gt;弹性&lt;/div&gt;</p><p class="show-animate-item">      &lt;/td&gt;</p><p class="show-animate-item">      &lt;td&gt;</p><p class="show-animate-item">	&lt;div class="comparison-table-inner"&gt;弹性扩展，灵活配置&lt;/div&gt;</p><p class="show-animate-item">      &lt;/td&gt;</p><p class="show-animate-item">      &lt;td&gt;</p><p class="show-animate-item">	&lt;div class="comparison-table-inner"&gt;运维困难&lt;/div&gt;</p><p class="show-animate-item">      &lt;/td&gt;</p><p class="show-animate-item">    &lt;/tr&gt;</p><p class="show-animate-item">    &lt;tr&gt;</p><p class="show-animate-item">      &lt;td&gt;</p><p class="show-animate-item">	&lt;div class="comparison-table-inner"&gt;可靠&lt;/div&gt;</p><p class="show-animate-item">      &lt;/td&gt;</p><p class="show-animate-item">      &lt;td&gt;</p><p class="show-animate-item">	&lt;div class="comparison-table-inner"&gt;稳定可靠，数据放心&lt;/div&gt;</p><p class="show-animate-item">      &lt;/td&gt;</p><p class="show-animate-item">      &lt;td&gt;</p><p class="show-animate-item">	&lt;div class="comparison-table-inner"&gt;系统脆弱，数据丢失&lt;/div&gt;</p><p class="show-animate-item">      &lt;/td&gt;</p><p class="show-animate-item">    &lt;/tr&gt;</p><p class="show-animate-item">    &lt;tr&gt;</p><p class="show-animate-item">      &lt;td&gt;</p><p class="show-animate-item">	&lt;div class="comparison-table-inner"&gt;易用&lt;/div&gt;</p><p class="show-animate-item">      &lt;/td&gt;</p><p class="show-animate-item">      &lt;td&gt;</p><p class="show-animate-item">	&lt;div class="comparison-table-inner"&gt;即买即用，快速部署&lt;/div&gt;</p><p class="show-animate-item">      &lt;/td&gt;</p><p class="show-animate-item">      &lt;td&gt;</p><p class="show-animate-item">	&lt;div class="comparison-table-inner"&gt;费心麻烦&lt;/div&gt;</p><p class="show-animate-item">      &lt;/td&gt;</p><p class="show-animate-item">    &lt;/tr&gt;</p><p class="show-animate-item">    &lt;tr&gt;</p><p class="show-animate-item">      &lt;td&gt;</p><p class="show-animate-item">	&lt;div class="comparison-table-inner"&gt;安全&lt;/div&gt;</p><p class="show-animate-item">      &lt;/td&gt;</p><p class="show-animate-item">      &lt;td&gt;</p><p class="show-animate-item">	&lt;div class="comparison-table-inner"&gt;立体防护，专业支持&lt;/div&gt;</p><p class="show-animate-item">      &lt;/td&gt;</p><p class="show-animate-item">      &lt;td&gt;</p><p class="show-animate-item">	&lt;div class="comparison-table-inner"&gt;黑客入侵&lt;/div&gt;</p><p class="show-animate-item">      &lt;/td&gt;</p><p class="show-animate-item">    &lt;/tr&gt;</p><p class="show-animate-item">  &lt;/tbody&gt;</p><p class="show-animate-item">&lt;/table&gt;</p></div><p class="show-animate-item"><b>主要知识点</b><br></p><p class="show-animate-item">&nbsp; &nbsp; 1、利用:nth-child(n)选择器选择高亮列/行</p><p class="show-animate-item">&nbsp; &nbsp; 2、当边框样式为实线时，运用double优先级比solid高的特点，覆盖solid样式</p><p class="show-animate-item">&nbsp; &nbsp; 3、运用1px或2px的double视觉上与solid一样的特点</p><p class="show-animate-item">&nbsp; &nbsp; 4、运用'table-cell'，'table-row'，'table-row-group'，'table-col'，'table-col-group', 'table'之间渲染优先级的关系</p><p class="show-animate-item">solid实现是如此，那dashed实现又如何呢</p><div class="_public_title show-animate-item" data-placeholder="Section Title">dashed.css</div><div class="_public_code show-animate-item" data-placeholder="Paste your code right here"><p class="show-animate-item">/*公共 start*/</p><p class="show-animate-item">*{margin: 0;padding: 0;}</p><p class="show-animate-item">a{color: #2277da;}</p><p class="show-animate-item">table{</p><p class="show-animate-item">  border-collapse: collapse;</p><p class="show-animate-item">  font-size: 14px;</p><p class="show-animate-item">  width: 30%;</p><p class="show-animate-item">  margin-top: 200px;</p><p class="show-animate-item">  margin-left: auto;</p><p class="show-animate-item">  margin-right: auto;</p><p class="show-animate-item">}</p><p class="show-animate-item">table tr td:first-child{</p><p class="show-animate-item">  font-weight: bold;</p><p class="show-animate-item">}</p><p class="show-animate-item">th{</p><p class="show-animate-item">  background-color: #f3f3f3;</p><p class="show-animate-item">}</p><p class="show-animate-item">/*公共 end*/</p><p class="show-animate-item">.method-4 th,</p><p class="show-animate-item">.method-4 td{</p><p class="show-animate-item">  padding: 20px;</p><p class="show-animate-item">  text-align: center;</p><p class="show-animate-item">}</p><p class="show-animate-item">.method-4 tr{</p><p class="show-animate-item">  border-top: 1px dashed #d3d3d3;</p><p class="show-animate-item">  border-bottom: 1px dashed #d3d3d3;</p><p class="show-animate-item">}</p><p class="show-animate-item">.method-4 thead tr{</p><p class="show-animate-item">  border-top-width: 0;</p><p class="show-animate-item">}</p><p class="show-animate-item">.method-4 tr:last-child{</p><p class="show-animate-item">  border-bottom-width: 0;</p><p class="show-animate-item">}</p><p class="show-animate-item">.method-4 colgroup{</p><p class="show-animate-item">  border: 1px dashed #d3d3d3;</p><p class="show-animate-item">}</p><p class="show-animate-item">.method-4 tr td:nth-child(3),</p><p class="show-animate-item">.method-4 tr th:nth-child(3),</p><p class="show-animate-item">.method-4 colgroup:nth-child(3){</p><p class="show-animate-item">  border: 1px dashed #22d1b4;</p><p class="show-animate-item">}</p><p class="show-animate-item">.method-4 tr td:nth-child(1),</p><p class="show-animate-item">.method-4 tr th:nth-child(1){</p><p class="show-animate-item">  border-left: 1px dashed #22d1b4;</p><p class="show-animate-item">}</p><p class="show-animate-item">.method-4 colgroup:nth-child(1){</p><p class="show-animate-item">  border: 1px dashed #22d1b4;</p><p class="show-animate-item">}</p></div><div class="_public_title show-animate-item" data-placeholder="Section Title">dashed.html</div><div class="_public_code show-animate-item" data-placeholder="Paste your code right here"><p class="show-animate-item">&lt;div class="method-4"&gt;</p><p class="show-animate-item">  &lt;table&gt;</p><p class="show-animate-item">    &lt;colgroup&gt;&lt;/colgroup&gt;</p><p class="show-animate-item">    &lt;colgroup class="highlight"&gt;&lt;/colgroup&gt;</p><p class="show-animate-item">    &lt;colgroup&gt;&lt;/colgroup&gt;</p><p class="show-animate-item">    &lt;thead&gt;</p><p class="show-animate-item">      &lt;tr&gt;</p><p class="show-animate-item">        &lt;th&gt;优势&lt;/th&gt;</p><p class="show-animate-item">        &lt;th&gt;云服务器&lt;/th&gt;</p><p class="show-animate-item">        &lt;th&gt;传统服务器&lt;/th&gt;</p><p class="show-animate-item">      &lt;/tr&gt;</p><p class="show-animate-item">    &lt;/thead&gt;</p><p class="show-animate-item">    &lt;tbody&gt;</p><p class="show-animate-item">      &lt;tr&gt;</p><p class="show-animate-item">	&lt;td&gt;弹性&lt;/td&gt;</p><p class="show-animate-item">	&lt;td&gt;弹性扩展，灵活配置&lt;/td&gt;</p><p class="show-animate-item">	&lt;td&gt;运维困难&lt;/td&gt;</p><p class="show-animate-item">      &lt;/tr&gt;</p><p class="show-animate-item">      &lt;tr&gt;</p><p class="show-animate-item">	&lt;td&gt;可靠&lt;/td&gt;</p><p class="show-animate-item">	&lt;td&gt;稳定可靠，数据放心&lt;/td&gt;</p><p class="show-animate-item">	&lt;td&gt;系统脆弱，数据丢失&lt;/td&gt;</p><p class="show-animate-item">      &lt;/tr&gt;</p><p class="show-animate-item">      &lt;tr&gt;</p><p class="show-animate-item">	&lt;td&gt;易用&lt;/td&gt;</p><p class="show-animate-item">	&lt;td&gt;即买即用，快速部署&lt;/td&gt;</p><p class="show-animate-item">	&lt;td&gt;费心麻烦&lt;/td&gt;</p><p class="show-animate-item">      &lt;/tr&gt;</p><p class="show-animate-item">      &lt;tr&gt;</p><p class="show-animate-item">	&lt;td&gt;安全&lt;/td&gt;</p><p class="show-animate-item">	&lt;td&gt;立体防护，专业支持&lt;/td&gt;</p><p class="show-animate-item">	&lt;td&gt;黑客入侵&lt;/td&gt;</p><p class="show-animate-item">      &lt;/tr&gt;</p><p class="show-animate-item">    &lt;/tbody&gt;</p><p class="show-animate-item">  &lt;/table&gt;</p><p class="show-animate-item">&lt;/div&gt;</p></div><p class="show-animate-item">而在这个demo中最核心的知识点就是<b>利用colgroup上设置的border优先级较低</b>的规则。<br></p></div>
+
+            </section>
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+
+        
+    
+    </div>
+
+    
+
+    <!-- 测试连接 https://v.qq.com/x/page/f0507qj9hhv.html -->
+    <!-- 测试连接 https://v.qq.com/x/page/s05065zrbps.html -->
+
+    <!-- 文章数据模块 -->
+    <section class="_mod_stat show-animate-item">
+        <div class="_stat_wrapper">
+            
+            <div class="_article_date">
+                <span class="date">OCTOBER 25, 2017</span>
+            </div>
+
+            <div class="_article_stat">
+
+                <ul class="_stat_list">
+                    <li class="_stat_item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18" class="_stat_view _stat_icon">
+                            <g>
+                                <path class="view_svg" d="M19,9c0,2.5-3.5,8-9,8S1,11.5,1,9s3.5-8,9-8S19,6.5,19,9Z"/>
+                                <circle class="view_svg" cx="10" cy="9" r="3"/>
+                            </g>
+                        </svg>
+                        <span class="_views">358731</span>
+                    </li>
+                    <li class="_stat_item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18.53" class="_stat_like _stat_icon" id="js-like-0" data-id="127">
+                            <g>
+                                <path class="like_svg" d="M17.54,9.54A5,5,0,1,0,10,3,5,5,0,1,0,2.46,9.54L10,17.11Z"/>
+                            </g>
+                        </svg>
+                        <span class="_likes js-like-text">170</span>
+                    </li>
+                </ul>
+
+                <ul class="_stat_share_article js-share-list" data-title="表格边框你知多少" data-desc="table之间的边框存在共用问题，自然而然就存在冲突。既然存在冲突，那么就势必涉及到最后渲染哪一个样式的问题。本文就主要研究当冲突产生时，如何让浏览器按照自己意愿渲染冲突边框。在这篇文章中都有介绍，以及对表格的边框渲染原理进行了深度的剖析" data-pic="https://cdn-isux.qq.com/upload/detail/big.jpg">
+                    <li class="share_article_item share_article_item_qzone js-china-ip" data-href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=%7Burl%7D&amp;title=%7Btitle%7D&amp;desc=&amp;summary=%7Bdesc%7D&amp;site=&amp;pics=%7Bpic%7D"></li>
+                    <li class="share_article_item share_article_item_qq js-china-ip" data-href="http://connect.qq.com/widget/shareqq/index.html?url=%7Burl%7D&amp;title=%7Btitle%7D&amp;desc=&amp;summary=%7Bdesc%7D&amp;site=isux&amp;pics=%7Bpic%7D"></li>
+                    <li class="share_article_item share_article_item_fb" data-href="https://www.facebook.com/sharer/sharer.php?u=%7Burl%7D&amp;t=%7Bdesc%7D"></li>
+                    <li class="share_article_item share_article_item_twitter" data-href="http://twitter.com/home?status=%7Bdesc%7D%20%23%7Btitle%7D%23&amp;url=%7Burl%7D&amp;pic=%7Bpic%7D&amp;desc="></li>
+                    <li class="share_article_item share_article_item_sina js-china-ip" data-href="http://service.weibo.com/share/share.php?title=%7Bdesc%7D%20%23%7Btitle%7D%23&amp;url=%7Burl%7D&amp;pic=%7Bpic%7D&amp;desc="></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作者模块 -->
+    <section class="_mod_authors show-animate-item">
+        <!-- 可以写成这个模块的 border-top -->
+        <!--<div class="_article_line"></div>-->
+        <div class="_authors_title">CONTRIBUTORS</div>
+        <ul class="_authors">
+            <li class="_author">
+                <img class="pic" src="https://isuxdesign-1251263993.file.myqcloud.com/avatars/Artboard%201-100.jpg" alt="">
+                <div class="name">啵啵</div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- 相关文章推荐模块 -->
+    <section class="_mod_related show-animate-item">
+        <ul class="related-list clearfix" id="list">
+            <li class="related-item first-item" data-index='1'>
+                <a href="3d-to-h5.html" target="_blank">
+                        <img class="pic clip-animate-item pic-gray" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/564_a.jpg" />
+                        <img class="pic pic-colorful clip-animate-item" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/564_a_src.jpg" />
+
+                    
+                    <div class="_title-wrapper fade-aniamte-item">
+                        <div class="_title-flex">
+                            <h3 class="title js-article-title">3DtoH5工作流应用手册 理论篇</h3>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="related-item" data-index='2'>
+                <a href="isux-ae-play.html" target="_blank">
+                        <img class="pic clip-animate-item pic-gray" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/542_a.jpg" />
+                        <img class="pic pic-colorful clip-animate-item" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/542_a_src.jpg" />
+
+                    
+                    <div class="_title-wrapper fade-aniamte-item">
+                        <div class="_title-flex">
+                            <h3 class="title js-article-title">玩转AE丨动效设计必备指南</h3>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="related-item last-item" data-index='3'>
+                <a href="isux-optimizing-3d-model.html" target="_blank">
+                        <img class="pic clip-animate-item pic-gray" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/372_a.jpg" />
+                        <img class="pic pic-colorful clip-animate-item" data-scale="0.9" src="https://cdn-isux.qq.com/upload/covers/372_a_src.jpg" />
+
+                    
+                    <div class="_title-wrapper fade-aniamte-item">
+                        <div class="_title-flex">
+                            <h3 class="title js-article-title">如何在页面极速渲染3D模型</h3>
+                        </div>
+                    </div>
+                </a>
+            </li>
+
+        
+        </ul>
+    </section>
+
+</div>
+
+<div class="share_article_scroll share_article_hide">
+    
+    <div class="_mod_stat">
+        <div class="_article_stat">
+
+            <ul class="_stat_list">
+                <li class="_stat_item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18" class="_stat_view _stat_icon">
+                        <g>
+                            <path class="view_svg" d="M19,9c0,2.5-3.5,8-9,8S1,11.5,1,9s3.5-8,9-8S19,6.5,19,9Z"/>
+                            <circle class="view_svg" cx="10" cy="9" r="3"/>
+                        </g>
+                    </svg>
+                    <span class="_views">358731</span>
+                </li>
+                <li class="_stat_item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18.53" class="_stat_like _stat_icon" id="js-like-1" data-id="127">
+                        <g>
+                            <path class="like_svg" d="M17.54,9.54A5,5,0,1,0,10,3,5,5,0,1,0,2.46,9.54L10,17.11Z"/>
+                        </g>
+                    </svg>
+                    <span class="_likes bottom-like-text">170</span>
+                </li>
+            </ul>
+
+            <ul class="_stat_share_article js-share-list" data-title="表格边框你知多少" data-desc="table之间的边框存在共用问题，自然而然就存在冲突。既然存在冲突，那么就势必涉及到最后渲染哪一个样式的问题。本文就主要研究当冲突产生时，如何让浏览器按照自己意愿渲染冲突边框。在这篇文章中都有介绍，以及对表格的边框渲染原理进行了深度的剖析" data-pic="https://cdn-isux.qq.com/upload/detail/big.jpg">
+                <li class="share_article_item share_article_item_qzone" data-href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=%7Burl%7D&amp;title=%7Btitle%7D&amp;desc=&amp;summary=%7Bdesc%7D&amp;site=&amp;pics=%7Bpic%7D"></li>
+                <li class="share_article_item share_article_item_qq" data-href="http://connect.qq.com/widget/shareqq/index.html?url=%7Burl%7D&amp;title=%7Btitle%7D&amp;desc=&amp;summary=%7Bdesc%7D&amp;site=isux&amp;pics=%7Bpic%7D"></li>
+                <li class="share_article_item share_article_item_fb" data-href="https://www.facebook.com/sharer/sharer.php?u=%7Burl%7D&amp;t=%7Bdesc%7D"></li>
+                <li class="share_article_item share_article_item_sina" data-href="http://service.weibo.com/share/share.php?title=%7Bdesc%7D%20%23%7Btitle%7D%23&amp;url=%7Burl%7D&amp;pic=%7Bpic%7D&amp;desc="></li>
+            </ul>
+        </div>
+    </div>
+
+    
+</div>
+<!-- 文章详情页 -->
+
+ <div id="bottom-mask"></div>
+<div class="mask-strip"></div>
+
+<footer class="mod_site_footer" role="contentinfo">
+    <div class="_footer-prefix">
+        <div class="_inner-wrapper"></div>
+    </div>
+    <div class="_social">
+        <div class="_inner-wrapper">
+            <ul class="_social-media-links">
+                <!-- <li class="-hc -vimeo"><a href="#" title="vimeo"></a></li> -->
+                <li class="-hc -wechat">
+                    <a title="wechat">
+                        <span class="-wechat-qr">
+                            <img class="lazy" data-src="../static/images/isux_qrcode.jpg" alt="微信公众号二维码" width="230" height="230">
+                        </span>
+                    </a>
+                </li>
+                <!-- <li class="-hc -facebook"><a href="#" title="facebook"></a></li> -->
+                <li class="-hc -weibo"><a href="http://weibo.com/txisux" target="_blank" title="weibo"></a></li>
+
+                <li class="-hc -zcool">
+                    <a href="https://www.zcool.com.cn/u/1936779" target="_blank" title="zcool"></a>
+                </li>
+
+                <li class="-hc -ins">
+                    <a href="https://www.instagram.com/isux_lab" target="_blank" title="instagram"></a>
+                </li>
+
+                <li class="-hc -behance">
+                    <a href="https://www.behance.net/18485758707c20" target="_blank" title="behance"></a>
+                </li>
+
+                <li class="-hc -medium">
+                    <a href="https://medium.com/@tencent.isux" target="_blank" title="medium"></a>
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="_footer-suffix">
+        <div class="_inner-wrapper">
+            <div class="supporting-information">
+                <ul class="_footer-links"><li class="_footer-link"><a href="https://www.tencent.com/" target="_blank">TENCENT</a></li><li class="_footer-link"><a href="https://qqfamily.com" target="_blank">QQfamily</a></li><li class="_footer-link"><a href="https://ycg.qq.com/" target="_blank">YCG</a></li></ul>
+            </div>
+            <div class="copyright">Copyright © 1998 - 2025 Tencent Inc. All Rights Reserved.</div>
+        </div>
+    </div>
+</footer>
+
+
+<div class="isux-qrcode">
+	<img src="../static/images/qrcode.jpg" alt="ISUX 二维码">
+</div>
+<div class="-search hide" id="search" role="application" aria-hidden="false">
+	<div class="-search-inner">
+		<div class="-search-form">
+			<span class="-search-box">
+				<input type="search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" maxlength="100" class="-search-input" placeholder="keywords" value="" />
+				<button type="button" class="-search-reset" title="Close">&times;</button>
+			</span>
+		</div>
+		<div class="-search-result">
+			<div class="-search-result-head">
+				啥，没结果？别担心，我们为您准备了推荐的文章：
+			</div>
+			<div class="gallery -search-gallery" id="searchResult"></div>
+		</div>
+		<div class="-loading -search-loading hide">
+			<span class="-loading-icon -search-loading-icon"><i></i><i></i></span>
+		</div>
+	</div>
+</div>
+<!-- .-search -->
+<script type="text/tpl" id="itemTpl">
+<div class="gallery-item <%=?cssclass%>"<%=?dataset%>>
+	<a class="gallery-wrapper" href="<%=url%>" target="_blank">
+		<div class="gallery-pics show-search-animate-item">
+			<div class="gallery-pic gallery-pic-gray lazy clip-animate-item" data-src="<%=image%>"></div>
+			<div class="gallery-pic gallery-pic-normal lazy clip-animate-item" data-src="<%=image1x%>"></div>
+		</div>
+		<div class="gallery-info show-search-animate-item">
+			<h3 class="title" title="<%=title%>"><%=title%></h3>
+			<p class="category"><%=category_name%></p>
+			<p class="abstract"><%=abstract%></p>
+		</div>
+	</a>
+</div>
+</script>
+<script>
+var G_csrf = 'w4HAepjhX1s0mlC8acnnZ_g3Zm77HA68';
+</script>
+<script src="../static/js/lib.js"></script>
+
+<!-- 引入腾讯视频JS库 -->
+<script src="https://vm.gtimg.cn/tencentvideo/txp/js/txplayer.js"></script>
+
+<!-- 引入判断背景显示不同字体颜色的组件 -->
+<script src="../static/js/common/background-check.js"></script>
+<script>
+window.backgroundCheck && backgroundCheck.init({
+    targets: '._title-flex',
+    imgs: '.pic-gray',
+    parents: '.related-item a',
+    cssclass: '_article-light-item',
+    lazy: false
+});
+</script>
+
+<!-- 页面逻辑js -->
+<script src="../static/js/detail.js"></script>
+
+<!-- TA -->
+
+<!-- TA -->
+<!-- GA -->
+
+<!-- GA -->
+</body>
+</html>
